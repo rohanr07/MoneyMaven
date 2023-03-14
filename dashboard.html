@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="dashboard.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="sideMenu">
+        <div id="sideMenuFixed"></div>
+        <div id="sidecontent">
+          <h1>MoneyMaven</h1>
+
+          <ul class="menu">
+            <li>Main</li>
+            <li class="dashboard_btn">Dashboard</li>
+            <li>Reports <span class="notification">1</span></li>
+            <li>Income</li>
+            <li>Expenses</li>
+            <li>Budget</li>
+          </ul>
+
+          <ul class="menu">
+            <li>Account</li>
+            <li>Help and support</li>
+            <li>Log out</li>
+          </ul>
+        </div>
+      </div>
+      <div id="content">
+        <div id="titleBar">
+          <h1>Dashboard</h1>
+          <h2>Monthly Income Performance</h2>
+          <div id="profilePic">
+            <a href="https://google.com" target="_blank"
+              ><img src="profileimg.jpeg"
+            /></a>
+          </div>
+          <div class="options">
+            <a href="https://google.coms" target="_blank"
+              ><div class="username">Prabal Singh</div></a
+            >
+            <hr />
+            <a href="#" class="option"><i class="fa fa-wrench"></i>Settings</a>
+            <a href="gdpr.html" class="option"
+              ><i class="fa fa-suitcase" id="Gdpr_btn"></i>GDPR Policy</a
+            >
+
+            <a href="#" class="option"
+              ><i class="fa fa-plus"></i>Account Info</a
+            >
+            <a href="#" class="logout"
+              >Log out <i class="fa fa-sign-out"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="mainChart">
+          <canvas id="salesData"></canvas>
+
+          <div class="clearFix"></div>
+
+          <div id="totalSales">
+            <div class="col">
+              <div id="creditSales" class="progressBar"></div>
+              <h3>£36,059</h3>
+              <span class="progressTitle">Income</span>
+            </div>
+            <div class="col">
+              <div id="channelSales" class="progressBar"></div>
+              <h3>£24,834</h3>
+              <span class="progressTitle">Expenses</span>
+            </div>
+            <div class="col">
+              <div id="directSales" class="progressBar"></div>
+              <h3>£15,650</h3>
+              <span class="progressTitle">Budget</span>
+            </div>
+          </div>
+
+          <table>
+            <tr>
+              <th>Recent Expenses</th>
+              <th>Amount</th>
+            </tr>
+
+            <tr>
+              <td>Unversity Costa</td>
+              <td>£ 13.3</td>
+            </tr>
+
+            <tr>
+              <td>Tesco selly oak</td>
+              <td>£ 18.3</td>
+            </tr>
+
+            <tr>
+              <td>University SuperStore</td>
+              <td>£ 4.1</td>
+            </tr>
+
+            <tr>
+              <td>Anurag Tiwari</td>
+              <td>£ 7.4</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <h2>Copyright © 2023 MoneyMaven Inc. ALL rights reserved</h2>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
+    <script src="//cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.7.4/dist/progressbar.js"></script>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>
