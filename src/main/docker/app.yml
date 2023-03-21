@@ -11,7 +11,7 @@ services:
       - SPRING_LIQUIBASE_URL=jdbc:postgresql://teamproject-postgresql:5432/teamproject
       - JHIPSTER_SLEEP=10 # gives time for other services to boot before the application
     ports:
-      - 8080:8080
+      - 127.0.0.1:8080:8080
   teamproject-postgresql:
     image: postgres:14.5
     volumes:
