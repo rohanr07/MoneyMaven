@@ -21,16 +21,20 @@ Navbar
   a.nav-link {
     font-weight: 400;
   }
+  .navbar-title {
+    font-size: 23px;
+    font-family: sans-serif;
+  }
 }
 
 /* ==========================================================================
 Logo styles
 ========================================================================== */
 .logo-img {
-  height: 45px;
-  width: 45px;
+  height: 70px;
+  width: 70px;
   display: inline-block;
   vertical-align: middle;
-  background: url('../../../content/images/logo-jhipster.png') no-repeat center center;
+  background: url('../../../content/images/MoneyMavenlogo.png') no-repeat center center;
   background-size: contain;
 }
