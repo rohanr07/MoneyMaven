@@ -1,19 +1,50 @@
 <div class="row">
-  <div class="col-md-2"></div>
+  <div class="col-md-2" [ngSwitch]="account != null">
+    <div id="sideMenu" *ngSwitchCase="true">
+      <div id="sideMenuFixed"></div>
+      <div id="sidecontent">
+        <ul class="menu">
+          <li>Main</li>
+          <li class="dashboard_btn">Dashboard</li>
+          <li>Reports <span class="notification">1</span></li>
+          <li>Income</li>
+          <li>Expenses</li>
+          <li>Budget</li>
+        </ul>
 
-  <div class="col-md-9">
-    <h1 class="display-4"><span jhiTranslate="home.title">Welcome to </span> MoneyMaven!</h1>
-    <br />
-    <h1>Spend Less.</h1>
-    <h1>Save More.</h1>
+        <ul class="menu">
+          <li>Account</li>
+          <li>Help and support</li>
+        </ul>
+        <pre><span class="alert alert-success" id="home-logged-message" *ngIf="account" jhiTranslate="home.logged.message" [translateValues]="{ username: account.login }"
+        >User: "{{ account.login }}".</span></pre>
+      </div>
+    </div>
+  </div>
 
-    <p>Log in or create your account now to grow your savings!</p>
+  <div class="col-md-6" [ngSwitch]="account != null">
+    <div *ngSwitchCase="false">
+      <h1 class="display-4"><span jhiTranslate="home.title">Welcome to </span> MoneyMaven!</h1>
+      <br />
+      <h1>Spend Less.</h1>
+      <h1>Save More.</h1>
 
-    <div [ngSwitch]="account !== null">
-      <div class="alert alert-success" *ngSwitchCase="true">
-        <span id="home-logged-message" *ngIf="account" jhiTranslate="home.logged.message" [translateValues]="{ username: account.login }"
-          >You are logged in as user "{{ account.login }}".</span
-        >
+      <p>Log in or create your account now to grow your savings!</p>
+    </div>
+
+    <div>
+      <div *ngSwitchCase="true">
+        <div id="container">
+          <div id="content">
+            <div id="titleBar"></div>
+
+            <div class="mainChart"></div>
+          </div>
+        </div>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
+        <script src="//cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.7.4/dist/progressbar.js"></script>
+
+        <script src="dashboard.js"></script>
       </div>
 
       <div class="alert alert-warning" *ngSwitchCase="false">
