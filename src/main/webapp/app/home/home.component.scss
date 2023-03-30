@@ -1,6 +1,8 @@
 /* ==========================================================================
 Main page styles
 ========================================================================== */
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
 
 /*.hipster {
   display: inline-block;
@@ -21,4 +23,103 @@ Main page styles
     background: url('../../content/images/jhipster_family_member_0.svg') no-repeat center top;
     background-size: contain;
   }
+}
+
+* {
+  box-sizing: border-box;
+}
+/* SCROLL BAR*/
+
+/* CONTAINER */
+//add container
+
+/* Side Bar */
+#sideMenu {
+  width: auto;
+  height: auto;
+  position: relative;
+  padding-top: 0px;
+  padding-left: 30px;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  background: #810ca8;
+  display: table-cell;
+  vertical-align: top;
+  color: #fff;
+}
+#sideMenuFixed {
+  //position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 240px;
+  height: 100%;
+  padding-top: 0px;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  background: #810ca8;
+  z-index: 9;
+}
+.alert-success {
+  padding: 0rem 0rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  width: 100px; /* set desired width */
+  height: 50px; /* set desired height */
+}
+#sidecontent {
+  //position: fixed;
+  width: 200px;
+  z-index: 10;
+}
+
+.menu {
+  list-style: none;
+  margin: 24px 0;
+  padding: 0;
+  width: 100%;
+}
+.menu li {
+  display: block;
+  height: 30px;
+  width: 100%;
+  line-height: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+  position: relative;
+  cursor: pointer;
+}
+.menu li:hover {
+  color: #fff;
+}
+.menu li:first-child {
+  height: 35px;
+  line-height: 35px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ddd;
+  background: rgba(0, 0, 0, 0.08);
+  margin-left: -18px;
+  padding: 0px 10px;
+  border-radius: 8px;
+  cursor: default;
+}
+
+/* Icons */
+.notification {
+  display: block;
+  width: 20px;
+  height: 20px;
+  color: #202b33;
+  text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7);
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  background: #59abe3;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 2%;
+  margin: auto;
+  transition: 0.3s ease;
 }
