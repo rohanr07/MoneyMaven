@@ -8,6 +8,7 @@ import { DEBUG_INFO_ENABLED } from 'app/app.constants';
 import { Authority } from 'app/config/authority.constants';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
+import { ExpensesComponent } from './expenses/expenses.component';
 
 @NgModule({
   imports: [
@@ -36,6 +37,10 @@ import { UserRouteAccessService } from 'app/core/auth/user-route-access.service'
         {
           path: '',
           loadChildren: () => import(`./entities/entity-routing.module`).then(m => m.EntityRoutingModule),
+        },
+        {
+          path: 'expenses',
+          component: ExpensesComponent,
         },
         navbarRoute,
         ...errorRoute,

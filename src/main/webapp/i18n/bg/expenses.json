@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "expenses": {
+      "home": {
+        "title": "Expenses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Създайте нов Expenses",
+        "createOrEditLabel": "Създайте или редактирайте Expenses",
+        "notFound": "Expenses не са намерени"
+      },
+      "created": "Създаден е нов Expenses с идентификатор {{ param }}",
+      "updated": "Expenses с идентификатор {{ param }} e oбновен",
+      "deleted": "Expenses с идентификатор {{ param }} е изтрит",
+      "delete": {
+        "question": "Наистина ли искате да изтриете Expenses {{ id }}?"
+      },
+      "detail": {
+        "title": "Expenses"
+      },
+      "id": "ID",
+      "expenseType": "Expense Type",
+      "amount": "Amount",
+      "description": "Description",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

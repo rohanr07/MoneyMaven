@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "expenses": {
+      "home": {
+        "title": "Expenses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Krijo një të ri Expenses",
+        "createOrEditLabel": "Krijo ose përpuno një Expenses",
+        "notFound": "No Expenses found"
+      },
+      "created": "Një Expenses i ri u krijua me identifikues {{ param }}",
+      "updated": "Një Expenses u përpunua me identifikues {{ param }}",
+      "deleted": "Një Expenses u fshi me identifikues {{ param }}",
+      "delete": {
+        "question": "Jeni i sigurtë që doni të fshini Expenses {{ id }}?"
+      },
+      "detail": {
+        "title": "Expenses"
+      },
+      "id": "ID",
+      "expenseType": "Expense Type",
+      "amount": "Amount",
+      "description": "Description",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

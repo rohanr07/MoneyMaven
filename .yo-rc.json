@@ -21,6 +21,7 @@
     "enableHibernateCache": true,
     "enableSwaggerCodegen": false,
     "enableTranslation": true,
+    "entities": ["Expenses"],
     "entitySuffix": "",
     "jhiPrefix": "jhi",
     "jhipsterVersion": "7.9.3",
@@ -75,6 +76,7 @@
       "uz-Latn-uz",
       "vi"
     ],
+    "lastLiquibaseTimestamp": 1681578470000,
     "messageBroker": false,
     "microfrontend": false,
     "microfrontends": [],
