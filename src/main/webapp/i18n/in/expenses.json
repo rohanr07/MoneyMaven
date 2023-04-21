@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "expenses": {
+      "home": {
+        "title": "Expenses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Buat Expenses baru",
+        "createOrEditLabel": "Buat atau edit Expenses",
+        "notFound": "No Expenses found"
+      },
+      "created": "Expenses dengan id {{ param }} telah dibuat",
+      "updated": "Expenses dengan id {{ param }} telah diperbaharui",
+      "deleted": "Expenses dengan id {{ param }} telah dihapus",
+      "delete": {
+        "question": "Apakah anda yakin ingin menghapus Expenses {{ id }}?"
+      },
+      "detail": {
+        "title": "Expenses"
+      },
+      "id": "ID",
+      "expenseType": "Expense Type",
+      "amount": "Amount",
+      "description": "Description",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

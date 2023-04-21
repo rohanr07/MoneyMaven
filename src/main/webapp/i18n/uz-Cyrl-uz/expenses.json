@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "expenses": {
+      "home": {
+        "title": "Expenses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Янги Expenses қўшиш",
+        "createOrEditLabel": "Expensesни таҳрирлаш",
+        "notFound": "No Expenses found"
+      },
+      "created": "Expenses {{ param }} билан қўшилди.",
+      "updated": "{{ param }}- Expenses сақланди.",
+      "deleted": "{{ param }}- Expenses ўчирилди.",
+      "delete": {
+        "question": "{{ id }}- Expensesни ўчирмоқчимисиз? "
+      },
+      "detail": {
+        "title": "Expenses"
+      },
+      "id": "ID",
+      "expenseType": "Expense Type",
+      "amount": "Amount",
+      "description": "Description",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "expenses": {
+      "home": {
+        "title": "Expenses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Δημιουργήστε ένα νέο Expenses",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Expenses",
+        "notFound": "No Expenses found"
+      },
+      "created": "Ένα νέο Expenses έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα Expenses έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα Expenses έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Expenses {{ id }};"
+      },
+      "detail": {
+        "title": "Expenses"
+      },
+      "id": "ID",
+      "expenseType": "Expense Type",
+      "amount": "Amount",
+      "description": "Description",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

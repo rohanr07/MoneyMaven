@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "expenses": {
+      "home": {
+        "title": "Expenses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Kreiraj novi Expenses",
+        "createOrEditLabel": "Kreirajte ili izmenite Expenses",
+        "notFound": "No Expenses found"
+      },
+      "created": "Kreiran je novi Expenses pod nazivom {{ param }}",
+      "updated": "Expenses pod nazivom {{ param }} je ažuriran",
+      "deleted": "Expenses pod nazivom {{ param }} je obrisan",
+      "delete": {
+        "question": "Da li ste sigurni da želite da obrišete Expenses pod nazivom {{ id }}?"
+      },
+      "detail": {
+        "title": "Expenses"
+      },
+      "id": "ID",
+      "expenseType": "Expense Type",
+      "amount": "Amount",
+      "description": "Description",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}
