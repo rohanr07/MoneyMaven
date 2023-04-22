@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "expense": {
+      "home": {
+        "title": "Expenses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Maak een nieuwe Expense",
+        "createOrEditLabel": "Maak of wijzig een Expense",
+        "notFound": "No Expenses found"
+      },
+      "created": "A new Expense is created with identifier {{ param }}",
+      "updated": "A Expense is updated with identifier {{ param }}",
+      "deleted": "A Expense is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Expense {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Expense"
+      },
+      "id": "ID",
+      "expenseType": "Expense Type",
+      "amount": "Amount",
+      "description": "Description",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

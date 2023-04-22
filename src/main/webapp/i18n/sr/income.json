@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "income": {
+      "home": {
+        "title": "Incomes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Kreiraj novi Income",
+        "createOrEditLabel": "Kreirajte ili izmenite Income",
+        "notFound": "No Incomes found"
+      },
+      "created": "Kreiran je novi Income pod nazivom {{ param }}",
+      "updated": "Income pod nazivom {{ param }} je ažuriran",
+      "deleted": "Income pod nazivom {{ param }} je obrisan",
+      "delete": {
+        "question": "Da li ste sigurni da želite da obrišete Income pod nazivom {{ id }}?"
+      },
+      "detail": {
+        "title": "Income"
+      },
+      "id": "ID",
+      "amount": "Amount",
+      "companyName": "Company Name",
+      "date": "Date",
+      "currency": "Currency",
+      "user": "User"
+    }
+  }
+}

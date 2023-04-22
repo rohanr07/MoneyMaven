@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "income": {
+      "home": {
+        "title": "Incomes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Egy új Income létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Incomet",
+        "notFound": "No Incomes found"
+      },
+      "created": "Egy új Income lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Income módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Income törölve lett {{ param }} azonosítóval",
+      "delete": {
+        "question": "Biztos benne, hogy törölni szeretné az Incomet {{ id }} azonosítóval?"
+      },
+      "detail": {
+        "title": "Income"
+      },
+      "id": "ID",
+      "amount": "Amount",
+      "companyName": "Company Name",
+      "date": "Date",
+      "currency": "Currency",
+      "user": "User"
+    }
+  }
+}

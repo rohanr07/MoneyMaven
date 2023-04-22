@@ -26,7 +26,6 @@ import { PageRibbonComponent } from './layouts/profiles/page-ribbon.component';
 import { ActiveMenuDirective } from './layouts/navbar/active-menu.directive';
 import { ErrorComponent } from './layouts/error/error.component';
 import { GdprComponent } from './gdpr/gdpr.component';
-import { ExpensesComponent } from './expenses/expenses.component';
 
 @NgModule({
   imports: [
@@ -47,16 +46,7 @@ import { ExpensesComponent } from './expenses/expenses.component';
     { provide: NgbDateAdapter, useClass: NgbDateDayjsAdapter },
     httpInterceptorProviders,
   ],
-  declarations: [
-    MainComponent,
-    NavbarComponent,
-    ErrorComponent,
-    PageRibbonComponent,
-    ActiveMenuDirective,
-    FooterComponent,
-    GdprComponent,
-    ExpensesComponent,
-  ],
+  declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent, GdprComponent],
   bootstrap: [MainComponent],
 })
 export class AppModule {

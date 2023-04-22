@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "income": {
+      "home": {
+        "title": "Incomes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Krijo një të ri Income",
+        "createOrEditLabel": "Krijo ose përpuno një Income",
+        "notFound": "No Incomes found"
+      },
+      "created": "Një Income i ri u krijua me identifikues {{ param }}",
+      "updated": "Një Income u përpunua me identifikues {{ param }}",
+      "deleted": "Një Income u fshi me identifikues {{ param }}",
+      "delete": {
+        "question": "Jeni i sigurtë që doni të fshini Income {{ id }}?"
+      },
+      "detail": {
+        "title": "Income"
+      },
+      "id": "ID",
+      "amount": "Amount",
+      "companyName": "Company Name",
+      "date": "Date",
+      "currency": "Currency",
+      "user": "User"
+    }
+  }
+}

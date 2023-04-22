@@ -14,7 +14,7 @@ import { SortService } from 'app/shared/sort/sort.service';
   templateUrl: './expenses.component.html',
 })
 export class ExpensesComponent implements OnInit {
-  expenses?: IExpenses[] | null;
+  expenses?: IExpenses[];
   isLoading = false;
 
   predicate = 'id';
@@ -60,12 +60,6 @@ export class ExpensesComponent implements OnInit {
 
   navigateToWithComponentValues(): void {
     this.handleNavigation(this.predicate, this.ascending);
-  }
-
-  filterByExpenseType(expenseType: string) {
-    this.expensesService.query().subscribe(res => {
-      this.expenses = res.body?.filter(expense => expense.expenseType === expenseType);
-    });
   }
 
   protected loadFromBackendWithRouteInformations(): Observable<EntityArrayResponseType> {

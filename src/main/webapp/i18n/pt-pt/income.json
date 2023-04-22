@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "income": {
+      "home": {
+        "title": "Incomes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Criar novo(a) Income",
+        "createOrEditLabel": "Criar ou editar Income",
+        "notFound": "Nenhum Incomes encontrado"
+      },
+      "created": "Um novo Income foi criado com o identificador {{ param }}",
+      "updated": "Income com identificador {{ param }} foi actualizado",
+      "deleted": "Income com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Income {{ id }}?"
+      },
+      "detail": {
+        "title": "Income"
+      },
+      "id": "ID",
+      "amount": "Amount",
+      "companyName": "Company Name",
+      "date": "Date",
+      "currency": "Currency",
+      "user": "User"
+    }
+  }
+}

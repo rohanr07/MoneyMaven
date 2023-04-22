@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "expense": {
+      "home": {
+        "title": "Expenses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Expense を追加",
+        "createOrEditLabel": "Expenseを追加または編集",
+        "notFound": "No Expenses found"
+      },
+      "created": "A new Expense is created with identifier {{ param }}",
+      "updated": "A Expense is updated with identifier {{ param }}",
+      "deleted": "A Expense is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Expense {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Expense"
+      },
+      "id": "ID",
+      "expenseType": "Expense Type",
+      "amount": "Amount",
+      "description": "Description",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "income": {
+      "home": {
+        "title": "Incomes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Income",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Income",
+        "notFound": "No Incomes found"
+      },
+      "created": "Một Income mới được tạo với định danh {{ param }}",
+      "updated": "Một Income cập nhật với định danh {{ param }}",
+      "deleted": "Một Income đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Income {{ id }}?"
+      },
+      "detail": {
+        "title": "Income"
+      },
+      "id": "ID",
+      "amount": "Amount",
+      "companyName": "Company Name",
+      "date": "Date",
+      "currency": "Currency",
+      "user": "User"
+    }
+  }
+}

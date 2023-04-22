@@ -1,0 +1,10 @@
+{
+  "teamprojectApp": {
+    "Currency": {
+      "null": "",
+      "GBP": "GBP",
+      "USD": "USD",
+      "Euros": "Euros"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "income": {
+      "home": {
+        "title": "Incomes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Income",
+        "createOrEditLabel": "Skapa eller ändra en Income",
+        "notFound": "No Incomes found"
+      },
+      "created": "En ny Income är skapad med id {{ param }}",
+      "updated": "En Income är uppdaterad med id  {{ param }}",
+      "deleted": "En Income är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Income {{ id }}?"
+      },
+      "detail": {
+        "title": "Income"
+      },
+      "id": "ID",
+      "amount": "Amount",
+      "companyName": "Company Name",
+      "date": "Date",
+      "currency": "Currency",
+      "user": "User"
+    }
+  }
+}

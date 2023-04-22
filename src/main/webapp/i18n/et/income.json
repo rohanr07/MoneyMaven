@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "income": {
+      "home": {
+        "title": "Incomes",
+        "refreshListLabel": "Värskenda nimekirja",
+        "createLabel": "Lisa uus Income",
+        "createOrEditLabel": "Lisa või muuda Income",
+        "notFound": "Ei leitud ühtegi Incomes"
+      },
+      "created": "Uus Income on loodud identifikaatoriga {{ param }}",
+      "updated": "Income identifikaatoriga {{ param }} on muudetud",
+      "deleted": "Income identifikaatoriga {{ param }} on kustutatud",
+      "delete": {
+        "question": "Kas olete kindel, et soovite kustutada Income {{ id }}?"
+      },
+      "detail": {
+        "title": "Income"
+      },
+      "id": "ID",
+      "amount": "Amount",
+      "companyName": "Company Name",
+      "date": "Date",
+      "currency": "Currency",
+      "user": "User"
+    }
+  }
+}

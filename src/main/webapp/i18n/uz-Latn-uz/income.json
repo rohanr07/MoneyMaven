@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "income": {
+      "home": {
+        "title": "Incomes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Yangi Income qo`shish",
+        "createOrEditLabel": "Incomeni tahrirlash",
+        "notFound": "No Incomes found"
+      },
+      "created": "Income {{ param }} bilan qo`shildi",
+      "updated": "{{ param }}- Income saqlandi",
+      "deleted": "{{ param }}- Income o`chirildi",
+      "delete": {
+        "question": "{{ id }}- Incomeni o`chirmoqchimisiz? "
+      },
+      "detail": {
+        "title": "Income"
+      },
+      "id": "ID",
+      "amount": "Amount",
+      "companyName": "Company Name",
+      "date": "Date",
+      "currency": "Currency",
+      "user": "User"
+    }
+  }
+}

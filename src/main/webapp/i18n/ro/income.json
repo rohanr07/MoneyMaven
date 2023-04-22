@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "income": {
+      "home": {
+        "title": "Incomes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Income",
+        "createOrEditLabel": "Creeare sau editare Income",
+        "notFound": "No Incomes found"
+      },
+      "created": "A fost creată o nouă entitate Income cu identificatorul {{ param }}",
+      "updated": "Income cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Income cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Income {{ id }}?"
+      },
+      "detail": {
+        "title": "Income"
+      },
+      "id": "ID",
+      "amount": "Amount",
+      "companyName": "Company Name",
+      "date": "Date",
+      "currency": "Currency",
+      "user": "User"
+    }
+  }
+}

@@ -11,16 +11,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import tech.jhipster.web.util.HeaderUtil;
 import tech.jhipster.web.util.ResponseUtil;
 import uk.ac.bham.teamproject.domain.Expenses;
 import uk.ac.bham.teamproject.repository.ExpensesRepository;
-import uk.ac.bham.teamproject.security.SecurityUtils;
 import uk.ac.bham.teamproject.web.rest.errors.BadRequestAlertException;
 
 /**
@@ -161,18 +157,10 @@ public class ExpensesResource {
     @GetMapping("/expenses")
     public List<Expenses> getAllExpenses(@RequestParam(required = false, defaultValue = "false") boolean eagerload) {
         log.debug("REST request to get all Expenses");
-
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-
         if (eagerload) {
-            log.debug("REST request in IF");
-
-            log.debug("user " + userDetails.getUsername());
-            return expensesRepository.findAllWithEagerRelationships(userDetails);
+            return expensesRepository.findAllWithEagerRelationships();
         } else {
-            log.debug("REST request in else");
-            return expensesRepository.findExpensesByCurrentUser(userDetails);
+            return expensesRepository.findAll();
         }
     }
 
