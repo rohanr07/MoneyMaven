@@ -6,14 +6,13 @@ entity Expense {
 }
 
 enum ExpenseType {
-  FIXED
-  VARIABLE
-  NECESSARY
-  DISCRETIONARY
-  ONE_TIME
-  SAVINGS_AND_INVESTMENT
-  DEBT_REPAYMENT
-  OTHER
+  Fixed
+  Variable
+  Necessary
+  Discretionary
+  Savings & Investment
+  Debt Repayment
+  Other
 }
 
 relationship ManyToOne {

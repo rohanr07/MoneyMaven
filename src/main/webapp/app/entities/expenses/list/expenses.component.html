@@ -2,39 +2,22 @@
   <h2 id="page-heading" data-cy="ExpensesHeading">
     <span jhiTranslate="teamprojectApp.expenses.home.title"> MoneyMaven :) </span>
 
-    <div class="d-flex justify-content-end">
+    <div class="d-flex justify-content-start">
       <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
         <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
         <span jhiTranslate="teamprojectApp.expenses.home.refreshListLabel">Refresh list</span>
       </button>
 
-      <div class="dropdown">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Dropdown button</button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Link 1</a></li>
-          <li><a class="dropdown-item" href="#">Link 2</a></li>
-          <li><a class="dropdown-item" href="#">Link 3</a></li>
-        </ul>
-      </div>
-
-      <div class="dropdown">
-        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-          View Expenses by Type
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#" (click)="filterByExpenseType('FIXED')">Fixed Expenses</a></li>
-          <li><a class="dropdown-item" href="#" (click)="filterByExpenseType('VARIABLE')">Variable Expenses</a></li>
-          <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" href="#" (click)="filterByExpenseType('FIXED')">Fixed Expenses</a></li>
-          <li><a class="dropdown-item" href="#" (click)="filterByExpenseType('VARIABLE')">Variable Expenses</a></li>
-          <li><a class="dropdown-item" href="#" (click)="filterByExpenseType('NECESSARY')">Necessary Expenses</a></li>
-          <li><a class="dropdown-item" href="#" (click)="filterByExpenseType('DISCRETIONARY')">Discretionary Expenses</a></li>
-          <li><a class="dropdown-item" href="#" (click)="filterByExpenseType('ONE TIME EXPENSE')">One Time Expenses</a></li>
-          <li><a class="dropdown-item" href="#" (click)="filterByExpenseType('SAVINGS & INVESTMENT')">Savings & Investment Expenses</a></li>
-          <li><a class="dropdown-item" href="#" (click)="filterByExpenseType('DEBT REPAYMENT')">Debt Repayment Expenses</a></li>
-          <li><a class="dropdown-item" href="#" (click)="filterByExpenseType('OTHER EXPENSES')">Other Expenses</a></li>
-        </ul> -->
-        </ul>
+      <!--<div class="d-flex p-3 bg-secondary justify-content-center"> -->
+      <div class="d-flex p-3 bg-secondary btn-group btn-group-sm justify-content-center">
+        <h6>View Expenses<br />by Type:</h6>
+        <button class="btn btn-dark btn-sm" href="#" (click)="filterByExpenseType('Fixed')">Fixed</button>
+        <button class="btn btn-dark btn-sm" href="#" (click)="filterByExpenseType('Variable')">Variable</button>
+        <button class="btn btn-dark btn-sm" href="#" (click)="filterByExpenseType('Necessary')">Necessary</button>
+        <button class="btn btn-dark btn-sm" href="#" (click)="filterByExpenseType('Discretionary')">Discretionary</button>
+        <button class="btn btn-dark btn-sm" href="#" (click)="filterByExpenseType('Savings & Investment')">Savings & Investment</button>
+        <button class="btn btn-dark btn-sm" href="#" (click)="filterByExpenseType('Debt Repayment')">Debt Repayment</button>
+        <button class="btn btn-dark btn-sm" href="#" (click)="filterByExpenseType('Other')">Other</button>
       </div>
 
       <button
@@ -44,7 +27,7 @@
         [routerLink]="['/expenses/new']"
       >
         <fa-icon icon="plus"></fa-icon>
-        <span jhiTranslate="teamprojectApp.expenses.home.createLabel"> Create a new Expense </span>
+        <span jhiTranslate="teamprojectApp.expenses.home.createLabel">Create a new Expense</span>
       </button>
     </div>
   </h2>
