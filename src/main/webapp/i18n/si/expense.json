@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "expense": {
+      "home": {
+        "title": "Expenses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "නව Expense එකක් සාදන්න",
+        "createOrEditLabel": "Expense සාදන්න හෝ සංස්කරණය කරන්න",
+        "notFound": "Expenses හමු නොවීය"
+      },
+      "created": "{{ param }} හඳුනාගැනීමෙන් නව Expense සාදනු ලැබේ",
+      "updated": "{{ param }} හඳුනාගැනීමෙන් Expense යාවත්කාලීන වේ",
+      "deleted": "{{ param }} හඳුනාගැනීමෙන් Expense මකා දමනු ලැබේ",
+      "delete": {
+        "question": "Expense {{ id }} මකා දැමීමට ඔබට විශ්වාසද?"
+      },
+      "detail": {
+        "title": "Expense"
+      },
+      "id": "ID",
+      "expenseType": "Expense Type",
+      "amount": "Amount",
+      "description": "Description",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

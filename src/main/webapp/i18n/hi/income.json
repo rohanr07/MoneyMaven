@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "income": {
+      "home": {
+        "title": "Incomes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नया Income बनाएँ",
+        "createOrEditLabel": "Income बनाएँ या संपादित करें",
+        "notFound": "No Incomes found"
+      },
+      "created": "एक नया Income [identifier: {{ param }}] तैयार है",
+      "updated": "एक Income [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Income [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Income [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Income"
+      },
+      "id": "ID",
+      "amount": "Amount",
+      "companyName": "Company Name",
+      "date": "Date",
+      "currency": "Currency",
+      "user": "User"
+    }
+  }
+}

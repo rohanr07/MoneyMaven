@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "expense": {
+      "home": {
+        "title": "Expenses",
+        "refreshListLabel": "Liste aktualisieren",
+        "createLabel": "Expense erstellen",
+        "createOrEditLabel": "Expense erstellen oder bearbeiten",
+        "notFound": "Keine Expenses gefunden"
+      },
+      "created": "Expense erstellt mit ID {{ param }}",
+      "updated": "Expense aktualisiert mit ID {{ param }}",
+      "deleted": "Expense gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Expense {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Expense"
+      },
+      "id": "ID",
+      "expenseType": "Expense Type",
+      "amount": "Amount",
+      "description": "Description",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

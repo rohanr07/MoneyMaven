@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "expense": {
+      "home": {
+        "title": "Expenses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "สร้าง Expense",
+        "createOrEditLabel": "สร้างหรือแก้ไข Expense",
+        "notFound": "No Expenses found"
+      },
+      "created": "Expense ถูกสร้างด้วย {{ param }}",
+      "updated": "Expense ถูกแก้ไขด้วย {{ param }}",
+      "deleted": "Expense ถูกลบด้วย {{ param }}",
+      "delete": {
+        "question": "คุณต้องการที่จะลบ Expense {{ id }}?"
+      },
+      "detail": {
+        "title": "Expense"
+      },
+      "id": "ID",
+      "expenseType": "Expense Type",
+      "amount": "Amount",
+      "description": "Description",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

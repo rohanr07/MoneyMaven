@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "expense": {
+      "home": {
+        "title": "Expenses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "建立一筆新的 Expense",
+        "createOrEditLabel": "建立或編輯 Expense",
+        "notFound": "No Expenses found"
+      },
+      "created": "新的 Expense 建立成功，識別碼為 {{ param }}",
+      "updated": "識別碼為 {{ param }} 的 Expense 更新成功",
+      "deleted": "識別碼為 {{ param }} 的 Expense 刪除成功",
+      "delete": {
+        "question": "您確定要刪除 Expense {{ id }} 嗎?"
+      },
+      "detail": {
+        "title": "Expense"
+      },
+      "id": "ID",
+      "expenseType": "Expense Type",
+      "amount": "Amount",
+      "description": "Description",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

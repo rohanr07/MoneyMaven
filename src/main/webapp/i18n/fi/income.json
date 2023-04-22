@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "income": {
+      "home": {
+        "title": "Incomes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Luo Income",
+        "createOrEditLabel": "Luo tai muokkaa Income",
+        "notFound": "Income ei löytynyt"
+      },
+      "created": "Uusi Income on luotu, id: {{ param }}",
+      "updated": "Income on päivitetty, id: {{ param }}",
+      "deleted": "Income on päivitetty, id: {{ param }}",
+      "delete": {
+        "question": "Haluatko varmasti poistaa Income {{ id }}?"
+      },
+      "detail": {
+        "title": "Income"
+      },
+      "id": "ID",
+      "amount": "Amount",
+      "companyName": "Company Name",
+      "date": "Date",
+      "currency": "Currency",
+      "user": "User"
+    }
+  }
+}

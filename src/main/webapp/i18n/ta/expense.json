@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "expense": {
+      "home": {
+        "title": "Expenses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Expense-ஐ உருவாக்கு",
+        "createOrEditLabel": "Expense -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Expenses found"
+      },
+      "created": "Expense புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Expense மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Expense நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Expense {{ id }}?"
+      },
+      "detail": {
+        "title": "Expense"
+      },
+      "id": "ID",
+      "expenseType": "Expense Type",
+      "amount": "Amount",
+      "description": "Description",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

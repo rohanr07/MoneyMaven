@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "income": {
+      "home": {
+        "title": "Incomes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Buat Income baru",
+        "createOrEditLabel": "Buat atau edit Income",
+        "notFound": "No Incomes found"
+      },
+      "created": "Income dengan id {{ param }} telah dibuat",
+      "updated": "Income dengan id {{ param }} telah diperbaharui",
+      "deleted": "Income dengan id {{ param }} telah dihapus",
+      "delete": {
+        "question": "Apakah anda yakin ingin menghapus Income {{ id }}?"
+      },
+      "detail": {
+        "title": "Income"
+      },
+      "id": "ID",
+      "amount": "Amount",
+      "companyName": "Company Name",
+      "date": "Date",
+      "currency": "Currency",
+      "user": "User"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "expense": {
+      "home": {
+        "title": "Expenses",
+        "refreshListLabel": "Värskenda nimekirja",
+        "createLabel": "Lisa uus Expense",
+        "createOrEditLabel": "Lisa või muuda Expense",
+        "notFound": "Ei leitud ühtegi Expenses"
+      },
+      "created": "Uus Expense on loodud identifikaatoriga {{ param }}",
+      "updated": "Expense identifikaatoriga {{ param }} on muudetud",
+      "deleted": "Expense identifikaatoriga {{ param }} on kustutatud",
+      "delete": {
+        "question": "Kas olete kindel, et soovite kustutada Expense {{ id }}?"
+      },
+      "detail": {
+        "title": "Expense"
+      },
+      "id": "ID",
+      "expenseType": "Expense Type",
+      "amount": "Amount",
+      "description": "Description",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

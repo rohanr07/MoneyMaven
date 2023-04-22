@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="income">
+      <h2 data-cy="incomeDetailsHeading"><span jhiTranslate="teamprojectApp.income.detail.title">Income</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ income.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="teamprojectApp.income.amount">Amount</span></dt>
+        <dd>
+          <span>{{ income.amount }}</span>
+        </dd>
+        <dt><span jhiTranslate="teamprojectApp.income.companyName">Company Name</span></dt>
+        <dd>
+          <span>{{ income.companyName }}</span>
+        </dd>
+        <dt><span jhiTranslate="teamprojectApp.income.date">Date</span></dt>
+        <dd>
+          <span>{{ income.date | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="teamprojectApp.income.currency">Currency</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'teamprojectApp.Currency.' + income.currency }}">{{ income.currency }}</span>
+        </dd>
+        <dt><span jhiTranslate="teamprojectApp.income.user">User</span></dt>
+        <dd>
+          <span>{{ income.user?.login }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/income', income.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

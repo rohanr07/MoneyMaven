@@ -1,0 +1,35 @@
+entity Expense {
+    expenseType String required,
+    amount Double required min(0),
+    description String maxlength(100),
+    date LocalDate
+}
+
+enum ExpenseType {
+    FIXED
+    VARIABLE
+    NECESSARY
+    DISCRETIONARY
+    ONE_TIME
+    SAVINGS_AND_INVESTMENT
+    DEBT_REPAYMENT
+    OTHER
+}
+
+entity Income{
+    amount Double required,
+    companyName String required,
+    date LocalDate,
+    currency Currency
+}
+
+enum Currency{
+    GBP
+    USD
+    Euros
+}
+
+relationship ManyToOne {
+    Expense{user(login)} to User,
+    Income{user(login)} to User
+}

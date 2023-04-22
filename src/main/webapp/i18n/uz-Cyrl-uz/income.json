@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "income": {
+      "home": {
+        "title": "Incomes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Янги Income қўшиш",
+        "createOrEditLabel": "Incomeни таҳрирлаш",
+        "notFound": "No Incomes found"
+      },
+      "created": "Income {{ param }} билан қўшилди.",
+      "updated": "{{ param }}- Income сақланди.",
+      "deleted": "{{ param }}- Income ўчирилди.",
+      "delete": {
+        "question": "{{ id }}- Incomeни ўчирмоқчимисиз? "
+      },
+      "detail": {
+        "title": "Income"
+      },
+      "id": "ID",
+      "amount": "Amount",
+      "companyName": "Company Name",
+      "date": "Date",
+      "currency": "Currency",
+      "user": "User"
+    }
+  }
+}

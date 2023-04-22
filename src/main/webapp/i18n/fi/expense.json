@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "expense": {
+      "home": {
+        "title": "Expenses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Luo Expense",
+        "createOrEditLabel": "Luo tai muokkaa Expense",
+        "notFound": "Expense ei löytynyt"
+      },
+      "created": "Uusi Expense on luotu, id: {{ param }}",
+      "updated": "Expense on päivitetty, id: {{ param }}",
+      "deleted": "Expense on päivitetty, id: {{ param }}",
+      "delete": {
+        "question": "Haluatko varmasti poistaa Expense {{ id }}?"
+      },
+      "detail": {
+        "title": "Expense"
+      },
+      "id": "ID",
+      "expenseType": "Expense Type",
+      "amount": "Amount",
+      "description": "Description",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

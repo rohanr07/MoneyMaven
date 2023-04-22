@@ -14,7 +14,7 @@ import { SortService } from 'app/shared/sort/sort.service';
   templateUrl: './expenses.component.html',
 })
 export class ExpensesComponent implements OnInit {
-  expenses?: IExpenses[] | null;
+  expenses?: IExpenses[];
   isLoading = false;
 
   predicate = 'id';
