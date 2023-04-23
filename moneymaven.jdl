@@ -1,4 +1,4 @@
-entity Expense {
+entity Expenses {
     expenseType String required,
     amount Double required min(0),
     description String maxlength(100),
@@ -29,6 +29,6 @@ enum Currency{
 }
 
 relationship ManyToOne {
-    Expense{user(login)} to User,
+    Expenses{user(login)} to User,
     Income{user(login)} to User
 }

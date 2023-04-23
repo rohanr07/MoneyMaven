@@ -8,7 +8,6 @@
       "entities": {
         "main": "Cутнасці",
         "expenses": "Expenses",
-        "expense": "Expense",
         "income": "Income",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
