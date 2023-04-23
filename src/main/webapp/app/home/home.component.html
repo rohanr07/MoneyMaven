@@ -1,5 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body></body>
+</html>
+
 <div class="row">
-  <div class="col-md-2" [ngSwitch]="account != null">
+  <div class="col-md-4" [ngSwitch]="account != null">
     <div id="sideMenu" *ngSwitchCase="true">
       <div id="sideMenuFixed"></div>
       <div id="sidecontent">
@@ -27,6 +36,81 @@
     </div>
   </div>
 
+  <div class="col-md-8" [ngSwitch]="account != null">
+    <div id="content" *ngSwitchCase="true">
+      <div id="titleBar">
+        <h1>Dashboard</h1>
+        <h2>Monthly Income Summary</h2>
+      </div>
+      <br />
+      <br />
+
+      <div class="clearFix"></div>
+
+      <div id="totalSales">
+        <div class="col">
+          <h4>Income</h4>
+          <h3>£36,059.00</h3>
+        </div>
+        <div class="col">
+          <h5>Expenses</h5>
+          <h3>£24,834.00</h3>
+        </div>
+        <div class="col">
+          <h6>Budget</h6>
+          <h3>£15,650.50</h3>
+        </div>
+      </div>
+
+      <table>
+        <tr>
+          <th>Recent Income</th>
+          <th>Amount</th>
+        </tr>
+
+        <tr>
+          <td>Process Metrics</td>
+          <td>£69,559.00</td>
+        </tr>
+
+        <tr>
+          <td>LLC Bedfordshire</td>
+          <td>£63,267.00</td>
+        </tr>
+
+        <tr>
+          <td>Technologies Auxiliary</td>
+          <td>£93,946.00</td>
+        </tr>
+      </table>
+
+      <br />
+      <br />
+      <br />
+      <table>
+        <tr>
+          <th>Recent Expenses</th>
+          <th>Amount</th>
+        </tr>
+
+        <tr>
+          <td>Senior Montegoro</td>
+          <td>£15,823.00</td>
+        </tr>
+
+        <tr>
+          <td>Arkansas Arizona</td>
+          <td>£39,836.00</td>
+        </tr>
+
+        <tr>
+          <td>Lavender Toolset</td>
+          <td>£58,133.00</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
   <div class="col-md-6" [ngSwitch]="account != null">
     <div *ngSwitchCase="false">
       <h1 class="display-4"><span jhiTranslate="home.title">Welcome to </span> MoneyMaven!</h1>
@@ -37,33 +121,17 @@
       <p>Log in or create your account now to grow your savings!</p>
     </div>
 
-    <div>
-      <div *ngSwitchCase="true">
-        <div id="container">
-          <div id="content">
-            <div id="titleBar"></div>
+    <div class="alert alert-warning" *ngSwitchCase="false">
+      <a class="alert-link" (click)="login()">Log in</a
+      ><span>
+        - you can try the default accounts:<br />- Administrator (login="admin" and password="admin") <br />- User (login="user" and
+        password="user").</span
+      >
+    </div>
 
-            <div class="mainChart"></div>
-          </div>
-        </div>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
-        <script src="//cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.7.4/dist/progressbar.js"></script>
-
-        <script src="dashboard.js"></script>
-      </div>
-
-      <div class="alert alert-warning" *ngSwitchCase="false">
-        <a class="alert-link" (click)="login()">Log in</a
-        ><span>
-          - you can try the default accounts:<br />- Administrator (login="admin" and password="admin") <br />- User (login="user" and
-          password="user").</span
-        >
-      </div>
-
-      <div class="alert alert-warning" *ngSwitchCase="false">
-        <span jhiTranslate="global.messages.info.register.noaccount">You don't have an account yet?</span>&nbsp;
-        <a class="alert-link" routerLink="account/register">Sign up - it's free</a>
-      </div>
+    <div class="alert alert-warning" *ngSwitchCase="false">
+      <span jhiTranslate="global.messages.info.register.noaccount">You don't have an account yet?</span>&nbsp;
+      <a class="alert-link" routerLink="account/register">Sign up - it's free</a>
     </div>
   </div>
 </div>
