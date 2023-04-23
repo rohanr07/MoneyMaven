@@ -8,6 +8,7 @@ import { ASC, DESC, SORT, ITEM_DELETED_EVENT, DEFAULT_SORT_DATA } from 'app/conf
 import { EntityArrayResponseType, ExpensesService } from '../service/expenses.service';
 import { ExpensesDeleteDialogComponent } from '../delete/expenses-delete-dialog.component';
 import { SortService } from 'app/shared/sort/sort.service';
+import { AccountService } from 'app/core/auth/account.service';
 
 @Component({
   selector: 'jhi-expenses',
@@ -15,23 +16,32 @@ import { SortService } from 'app/shared/sort/sort.service';
 })
 export class ExpensesComponent implements OnInit {
   expenses?: IExpenses[];
+  searchTerm: string = '';
+  currentUser: any;
+  totalMonthlyExpenses: number = 0;
   isLoading = false;
 
   predicate = 'id';
   ascending = true;
+  today: Date = new Date();
 
   constructor(
     protected expensesService: ExpensesService,
     protected activatedRoute: ActivatedRoute,
     public router: Router,
     protected sortService: SortService,
-    protected modalService: NgbModal
+    protected modalService: NgbModal,
+    protected accountService: AccountService
   ) {}
 
   trackId = (_index: number, item: IExpenses): number => this.expensesService.getExpensesIdentifier(item);
 
   ngOnInit(): void {
     this.load();
+    this.accountService.identity().subscribe(account => {
+      this.currentUser = account;
+    });
+    this.getTotalMonthlyExpenses();
   }
 
   delete(expenses: IExpenses): void {
@@ -65,6 +75,22 @@ export class ExpensesComponent implements OnInit {
   filterByExpenseType(expenseType: string) {
     this.expensesService.query().subscribe(res => {
       this.expenses = res.body?.filter(expense => expense.expenseType === expenseType);
+    });
+  }
+
+  filterByDescription(searchTerm: string) {
+    this.expensesService.query().subscribe(res => {
+      this.expenses = res.body?.filter(expense => expense?.description?.toLowerCase().includes(searchTerm.toLowerCase()));
+    });
+  }
+
+  getTotalMonthlyExpenses(): void {
+    const now = new Date();
+    const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+    const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+    this.expensesService.getExpensesBetweenDates(startOfMonth, endOfMonth, this.currentUser.login).subscribe(expenses => {
+      // @ts-ignore
+      this.totalMonthlyExpenses = expenses.reduce((total, expense) => total + expense.amount, 0);
     });
   }
 

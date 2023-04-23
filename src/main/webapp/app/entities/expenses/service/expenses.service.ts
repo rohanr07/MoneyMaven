@@ -104,6 +104,13 @@ export class ExpensesService {
     };
   }
 
+  getExpensesBetweenDates(start: Date, end: Date, login: string): Observable<IExpenses[]> {
+    const startIso = start.toISOString();
+    const endIso = end.toISOString();
+    const url = `${this.resourceUrl}?created_dt.greaterThanOrEqual=${startIso}&created_dt.lessThanOrEqual=${endIso}`;
+    return this.http.get<IExpenses[]>(url);
+  }
+
   protected convertDateFromServer(restExpenses: RestExpenses): IExpenses {
     return {
       ...restExpenses,

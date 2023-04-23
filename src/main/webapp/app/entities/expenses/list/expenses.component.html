@@ -1,24 +1,49 @@
 <div>
   <h2 id="page-heading" data-cy="ExpensesHeading">
     <span jhiTranslate="teamprojectApp.expenses.home.title">Expenses</span>
+    <h5 class="text-end">{{ today | date: 'MM/dd/yyyy' }}</h5>
+    <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-start">
+        <input type="text" class="form-control me-2 small-search-box" [(ngModel)]="searchTerm" placeholder="Search by description..." />
+        <button class="btn btn-success h5-font-size" (click)="filterByDescription(searchTerm)">Search</button>
+      </div>
+      <div class="d-flex justify-content-end">
+        <h5><b>Logged in: </b>{{ currentUser?.login }}</h5>
+      </div>
+    </div>
+    <p></p>
+    <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-start">
+        <h5><b> View Expenses by Types </b></h5>
+      </div>
+      <div class="d-flex justify-content-end">
+        <h5><b>Total Monthly Expenses: </b>${{ totalMonthlyExpenses }}</h5>
+      </div>
+    </div>
+
+    <style>
+      .small-search-box {
+        width: 200px;
+      }
+    </style>
 
     <div class="d-flex justify-content-start">
+      <div class="d-flex p-3 bg-secondary btn-group btn-group-sm justify-content-center">
+        <button class="btn btn-sm btn-dark" href="#" (click)="filterByExpenseType('Fixed')">Fixed</button>
+        <button class="btn btn-dark" href="#" (click)="filterByExpenseType('Variable')">Variable</button>
+        <button class="btn btn-dark" href="#" (click)="filterByExpenseType('Necessary')">Necessary</button>
+        <button class="btn btn-dark" href="#" (click)="filterByExpenseType('Discretionary')">Discretionary</button>
+        <button class="btn btn-dark" href="#" (click)="filterByExpenseType('Savings & Investment')">Savings & Investment</button>
+        <button class="btn btn-dark" href="#" (click)="filterByExpenseType('Debt Repayment')">Debt Repayment</button>
+        <button class="btn btn-dark" href="#" (click)="filterByExpenseType('Other')">Other</button>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-end">
       <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
         <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
         <span jhiTranslate="teamprojectApp.expenses.home.refreshListLabel">Refresh list</span>
       </button>
-
-      <!--<div class="d-flex p-3 bg-secondary justify-content-center"> -->
-      <div class="d-flex p-3 bg-secondary btn-group btn-group-sm justify-content-center">
-        <h6>View Expenses<br />by Type:</h6>
-        <button class="btn btn-dark btn-sm" href="#" (click)="filterByExpenseType('Fixed')">Fixed</button>
-        <button class="btn btn-dark btn-sm" href="#" (click)="filterByExpenseType('Variable')">Variable</button>
-        <button class="btn btn-dark btn-sm" href="#" (click)="filterByExpenseType('Necessary')">Necessary</button>
-        <button class="btn btn-dark btn-sm" href="#" (click)="filterByExpenseType('Discretionary')">Discretionary</button>
-        <button class="btn btn-dark btn-sm" href="#" (click)="filterByExpenseType('Savings & Investment')">Savings & Investment</button>
-        <button class="btn btn-dark btn-sm" href="#" (click)="filterByExpenseType('Debt Repayment')">Debt Repayment</button>
-        <button class="btn btn-dark btn-sm" href="#" (click)="filterByExpenseType('Other')">Other</button>
-      </div>
 
       <button
         id="jh-create-entity"
@@ -27,7 +52,7 @@
         [routerLink]="['/expenses/new']"
       >
         <fa-icon icon="plus"></fa-icon>
-        <span jhiTranslate="teamprojectApp.expenses.home.createLabel">Create a new Expense</span>
+        <span jhiTranslate="teamprojectApp.expenses.home.createLabel"> Create a new Expense </span>
       </button>
     </div>
   </h2>
@@ -58,7 +83,7 @@
           </th>
           <th scope="col" jhiSortBy="amount">
             <div class="d-flex">
-              <span jhiTranslate="teamprojectApp.expenses.amount">Amount</span>
+              <span jhiTranslate="teamprojectApp.expenses.amount">&pound;Amount</span>
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
