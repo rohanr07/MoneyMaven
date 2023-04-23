@@ -1,0 +1,60 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="financialTransaction">
+      <h2 data-cy="financialTransactionDetailsHeading">
+        <span jhiTranslate="teamprojectApp.financialTransaction.detail.title">Financial Transaction</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ financialTransaction.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="teamprojectApp.financialTransaction.description">Description</span></dt>
+        <dd>
+          <span>{{ financialTransaction.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="teamprojectApp.financialTransaction.amount">Amount</span></dt>
+        <dd>
+          <span>{{ financialTransaction.amount }}</span>
+        </dd>
+        <dt><span jhiTranslate="teamprojectApp.financialTransaction.date">Date</span></dt>
+        <dd>
+          <span>{{ financialTransaction.date | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="teamprojectApp.financialTransaction.account">Account</span></dt>
+        <dd>
+          <div *ngIf="financialTransaction.account">
+            <a [routerLink]="['/financial-account', financialTransaction.account.id, 'view']">{{ financialTransaction.account.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="teamprojectApp.financialTransaction.category">Category</span></dt>
+        <dd>
+          <div *ngIf="financialTransaction.category">
+            <a [routerLink]="['/category', financialTransaction.category.id, 'view']">{{ financialTransaction.category.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="teamprojectApp.financialTransaction.budget">Budget</span></dt>
+        <dd>
+          <div *ngIf="financialTransaction.budget">
+            <a [routerLink]="['/budget', financialTransaction.budget.id, 'view']">{{ financialTransaction.budget.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/financial-transaction', financialTransaction.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

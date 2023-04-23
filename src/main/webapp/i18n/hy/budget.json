@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "budget": {
+      "home": {
+        "title": "Budgets",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Ստեղծել նոր Budget",
+        "createOrEditLabel": "Ստեղծել կամ փոփոխել Budget",
+        "notFound": "No Budgets found"
+      },
+      "created": "Նոր Budget ստեղծված է {{ param }} նունացուցիչով",
+      "updated": "Budget թարմացվաց է {{ param }} նունացուցիչով",
+      "deleted": "Budget հեռացված է {{ param }}  նունացուցիչով",
+      "delete": {
+        "question": "Դուք վստահ ե՞ք, որ ցանկանում եք հեռացնել Budget {{ id }}?"
+      },
+      "detail": {
+        "title": "Budget"
+      },
+      "id": "ID",
+      "name": "Name",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "limit": "Limit",
+      "transactions": "Transactions"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "financialAccount": {
+      "home": {
+        "title": "Financial Accounts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "สร้าง Financial Account",
+        "createOrEditLabel": "สร้างหรือแก้ไข Financial Account",
+        "notFound": "No Financial Accounts found"
+      },
+      "created": "Financial Account ถูกสร้างด้วย {{ param }}",
+      "updated": "Financial Account ถูกแก้ไขด้วย {{ param }}",
+      "deleted": "Financial Account ถูกลบด้วย {{ param }}",
+      "delete": {
+        "question": "คุณต้องการที่จะลบ Financial Account {{ id }}?"
+      },
+      "detail": {
+        "title": "Financial Account"
+      },
+      "id": "ID",
+      "name": "Name",
+      "balance": "Balance",
+      "type": "Type",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

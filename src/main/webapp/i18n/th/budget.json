@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "budget": {
+      "home": {
+        "title": "Budgets",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "สร้าง Budget",
+        "createOrEditLabel": "สร้างหรือแก้ไข Budget",
+        "notFound": "No Budgets found"
+      },
+      "created": "Budget ถูกสร้างด้วย {{ param }}",
+      "updated": "Budget ถูกแก้ไขด้วย {{ param }}",
+      "deleted": "Budget ถูกลบด้วย {{ param }}",
+      "delete": {
+        "question": "คุณต้องการที่จะลบ Budget {{ id }}?"
+      },
+      "detail": {
+        "title": "Budget"
+      },
+      "id": "ID",
+      "name": "Name",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "limit": "Limit",
+      "transactions": "Transactions"
+    }
+  }
+}

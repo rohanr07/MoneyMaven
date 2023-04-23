@@ -1,0 +1,29 @@
+{
+  "teamprojectApp": {
+    "financialTransaction": {
+      "home": {
+        "title": "Financial Transactions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "建立一筆新的 Financial Transaction",
+        "createOrEditLabel": "建立或編輯 Financial Transaction",
+        "notFound": "No Financial Transactions found"
+      },
+      "created": "新的 Financial Transaction 建立成功，識別碼為 {{ param }}",
+      "updated": "識別碼為 {{ param }} 的 Financial Transaction 更新成功",
+      "deleted": "識別碼為 {{ param }} 的 Financial Transaction 刪除成功",
+      "delete": {
+        "question": "您確定要刪除 Financial Transaction {{ id }} 嗎?"
+      },
+      "detail": {
+        "title": "Financial Transaction"
+      },
+      "id": "ID",
+      "description": "Description",
+      "amount": "Amount",
+      "date": "Date",
+      "account": "Account",
+      "category": "Category",
+      "budget": "Budget"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "budget": {
+      "home": {
+        "title": "Budgets",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Buat Budget baru",
+        "createOrEditLabel": "Buat atau edit Budget",
+        "notFound": "No Budgets found"
+      },
+      "created": "Budget dengan id {{ param }} telah dibuat",
+      "updated": "Budget dengan id {{ param }} telah diperbaharui",
+      "deleted": "Budget dengan id {{ param }} telah dihapus",
+      "delete": {
+        "question": "Apakah anda yakin ingin menghapus Budget {{ id }}?"
+      },
+      "detail": {
+        "title": "Budget"
+      },
+      "id": "ID",
+      "name": "Name",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "limit": "Limit",
+      "transactions": "Transactions"
+    }
+  }
+}

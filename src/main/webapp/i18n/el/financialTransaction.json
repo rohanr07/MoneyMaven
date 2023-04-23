@@ -1,0 +1,29 @@
+{
+  "teamprojectApp": {
+    "financialTransaction": {
+      "home": {
+        "title": "Financial Transactions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Δημιουργήστε ένα νέο Financial Transaction",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Financial Transaction",
+        "notFound": "No Financial Transactions found"
+      },
+      "created": "Ένα νέο Financial Transaction έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα Financial Transaction έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα Financial Transaction έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Financial Transaction {{ id }};"
+      },
+      "detail": {
+        "title": "Financial Transaction"
+      },
+      "id": "ID",
+      "description": "Description",
+      "amount": "Amount",
+      "date": "Date",
+      "account": "Account",
+      "category": "Category",
+      "budget": "Budget"
+    }
+  }
+}

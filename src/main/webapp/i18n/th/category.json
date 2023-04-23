@@ -1,0 +1,26 @@
+{
+  "teamprojectApp": {
+    "category": {
+      "home": {
+        "title": "Categories",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "สร้าง Category",
+        "createOrEditLabel": "สร้างหรือแก้ไข Category",
+        "notFound": "No Categories found"
+      },
+      "created": "Category ถูกสร้างด้วย {{ param }}",
+      "updated": "Category ถูกแก้ไขด้วย {{ param }}",
+      "deleted": "Category ถูกลบด้วย {{ param }}",
+      "delete": {
+        "question": "คุณต้องการที่จะลบ Category {{ id }}?"
+      },
+      "detail": {
+        "title": "Category"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

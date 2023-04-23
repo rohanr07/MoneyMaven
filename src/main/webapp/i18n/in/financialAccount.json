@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "financialAccount": {
+      "home": {
+        "title": "Financial Accounts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Buat Financial Account baru",
+        "createOrEditLabel": "Buat atau edit Financial Account",
+        "notFound": "No Financial Accounts found"
+      },
+      "created": "Financial Account dengan id {{ param }} telah dibuat",
+      "updated": "Financial Account dengan id {{ param }} telah diperbaharui",
+      "deleted": "Financial Account dengan id {{ param }} telah dihapus",
+      "delete": {
+        "question": "Apakah anda yakin ingin menghapus Financial Account {{ id }}?"
+      },
+      "detail": {
+        "title": "Financial Account"
+      },
+      "id": "ID",
+      "name": "Name",
+      "balance": "Balance",
+      "type": "Type",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

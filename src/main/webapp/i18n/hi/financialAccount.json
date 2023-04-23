@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "financialAccount": {
+      "home": {
+        "title": "FinancialAccounts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नया Financial Account बनाएँ",
+        "createOrEditLabel": "Financial Account बनाएँ या संपादित करें",
+        "notFound": "No Financial Accounts found"
+      },
+      "created": "एक नया Financial Account [identifier: {{ param }}] तैयार है",
+      "updated": "एक Financial Account [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Financial Account [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Financial Account [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Financial Account"
+      },
+      "id": "ID",
+      "name": "Name",
+      "balance": "Balance",
+      "type": "Type",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

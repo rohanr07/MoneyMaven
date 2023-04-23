@@ -1,0 +1,29 @@
+{
+  "teamprojectApp": {
+    "financialTransaction": {
+      "home": {
+        "title": "Financial Transactions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Financial Transaction",
+        "createOrEditLabel": "Skapa eller ändra en Financial Transaction",
+        "notFound": "No Financial Transactions found"
+      },
+      "created": "En ny Financial Transaction är skapad med id {{ param }}",
+      "updated": "En Financial Transaction är uppdaterad med id  {{ param }}",
+      "deleted": "En Financial Transaction är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Financial Transaction {{ id }}?"
+      },
+      "detail": {
+        "title": "Financial Transaction"
+      },
+      "id": "ID",
+      "description": "Description",
+      "amount": "Amount",
+      "date": "Date",
+      "account": "Account",
+      "category": "Category",
+      "budget": "Budget"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "financialAccount": {
+      "home": {
+        "title": "Financial Accounts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Financial Account",
+        "createOrEditLabel": "Creeare sau editare Financial Account",
+        "notFound": "No Financial Accounts found"
+      },
+      "created": "A fost creată o nouă entitate Financial Account cu identificatorul {{ param }}",
+      "updated": "Financial Account cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Financial Account cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Financial Account {{ id }}?"
+      },
+      "detail": {
+        "title": "Financial Account"
+      },
+      "id": "ID",
+      "name": "Name",
+      "balance": "Balance",
+      "type": "Type",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

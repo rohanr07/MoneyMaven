@@ -1,0 +1,135 @@
+<div>
+  <h2 id="page-heading" data-cy="FinancialTransactionHeading">
+    <span jhiTranslate="teamprojectApp.financialTransaction.home.title">Financial Transactions</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="teamprojectApp.financialTransaction.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-financial-transaction"
+        [routerLink]="['/financial-transaction/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="teamprojectApp.financialTransaction.home.createLabel"> Create a new Financial Transaction </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="financialTransactions?.length === 0">
+    <span jhiTranslate="teamprojectApp.financialTransaction.home.notFound">No Financial Transactions found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="financialTransactions && financialTransactions.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="description">
+            <div class="d-flex">
+              <span jhiTranslate="teamprojectApp.financialTransaction.description">Description</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="amount">
+            <div class="d-flex">
+              <span jhiTranslate="teamprojectApp.financialTransaction.amount">Amount</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="date">
+            <div class="d-flex">
+              <span jhiTranslate="teamprojectApp.financialTransaction.date">Date</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="account.id">
+            <div class="d-flex">
+              <span jhiTranslate="teamprojectApp.financialTransaction.account">Account</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="category.id">
+            <div class="d-flex">
+              <span jhiTranslate="teamprojectApp.financialTransaction.category">Category</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="budget.id">
+            <div class="d-flex">
+              <span jhiTranslate="teamprojectApp.financialTransaction.budget">Budget</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let financialTransaction of financialTransactions; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/financial-transaction', financialTransaction.id, 'view']">{{ financialTransaction.id }}</a>
+          </td>
+          <td>{{ financialTransaction.description }}</td>
+          <td>{{ financialTransaction.amount }}</td>
+          <td>{{ financialTransaction.date | formatMediumDatetime }}</td>
+          <td>
+            <div *ngIf="financialTransaction.account">
+              <a [routerLink]="['/financial-account', financialTransaction.account.id, 'view']">{{ financialTransaction.account.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="financialTransaction.category">
+              <a [routerLink]="['/category', financialTransaction.category.id, 'view']">{{ financialTransaction.category.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="financialTransaction.budget">
+              <a [routerLink]="['/budget', financialTransaction.budget.id, 'view']">{{ financialTransaction.budget.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/financial-transaction', financialTransaction.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/financial-transaction', financialTransaction.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(financialTransaction)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

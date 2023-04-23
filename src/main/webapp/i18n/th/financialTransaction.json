@@ -1,0 +1,29 @@
+{
+  "teamprojectApp": {
+    "financialTransaction": {
+      "home": {
+        "title": "Financial Transactions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "สร้าง Financial Transaction",
+        "createOrEditLabel": "สร้างหรือแก้ไข Financial Transaction",
+        "notFound": "No Financial Transactions found"
+      },
+      "created": "Financial Transaction ถูกสร้างด้วย {{ param }}",
+      "updated": "Financial Transaction ถูกแก้ไขด้วย {{ param }}",
+      "deleted": "Financial Transaction ถูกลบด้วย {{ param }}",
+      "delete": {
+        "question": "คุณต้องการที่จะลบ Financial Transaction {{ id }}?"
+      },
+      "detail": {
+        "title": "Financial Transaction"
+      },
+      "id": "ID",
+      "description": "Description",
+      "amount": "Amount",
+      "date": "Date",
+      "account": "Account",
+      "category": "Category",
+      "budget": "Budget"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "teamprojectApp": {
+    "financialTransaction": {
+      "home": {
+        "title": "Financial Transactions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Financial Transaction",
+        "createOrEditLabel": "创建或编辑 Financial Transaction",
+        "notFound": "No Financial Transactions found"
+      },
+      "created": "Financial Transaction {{ param }} 创建成功",
+      "updated": "Financial Transaction {{ param }} 更新成功",
+      "deleted": "Financial Transaction {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Financial Transaction {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Financial Transaction"
+      },
+      "id": "ID",
+      "description": "Description",
+      "amount": "Amount",
+      "date": "Date",
+      "account": "Account",
+      "category": "Category",
+      "budget": "Budget"
+    }
+  }
+}

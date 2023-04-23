@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "financialAccount": {
+      "home": {
+        "title": "Financial Accounts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "కొత్త Financial Account  సృష్టించండి",
+        "createOrEditLabel": "Financial Account సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Financial Accounts found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Financial Account సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Financial Account సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Financial Account తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Financial Account {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Financial Account"
+      },
+      "id": "ID",
+      "name": "Name",
+      "balance": "Balance",
+      "type": "Type",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

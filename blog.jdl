@@ -1,8 +1,43 @@
-application {
-  config {
-    baseName $appName$
-    packageName $appPackage$
-    applicationType monolith
-    $END$
-  }
+
+
+entity FinancialTransaction {
+    description String required,
+    amount Double required,
+    date Instant required
 }
+
+entity Category {
+    name String required,
+    description String
+}
+
+entity Budget {
+    name String required,
+    startDate Instant required,
+    endDate Instant required,
+    limit Double required
+}
+
+entity FinancialAccount {
+    name String required,
+    balance Double required,
+    type AccountType required,
+    description String
+}
+
+enum AccountType {
+    CASH,
+    CHECKING,
+    SAVINGS,
+    CREDIT_CARD
+}
+
+
+
+relationship OneToMany {
+    FinancialAccount{transactions} to FinancialTransaction{account}
+    Category{transactions} to FinancialTransaction{category}
+    Budget{transactions} to FinancialTransaction{budget}
+}
+
+

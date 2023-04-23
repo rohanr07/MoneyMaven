@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity FinancialTransaction.
+    -->
+    <changeSet id="20230314145605-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="account_id"
+                                 baseTableName="financial_transaction"
+                                 constraintName="fk_financial_transaction__account_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="financial_account"/>
+
+        <addForeignKeyConstraint baseColumnNames="category_id"
+                                 baseTableName="financial_transaction"
+                                 constraintName="fk_financial_transaction__category_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="category"/>
+
+        <addForeignKeyConstraint baseColumnNames="budget_id"
+                                 baseTableName="financial_transaction"
+                                 constraintName="fk_financial_transaction__budget_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="budget"/>
+    </changeSet>
+</databaseChangeLog>

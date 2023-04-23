@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "financialAccount": {
+      "home": {
+        "title": "FinancialAccounts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Financial Account を追加",
+        "createOrEditLabel": "Financial Accountを追加または編集",
+        "notFound": "No Financial Accounts found"
+      },
+      "created": "A new Financial Account is created with identifier {{ param }}",
+      "updated": "A Financial Account is updated with identifier {{ param }}",
+      "deleted": "A Financial Account is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Financial Account {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Financial Account"
+      },
+      "id": "ID",
+      "name": "Name",
+      "balance": "Balance",
+      "type": "Type",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "teamprojectApp": {
+    "category": {
+      "home": {
+        "title": "Categories",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Янги Category қўшиш",
+        "createOrEditLabel": "Categoryни таҳрирлаш",
+        "notFound": "No Categories found"
+      },
+      "created": "Category {{ param }} билан қўшилди.",
+      "updated": "{{ param }}- Category сақланди.",
+      "deleted": "{{ param }}- Category ўчирилди.",
+      "delete": {
+        "question": "{{ id }}- Categoryни ўчирмоқчимисиз? "
+      },
+      "detail": {
+        "title": "Category"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

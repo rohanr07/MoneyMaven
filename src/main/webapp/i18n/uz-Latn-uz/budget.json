@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "budget": {
+      "home": {
+        "title": "Budgets",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Yangi Budget qo`shish",
+        "createOrEditLabel": "Budgetni tahrirlash",
+        "notFound": "No Budgets found"
+      },
+      "created": "Budget {{ param }} bilan qo`shildi",
+      "updated": "{{ param }}- Budget saqlandi",
+      "deleted": "{{ param }}- Budget o`chirildi",
+      "delete": {
+        "question": "{{ id }}- Budgetni o`chirmoqchimisiz? "
+      },
+      "detail": {
+        "title": "Budget"
+      },
+      "id": "ID",
+      "name": "Name",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "limit": "Limit",
+      "transactions": "Transactions"
+    }
+  }
+}

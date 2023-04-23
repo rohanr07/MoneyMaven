@@ -1,0 +1,29 @@
+{
+  "teamprojectApp": {
+    "financialTransaction": {
+      "home": {
+        "title": "Financial Transactions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "නව Financial Transaction එකක් සාදන්න",
+        "createOrEditLabel": "Financial Transaction සාදන්න හෝ සංස්කරණය කරන්න",
+        "notFound": "Financial Transactions හමු නොවීය"
+      },
+      "created": "{{ param }} හඳුනාගැනීමෙන් නව Financial Transaction සාදනු ලැබේ",
+      "updated": "{{ param }} හඳුනාගැනීමෙන් Financial Transaction යාවත්කාලීන වේ",
+      "deleted": "{{ param }} හඳුනාගැනීමෙන් Financial Transaction මකා දමනු ලැබේ",
+      "delete": {
+        "question": "Financial Transaction {{ id }} මකා දැමීමට ඔබට විශ්වාසද?"
+      },
+      "detail": {
+        "title": "Financial Transaction"
+      },
+      "id": "ID",
+      "description": "Description",
+      "amount": "Amount",
+      "date": "Date",
+      "account": "Account",
+      "category": "Category",
+      "budget": "Budget"
+    }
+  }
+}

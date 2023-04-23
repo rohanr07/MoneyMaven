@@ -1,0 +1,29 @@
+{
+  "teamprojectApp": {
+    "financialTransaction": {
+      "home": {
+        "title": "FinancialTransactions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Egy új Financial Transaction létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Financial Transactiont",
+        "notFound": "No Financial Transactions found"
+      },
+      "created": "Egy új Financial Transaction lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Financial Transaction módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Financial Transaction törölve lett {{ param }} azonosítóval",
+      "delete": {
+        "question": "Biztos benne, hogy törölni szeretné az Financial Transactiont {{ id }} azonosítóval?"
+      },
+      "detail": {
+        "title": "Financial Transaction"
+      },
+      "id": "ID",
+      "description": "Description",
+      "amount": "Amount",
+      "date": "Date",
+      "account": "Account",
+      "category": "Category",
+      "budget": "Budget"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "teamprojectApp": {
+    "financialTransaction": {
+      "home": {
+        "title": "Financial Transactions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "కొత్త Financial Transaction  సృష్టించండి",
+        "createOrEditLabel": "Financial Transaction సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Financial Transactions found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Financial Transaction సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Financial Transaction సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Financial Transaction తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Financial Transaction {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Financial Transaction"
+      },
+      "id": "ID",
+      "description": "Description",
+      "amount": "Amount",
+      "date": "Date",
+      "account": "Account",
+      "category": "Category",
+      "budget": "Budget"
+    }
+  }
+}

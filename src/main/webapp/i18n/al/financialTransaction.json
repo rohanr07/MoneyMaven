@@ -1,0 +1,29 @@
+{
+  "teamprojectApp": {
+    "financialTransaction": {
+      "home": {
+        "title": "Financial Transactions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Krijo një të ri Financial Transaction",
+        "createOrEditLabel": "Krijo ose përpuno një Financial Transaction",
+        "notFound": "No Financial Transactions found"
+      },
+      "created": "Një Financial Transaction i ri u krijua me identifikues {{ param }}",
+      "updated": "Një Financial Transaction u përpunua me identifikues {{ param }}",
+      "deleted": "Një Financial Transaction u fshi me identifikues {{ param }}",
+      "delete": {
+        "question": "Jeni i sigurtë që doni të fshini Financial Transaction {{ id }}?"
+      },
+      "detail": {
+        "title": "Financial Transaction"
+      },
+      "id": "ID",
+      "description": "Description",
+      "amount": "Amount",
+      "date": "Date",
+      "account": "Account",
+      "category": "Category",
+      "budget": "Budget"
+    }
+  }
+}

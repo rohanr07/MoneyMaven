@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "financialAccount": {
+      "home": {
+        "title": "Financial Accounts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Янги Financial Account қўшиш",
+        "createOrEditLabel": "Financial Accountни таҳрирлаш",
+        "notFound": "No Financial Accounts found"
+      },
+      "created": "Financial Account {{ param }} билан қўшилди.",
+      "updated": "{{ param }}- Financial Account сақланди.",
+      "deleted": "{{ param }}- Financial Account ўчирилди.",
+      "delete": {
+        "question": "{{ id }}- Financial Accountни ўчирмоқчимисиз? "
+      },
+      "detail": {
+        "title": "Financial Account"
+      },
+      "id": "ID",
+      "name": "Name",
+      "balance": "Balance",
+      "type": "Type",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

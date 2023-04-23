@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "budget": {
+      "home": {
+        "title": "Budgets",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Budget を追加",
+        "createOrEditLabel": "Budgetを追加または編集",
+        "notFound": "No Budgets found"
+      },
+      "created": "A new Budget is created with identifier {{ param }}",
+      "updated": "A Budget is updated with identifier {{ param }}",
+      "deleted": "A Budget is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Budget {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Budget"
+      },
+      "id": "ID",
+      "name": "Name",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "limit": "Limit",
+      "transactions": "Transactions"
+    }
+  }
+}

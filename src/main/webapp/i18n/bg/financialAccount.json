@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "financialAccount": {
+      "home": {
+        "title": "Financial Accounts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Създайте нов Financial Account",
+        "createOrEditLabel": "Създайте или редактирайте Financial Account",
+        "notFound": "Financial Accounts не са намерени"
+      },
+      "created": "Създаден е нов Financial Account с идентификатор {{ param }}",
+      "updated": "Financial Account с идентификатор {{ param }} e oбновен",
+      "deleted": "Financial Account с идентификатор {{ param }} е изтрит",
+      "delete": {
+        "question": "Наистина ли искате да изтриете Financial Account {{ id }}?"
+      },
+      "detail": {
+        "title": "Financial Account"
+      },
+      "id": "ID",
+      "name": "Name",
+      "balance": "Balance",
+      "type": "Type",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

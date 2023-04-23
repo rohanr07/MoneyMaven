@@ -1,0 +1,29 @@
+{
+  "teamprojectApp": {
+    "financialTransaction": {
+      "home": {
+        "title": "Financial Transactions",
+        "refreshListLabel": "Värskenda nimekirja",
+        "createLabel": "Lisa uus Financial Transaction",
+        "createOrEditLabel": "Lisa või muuda Financial Transaction",
+        "notFound": "Ei leitud ühtegi Financial Transactions"
+      },
+      "created": "Uus Financial Transaction on loodud identifikaatoriga {{ param }}",
+      "updated": "Financial Transaction identifikaatoriga {{ param }} on muudetud",
+      "deleted": "Financial Transaction identifikaatoriga {{ param }} on kustutatud",
+      "delete": {
+        "question": "Kas olete kindel, et soovite kustutada Financial Transaction {{ id }}?"
+      },
+      "detail": {
+        "title": "Financial Transaction"
+      },
+      "id": "ID",
+      "description": "Description",
+      "amount": "Amount",
+      "date": "Date",
+      "account": "Account",
+      "category": "Category",
+      "budget": "Budget"
+    }
+  }
+}

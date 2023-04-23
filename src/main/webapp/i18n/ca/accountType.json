@@ -1,0 +1,11 @@
+{
+  "teamprojectApp": {
+    "AccountType": {
+      "null": "",
+      "CASH": "CASH",
+      "CHECKING": "CHECKING",
+      "SAVINGS": "SAVINGS",
+      "CREDIT_CARD": "CREDIT_CARD"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "financialAccount": {
+      "home": {
+        "title": "Financial Accounts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Ստեղծել նոր Financial Account",
+        "createOrEditLabel": "Ստեղծել կամ փոփոխել Financial Account",
+        "notFound": "No Financial Accounts found"
+      },
+      "created": "Նոր Financial Account ստեղծված է {{ param }} նունացուցիչով",
+      "updated": "Financial Account թարմացվաց է {{ param }} նունացուցիչով",
+      "deleted": "Financial Account հեռացված է {{ param }}  նունացուցիչով",
+      "delete": {
+        "question": "Դուք վստահ ե՞ք, որ ցանկանում եք հեռացնել Financial Account {{ id }}?"
+      },
+      "detail": {
+        "title": "Financial Account"
+      },
+      "id": "ID",
+      "name": "Name",
+      "balance": "Balance",
+      "type": "Type",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

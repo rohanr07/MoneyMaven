@@ -1,0 +1,29 @@
+{
+  "teamprojectApp": {
+    "financialTransaction": {
+      "home": {
+        "title": "Financial Transaction",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Dodaj Financial Transaction",
+        "createOrEditLabel": "Dodaj lub edytuj: Financial Transaction",
+        "notFound": "No Financial Transactions found"
+      },
+      "created": "Utworzono nowy obiekt typu Financial Transaction z identyfikatorem {{ param }}",
+      "updated": "Uaktualniono obiekt typu Financial Transaction z identyfikatorem {{ param }}",
+      "deleted": "Usunięto obiekt typu Financial Transaction z identyfikatorem {{ param }}",
+      "delete": {
+        "question": "Czy na pewno chcesz usunąć Financial Transaction {{ id }}?"
+      },
+      "detail": {
+        "title": "Financial Transaction"
+      },
+      "id": "ID",
+      "description": "Description",
+      "amount": "Amount",
+      "date": "Date",
+      "account": "Account",
+      "category": "Category",
+      "budget": "Budget"
+    }
+  }
+}

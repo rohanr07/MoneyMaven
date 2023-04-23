@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "financialAccount": {
+      "home": {
+        "title": "FinancialAccounts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Genera un nuovo Financial Account",
+        "createOrEditLabel": "Genera o modifica un Financial Account",
+        "notFound": "No Financial Accounts found"
+      },
+      "created": "&Egrave; stato generato un nuovo Financial Account con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Financial Account identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Financial Account con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Financial Account {{ id }}?"
+      },
+      "detail": {
+        "title": "Financial Account"
+      },
+      "id": "ID",
+      "name": "Name",
+      "balance": "Balance",
+      "type": "Type",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

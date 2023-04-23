@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "financialAccount": {
+      "home": {
+        "title": "Financial Accounts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Financial Account-ஐ உருவாக்கு",
+        "createOrEditLabel": "Financial Account -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Financial Accounts found"
+      },
+      "created": "Financial Account புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Financial Account மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Financial Account நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Financial Account {{ id }}?"
+      },
+      "detail": {
+        "title": "Financial Account"
+      },
+      "id": "ID",
+      "name": "Name",
+      "balance": "Balance",
+      "type": "Type",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}
