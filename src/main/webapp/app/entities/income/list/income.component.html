@@ -1,6 +1,6 @@
 <div>
   <h2 id="page-heading" data-cy="IncomeHeading">
-    <span jhiTranslate="teamprojectApp.income.home.title">Incomes</span>
+    <span>Income</span>
 
     <div class="d-flex justify-content-end">
       <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
@@ -46,7 +46,7 @@
           </th>
           <th scope="col" jhiSortBy="companyName">
             <div class="d-flex">
-              <span jhiTranslate="teamprojectApp.income.companyName">Company Name</span>
+              <span>Reference</span>
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
@@ -62,12 +62,12 @@
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
-          <th scope="col" jhiSortBy="user.login">
+          <!--<th scope="col" jhiSortBy="user.login">
             <div class="d-flex">
-              <span jhiTranslate="teamprojectApp.income.user">User</span>
+              <span jhiTranslate="teamprojectApp.income.user">Type</span>
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
-          </th>
+          </th>-->
           <th scope="col"></th>
         </tr>
       </thead>

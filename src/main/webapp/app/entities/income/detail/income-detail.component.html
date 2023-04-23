@@ -18,7 +18,11 @@
         <dd>
           <span>{{ income.amount }}</span>
         </dd>
-        <dt><span jhiTranslate="teamprojectApp.income.companyName">Company Name</span></dt>
+        <dt><span jhiTranslate="teamprojectApp.income.currency">Currency</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'teamprojectApp.Currency.' + income.currency }}">{{ income.currency }}</span>
+        </dd>
+        <dt><span>Reference</span></dt>
         <dd>
           <span>{{ income.companyName }}</span>
         </dd>
@@ -26,14 +30,11 @@
         <dd>
           <span>{{ income.date | formatMediumDate }}</span>
         </dd>
-        <dt><span jhiTranslate="teamprojectApp.income.currency">Currency</span></dt>
-        <dd>
-          <span jhiTranslate="{{ 'teamprojectApp.Currency.' + income.currency }}">{{ income.currency }}</span>
-        </dd>
-        <dt><span jhiTranslate="teamprojectApp.income.user">User</span></dt>
+
+        <!-- <dt><span jhiTranslate="teamprojectApp.income.user">User</span></dt>
         <dd>
           <span>{{ income.user?.login }}</span>
-        </dd>
+        </dd>-->
       </dl>
 
       <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
