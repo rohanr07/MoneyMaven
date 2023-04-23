@@ -24,6 +24,7 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
@@ -198,16 +199,18 @@ class ExpensesResourceIT {
 
     @SuppressWarnings({ "unchecked" })
     void getAllExpensesWithEagerRelationshipsIsEnabled() throws Exception {
-        when(expensesRepositoryMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
+        when(expensesRepositoryMock.findAllWithEagerRelationships((UserDetails) any()))
+            .thenReturn((List<Expenses>) new PageImpl(new ArrayList<>()));
 
         restExpensesMockMvc.perform(get(ENTITY_API_URL + "?eagerload=true")).andExpect(status().isOk());
 
-        verify(expensesRepositoryMock, times(1)).findAllWithEagerRelationships(any());
+        verify(expensesRepositoryMock, times(1)).findAllWithEagerRelationships((UserDetails) any());
     }
 
     @SuppressWarnings({ "unchecked" })
     void getAllExpensesWithEagerRelationshipsIsNotEnabled() throws Exception {
-        when(expensesRepositoryMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
+        when(expensesRepositoryMock.findAllWithEagerRelationships((UserDetails) any()))
+            .thenReturn((List<Expenses>) new PageImpl(new ArrayList<>()));
 
         restExpensesMockMvc.perform(get(ENTITY_API_URL + "?eagerload=false")).andExpect(status().isOk());
         verify(expensesRepositoryMock, times(1)).findAll(any(Pageable.class));
