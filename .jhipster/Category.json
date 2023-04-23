@@ -1,0 +1,32 @@
+{
+  "applications": "*",
+  "changelogDate": "20230314145606",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "category",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Category",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "financialTransaction",
+      "otherEntityRelationshipName": "category",
+      "relationshipName": "transactions",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

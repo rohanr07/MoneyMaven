@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "budget": {
+      "home": {
+        "title": "Budgets",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Pridať Budget",
+        "createOrEditLabel": "Pridať alebo upraviť Budget",
+        "notFound": "No Budgets found"
+      },
+      "created": "Bol vytvorený potomok entity Budget s identifikátorom {{ param }}",
+      "updated": "Potomok entity Budget s identifikátorom {{ param }} bol upravený.",
+      "deleted": "Potomok entity Budget s identifikátorom {{ param }} bol vymazaný.",
+      "delete": {
+        "question": "Ste si istý, že chcete vymazať Budget {{ id }}?"
+      },
+      "detail": {
+        "title": "Budget"
+      },
+      "id": "ID",
+      "name": "Name",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "limit": "Limit",
+      "transactions": "Transactions"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "teamprojectApp": {
+    "financialTransaction": {
+      "home": {
+        "title": "Financial Transactions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Financial Transaction",
+        "createOrEditLabel": "Creeare sau editare Financial Transaction",
+        "notFound": "No Financial Transactions found"
+      },
+      "created": "A fost creată o nouă entitate Financial Transaction cu identificatorul {{ param }}",
+      "updated": "Financial Transaction cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Financial Transaction cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Financial Transaction {{ id }}?"
+      },
+      "detail": {
+        "title": "Financial Transaction"
+      },
+      "id": "ID",
+      "description": "Description",
+      "amount": "Amount",
+      "date": "Date",
+      "account": "Account",
+      "category": "Category",
+      "budget": "Budget"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "teamprojectApp": {
+    "category": {
+      "home": {
+        "title": "Categories",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Pridať Category",
+        "createOrEditLabel": "Pridať alebo upraviť Category",
+        "notFound": "No Categories found"
+      },
+      "created": "Bol vytvorený potomok entity Category s identifikátorom {{ param }}",
+      "updated": "Potomok entity Category s identifikátorom {{ param }} bol upravený.",
+      "deleted": "Potomok entity Category s identifikátorom {{ param }} bol vymazaný.",
+      "delete": {
+        "question": "Ste si istý, že chcete vymazať Category {{ id }}?"
+      },
+      "detail": {
+        "title": "Category"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

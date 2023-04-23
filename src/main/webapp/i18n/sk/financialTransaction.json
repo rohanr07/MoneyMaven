@@ -1,0 +1,29 @@
+{
+  "teamprojectApp": {
+    "financialTransaction": {
+      "home": {
+        "title": "Financial Transactions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Pridať Financial Transaction",
+        "createOrEditLabel": "Pridať alebo upraviť Financial Transaction",
+        "notFound": "No Financial Transactions found"
+      },
+      "created": "Bol vytvorený potomok entity Financial Transaction s identifikátorom {{ param }}",
+      "updated": "Potomok entity Financial Transaction s identifikátorom {{ param }} bol upravený.",
+      "deleted": "Potomok entity Financial Transaction s identifikátorom {{ param }} bol vymazaný.",
+      "delete": {
+        "question": "Ste si istý, že chcete vymazať Financial Transaction {{ id }}?"
+      },
+      "detail": {
+        "title": "Financial Transaction"
+      },
+      "id": "ID",
+      "description": "Description",
+      "amount": "Amount",
+      "date": "Date",
+      "account": "Account",
+      "category": "Category",
+      "budget": "Budget"
+    }
+  }
+}

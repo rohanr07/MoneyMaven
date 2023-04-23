@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "budget": {
+      "home": {
+        "title": "Budgets",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Budget",
+        "createOrEditLabel": "Creeare sau editare Budget",
+        "notFound": "No Budgets found"
+      },
+      "created": "A fost creată o nouă entitate Budget cu identificatorul {{ param }}",
+      "updated": "Budget cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Budget cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Budget {{ id }}?"
+      },
+      "detail": {
+        "title": "Budget"
+      },
+      "id": "ID",
+      "name": "Name",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "limit": "Limit",
+      "transactions": "Transactions"
+    }
+  }
+}

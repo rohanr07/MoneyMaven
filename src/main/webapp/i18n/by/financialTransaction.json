@@ -1,0 +1,29 @@
+{
+  "teamprojectApp": {
+    "financialTransaction": {
+      "home": {
+        "title": "Financial Transactions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Стварыць новы Financial Transaction",
+        "createOrEditLabel": "Стварыць або адрэдагаваць Financial Transaction",
+        "notFound": "No Financial Transactions found"
+      },
+      "created": "Новы Financial Transaction створан з ідэнтыфікатарам {{ param }}",
+      "updated": "Financial Transaction абноўлен з ідэнтыфікатарам {{ param }}",
+      "deleted": "Financial Transaction выдален з ідэнтыфікатарам {{ param }}",
+      "delete": {
+        "question": "Вы ўпэўнены, што жадаеце выдаліць Financial Transaction {{ id }}?"
+      },
+      "detail": {
+        "title": "Financial Transaction"
+      },
+      "id": "ID",
+      "description": "Description",
+      "amount": "Amount",
+      "date": "Date",
+      "account": "Account",
+      "category": "Category",
+      "budget": "Budget"
+    }
+  }
+}

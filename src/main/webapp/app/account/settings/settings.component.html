@@ -11,6 +11,21 @@
       </div>
 
       <jhi-alert-error></jhi-alert-error>
+      <style>
+        .personal-information-link,
+        .notification-preferences-link,
+        .change-theme-link,
+        .language-preferences-link,
+        .export-data-link,
+        .log-out-link,
+        .delete-account-link {
+          text-decoration: none; /* remove underline */
+          font-size: 20px; /* set font size */
+        }
+      </style>
+
+      <img src="../../content/images/persons.png" alt="Image description" width="25" height="25" />
+      <a href="#personal-information-link" class="personal-information-link">Personal Information</a><br /><br />
 
       <form name="form" role="form" (ngSubmit)="save()" [formGroup]="settingsForm" *ngIf="settingsForm.value.login" novalidate>
         <div class="mb-3">
@@ -143,7 +158,17 @@
             </small>
           </div>
         </div>
-
+        <button
+          type="submit"
+          [disabled]="settingsForm.invalid"
+          class="btn btn-primary"
+          jhiTranslate="settings.form.button"
+          data-cy="submit"
+        >
+          Save</button
+        ><br /><br />
+        <img src="../../content/images/globe.png" alt="Image description" width="25" height="25" />
+        <a href="#language-preferences" class="language-preferences-link">Language Preferences</a><br />
         <div class="mb-3" *ngIf="languages && languages.length > 0">
           <label for="langKey" jhiTranslate="settings.form.language">Language</label>
           <select class="form-control" id="langKey" name="langKey" formControlName="langKey" data-cy="langKey">
@@ -161,6 +186,14 @@
           Save
         </button>
       </form>
+      <img src="../../content/images/bell.png" alt="Image description" width="25" height="25" />
+      <a href="#notification-preferences" class="notification-preferences-link">Notification Preferences</a><br /><br />
+      <img src="../../content/images/pallete.png" alt="Image description" width="25" height="25" />
+      <a href="#change-theme" class="change-theme-link">Change Theme</a><br /><br />
+      <img src="../../content/images/logout.png" alt="Image description" width="25" height="25" />
+      <a class="log-out-link" (click)="logout()" id="logout" data-cy="logout">LogOut </a><br /><br />
+      <img src="../../content/images/delete.png" alt="Image description" width="25" height="25" />
+      <a href="#delete account" class="delete-account-link">Delete Account</a><br /><br />
     </div>
   </div>
 </div>

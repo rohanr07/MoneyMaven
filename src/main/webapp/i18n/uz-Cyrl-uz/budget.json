@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "budget": {
+      "home": {
+        "title": "Budgets",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Янги Budget қўшиш",
+        "createOrEditLabel": "Budgetни таҳрирлаш",
+        "notFound": "No Budgets found"
+      },
+      "created": "Budget {{ param }} билан қўшилди.",
+      "updated": "{{ param }}- Budget сақланди.",
+      "deleted": "{{ param }}- Budget ўчирилди.",
+      "delete": {
+        "question": "{{ id }}- Budgetни ўчирмоқчимисиз? "
+      },
+      "detail": {
+        "title": "Budget"
+      },
+      "id": "ID",
+      "name": "Name",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "limit": "Limit",
+      "transactions": "Transactions"
+    }
+  }
+}

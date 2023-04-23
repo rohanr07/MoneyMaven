@@ -1,0 +1,29 @@
+{
+  "teamprojectApp": {
+    "financialTransaction": {
+      "home": {
+        "title": "FinancialTransactions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Financial Transaction を追加",
+        "createOrEditLabel": "Financial Transactionを追加または編集",
+        "notFound": "No Financial Transactions found"
+      },
+      "created": "A new Financial Transaction is created with identifier {{ param }}",
+      "updated": "A Financial Transaction is updated with identifier {{ param }}",
+      "deleted": "A Financial Transaction is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Financial Transaction {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Financial Transaction"
+      },
+      "id": "ID",
+      "description": "Description",
+      "amount": "Amount",
+      "date": "Date",
+      "account": "Account",
+      "category": "Category",
+      "budget": "Budget"
+    }
+  }
+}

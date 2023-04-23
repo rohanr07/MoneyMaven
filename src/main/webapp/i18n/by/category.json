@@ -1,0 +1,26 @@
+{
+  "teamprojectApp": {
+    "category": {
+      "home": {
+        "title": "Categories",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Стварыць новы Category",
+        "createOrEditLabel": "Стварыць або адрэдагаваць Category",
+        "notFound": "No Categories found"
+      },
+      "created": "Новы Category створан з ідэнтыфікатарам {{ param }}",
+      "updated": "Category абноўлен з ідэнтыфікатарам {{ param }}",
+      "deleted": "Category выдален з ідэнтыфікатарам {{ param }}",
+      "delete": {
+        "question": "Вы ўпэўнены, што жадаеце выдаліць Category {{ id }}?"
+      },
+      "detail": {
+        "title": "Category"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

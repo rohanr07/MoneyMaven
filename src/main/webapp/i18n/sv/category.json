@@ -1,0 +1,26 @@
+{
+  "teamprojectApp": {
+    "category": {
+      "home": {
+        "title": "Categories",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Category",
+        "createOrEditLabel": "Skapa eller ändra en Category",
+        "notFound": "No Categories found"
+      },
+      "created": "En ny Category är skapad med id {{ param }}",
+      "updated": "En Category är uppdaterad med id  {{ param }}",
+      "deleted": "En Category är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Category {{ id }}?"
+      },
+      "detail": {
+        "title": "Category"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

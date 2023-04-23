@@ -1,0 +1,29 @@
+{
+  "teamprojectApp": {
+    "financialTransaction": {
+      "home": {
+        "title": "Financial Transactions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Luo Financial Transaction",
+        "createOrEditLabel": "Luo tai muokkaa Financial Transaction",
+        "notFound": "Financial Transaction ei löytynyt"
+      },
+      "created": "Uusi Financial Transaction on luotu, id: {{ param }}",
+      "updated": "Financial Transaction on päivitetty, id: {{ param }}",
+      "deleted": "Financial Transaction on päivitetty, id: {{ param }}",
+      "delete": {
+        "question": "Haluatko varmasti poistaa Financial Transaction {{ id }}?"
+      },
+      "detail": {
+        "title": "Financial Transaction"
+      },
+      "id": "ID",
+      "description": "Description",
+      "amount": "Amount",
+      "date": "Date",
+      "account": "Account",
+      "category": "Category",
+      "budget": "Budget"
+    }
+  }
+}

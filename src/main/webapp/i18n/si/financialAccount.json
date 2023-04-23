@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "financialAccount": {
+      "home": {
+        "title": "Financial Accounts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "නව Financial Account එකක් සාදන්න",
+        "createOrEditLabel": "Financial Account සාදන්න හෝ සංස්කරණය කරන්න",
+        "notFound": "Financial Accounts හමු නොවීය"
+      },
+      "created": "{{ param }} හඳුනාගැනීමෙන් නව Financial Account සාදනු ලැබේ",
+      "updated": "{{ param }} හඳුනාගැනීමෙන් Financial Account යාවත්කාලීන වේ",
+      "deleted": "{{ param }} හඳුනාගැනීමෙන් Financial Account මකා දමනු ලැබේ",
+      "delete": {
+        "question": "Financial Account {{ id }} මකා දැමීමට ඔබට විශ්වාසද?"
+      },
+      "detail": {
+        "title": "Financial Account"
+      },
+      "id": "ID",
+      "name": "Name",
+      "balance": "Balance",
+      "type": "Type",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

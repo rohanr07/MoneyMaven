@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "financialAccount": {
+      "home": {
+        "title": "Financial Accounts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Financial Account",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Financial Account",
+        "notFound": "No Financial Accounts found"
+      },
+      "created": "Một Financial Account mới được tạo với định danh {{ param }}",
+      "updated": "Một Financial Account cập nhật với định danh {{ param }}",
+      "deleted": "Một Financial Account đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Financial Account {{ id }}?"
+      },
+      "detail": {
+        "title": "Financial Account"
+      },
+      "id": "ID",
+      "name": "Name",
+      "balance": "Balance",
+      "type": "Type",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

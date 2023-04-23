@@ -1,0 +1,26 @@
+{
+  "teamprojectApp": {
+    "category": {
+      "home": {
+        "title": "Categories",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Ստեղծել նոր Category",
+        "createOrEditLabel": "Ստեղծել կամ փոփոխել Category",
+        "notFound": "No Categories found"
+      },
+      "created": "Նոր Category ստեղծված է {{ param }} նունացուցիչով",
+      "updated": "Category թարմացվաց է {{ param }} նունացուցիչով",
+      "deleted": "Category հեռացված է {{ param }}  նունացուցիչով",
+      "delete": {
+        "question": "Դուք վստահ ե՞ք, որ ցանկանում եք հեռացնել Category {{ id }}?"
+      },
+      "detail": {
+        "title": "Category"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

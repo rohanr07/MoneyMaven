@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "budget": {
+      "home": {
+        "title": "Budgets",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Kreirati Budget",
+        "createOrEditLabel": "Kreirati ili urediti Budget",
+        "notFound": "Nije nađeno Budgets"
+      },
+      "created": "Kreiran je Budget sa identifikatorom {{ param }}",
+      "updated": "Ažuriran je Budget sa identifikatorom {{ param }}",
+      "deleted": "Obrisan je Budget sa identifikatorom {{ param }}",
+      "delete": {
+        "question": "Da li ste sigurni da želite obrisati Budget {{ id }}?"
+      },
+      "detail": {
+        "title": "Budget"
+      },
+      "id": "ID",
+      "name": "Name",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "limit": "Limit",
+      "transactions": "Transactions"
+    }
+  }
+}

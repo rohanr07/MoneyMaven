@@ -1,0 +1,29 @@
+{
+  "teamprojectApp": {
+    "financialTransaction": {
+      "home": {
+        "title": "FinancialTransactions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नया Financial Transaction बनाएँ",
+        "createOrEditLabel": "Financial Transaction बनाएँ या संपादित करें",
+        "notFound": "No Financial Transactions found"
+      },
+      "created": "एक नया Financial Transaction [identifier: {{ param }}] तैयार है",
+      "updated": "एक Financial Transaction [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Financial Transaction [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Financial Transaction [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Financial Transaction"
+      },
+      "id": "ID",
+      "description": "Description",
+      "amount": "Amount",
+      "date": "Date",
+      "account": "Account",
+      "category": "Category",
+      "budget": "Budget"
+    }
+  }
+}

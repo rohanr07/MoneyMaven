@@ -1,0 +1,26 @@
+{
+  "teamprojectApp": {
+    "category": {
+      "home": {
+        "title": "Categories",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "නව Category එකක් සාදන්න",
+        "createOrEditLabel": "Category සාදන්න හෝ සංස්කරණය කරන්න",
+        "notFound": "Categories හමු නොවීය"
+      },
+      "created": "{{ param }} හඳුනාගැනීමෙන් නව Category සාදනු ලැබේ",
+      "updated": "{{ param }} හඳුනාගැනීමෙන් Category යාවත්කාලීන වේ",
+      "deleted": "{{ param }} හඳුනාගැනීමෙන් Category මකා දමනු ලැබේ",
+      "delete": {
+        "question": "Category {{ id }} මකා දැමීමට ඔබට විශ්වාසද?"
+      },
+      "detail": {
+        "title": "Category"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "teamprojectApp": {
+    "financialTransaction": {
+      "home": {
+        "title": "Financial Transactions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Yangi Financial Transaction qo`shish",
+        "createOrEditLabel": "Financial Transactionni tahrirlash",
+        "notFound": "No Financial Transactions found"
+      },
+      "created": "Financial Transaction {{ param }} bilan qo`shildi",
+      "updated": "{{ param }}- Financial Transaction saqlandi",
+      "deleted": "{{ param }}- Financial Transaction o`chirildi",
+      "delete": {
+        "question": "{{ id }}- Financial Transactionni o`chirmoqchimisiz? "
+      },
+      "detail": {
+        "title": "Financial Transaction"
+      },
+      "id": "ID",
+      "description": "Description",
+      "amount": "Amount",
+      "date": "Date",
+      "account": "Account",
+      "category": "Category",
+      "budget": "Budget"
+    }
+  }
+}

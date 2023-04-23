@@ -1,0 +1,29 @@
+{
+  "teamprojectApp": {
+    "financialTransaction": {
+      "home": {
+        "title": "Financial Transactions",
+        "refreshListLabel": "Liste aktualisieren",
+        "createLabel": "Financial Transaction erstellen",
+        "createOrEditLabel": "Financial Transaction erstellen oder bearbeiten",
+        "notFound": "Keine Financial Transactions gefunden"
+      },
+      "created": "Financial Transaction erstellt mit ID {{ param }}",
+      "updated": "Financial Transaction aktualisiert mit ID {{ param }}",
+      "deleted": "Financial Transaction gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Financial Transaction {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Financial Transaction"
+      },
+      "id": "ID",
+      "description": "Description",
+      "amount": "Amount",
+      "date": "Date",
+      "account": "Account",
+      "category": "Category",
+      "budget": "Budget"
+    }
+  }
+}

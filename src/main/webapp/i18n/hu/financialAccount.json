@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "financialAccount": {
+      "home": {
+        "title": "FinancialAccounts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Egy új Financial Account létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Financial Accountt",
+        "notFound": "No Financial Accounts found"
+      },
+      "created": "Egy új Financial Account lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Financial Account módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Financial Account törölve lett {{ param }} azonosítóval",
+      "delete": {
+        "question": "Biztos benne, hogy törölni szeretné az Financial Accountt {{ id }} azonosítóval?"
+      },
+      "detail": {
+        "title": "Financial Account"
+      },
+      "id": "ID",
+      "name": "Name",
+      "balance": "Balance",
+      "type": "Type",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

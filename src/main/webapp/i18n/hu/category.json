@@ -1,0 +1,26 @@
+{
+  "teamprojectApp": {
+    "category": {
+      "home": {
+        "title": "Categories",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Egy új Category létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Categoryt",
+        "notFound": "No Categories found"
+      },
+      "created": "Egy új Category lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Category módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Category törölve lett {{ param }} azonosítóval",
+      "delete": {
+        "question": "Biztos benne, hogy törölni szeretné az Categoryt {{ id }} azonosítóval?"
+      },
+      "detail": {
+        "title": "Category"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

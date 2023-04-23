@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "financialAccount": {
+      "home": {
+        "title": "Financial Accounts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "建立一筆新的 Financial Account",
+        "createOrEditLabel": "建立或編輯 Financial Account",
+        "notFound": "No Financial Accounts found"
+      },
+      "created": "新的 Financial Account 建立成功，識別碼為 {{ param }}",
+      "updated": "識別碼為 {{ param }} 的 Financial Account 更新成功",
+      "deleted": "識別碼為 {{ param }} 的 Financial Account 刪除成功",
+      "delete": {
+        "question": "您確定要刪除 Financial Account {{ id }} 嗎?"
+      },
+      "detail": {
+        "title": "Financial Account"
+      },
+      "id": "ID",
+      "name": "Name",
+      "balance": "Balance",
+      "type": "Type",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

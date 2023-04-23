@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "financialAccount": {
+      "home": {
+        "title": "Financial Accounts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Vytvořit Financial Account",
+        "createOrEditLabel": "Vytvořit nebo upravit Financial Account",
+        "notFound": "No Financial Accounts found"
+      },
+      "created": "Byl vytvořen potomek entity Financial Account s identifikátorem {{ param }}",
+      "updated": "Potomek entity Financial Account s identifikátorem {{ param }} byl upravený.",
+      "deleted": "Potomek entity Financial Account s identifikátorem {{ param }} bol smazaný.",
+      "delete": {
+        "question": "Jste si jisti, že chcete smazat Financial Account {{ id }}?"
+      },
+      "detail": {
+        "title": "Financial Account"
+      },
+      "id": "ID",
+      "name": "Name",
+      "balance": "Balance",
+      "type": "Type",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

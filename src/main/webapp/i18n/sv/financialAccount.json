@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "financialAccount": {
+      "home": {
+        "title": "Financial Accounts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Financial Account",
+        "createOrEditLabel": "Skapa eller ändra en Financial Account",
+        "notFound": "No Financial Accounts found"
+      },
+      "created": "En ny Financial Account är skapad med id {{ param }}",
+      "updated": "En Financial Account är uppdaterad med id  {{ param }}",
+      "deleted": "En Financial Account är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Financial Account {{ id }}?"
+      },
+      "detail": {
+        "title": "Financial Account"
+      },
+      "id": "ID",
+      "name": "Name",
+      "balance": "Balance",
+      "type": "Type",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

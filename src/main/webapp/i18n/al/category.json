@@ -1,0 +1,26 @@
+{
+  "teamprojectApp": {
+    "category": {
+      "home": {
+        "title": "Categories",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Krijo një të ri Category",
+        "createOrEditLabel": "Krijo ose përpuno një Category",
+        "notFound": "No Categories found"
+      },
+      "created": "Një Category i ri u krijua me identifikues {{ param }}",
+      "updated": "Një Category u përpunua me identifikues {{ param }}",
+      "deleted": "Një Category u fshi me identifikues {{ param }}",
+      "delete": {
+        "question": "Jeni i sigurtë që doni të fshini Category {{ id }}?"
+      },
+      "detail": {
+        "title": "Category"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

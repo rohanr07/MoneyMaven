@@ -1,0 +1,26 @@
+{
+  "teamprojectApp": {
+    "category": {
+      "home": {
+        "title": "Categories",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Buat Category baru",
+        "createOrEditLabel": "Buat atau edit Category",
+        "notFound": "No Categories found"
+      },
+      "created": "Category dengan id {{ param }} telah dibuat",
+      "updated": "Category dengan id {{ param }} telah diperbaharui",
+      "deleted": "Category dengan id {{ param }} telah dihapus",
+      "delete": {
+        "question": "Apakah anda yakin ingin menghapus Category {{ id }}?"
+      },
+      "detail": {
+        "title": "Category"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "budget": {
+      "home": {
+        "title": "Budgets",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Luo Budget",
+        "createOrEditLabel": "Luo tai muokkaa Budget",
+        "notFound": "Budget ei löytynyt"
+      },
+      "created": "Uusi Budget on luotu, id: {{ param }}",
+      "updated": "Budget on päivitetty, id: {{ param }}",
+      "deleted": "Budget on päivitetty, id: {{ param }}",
+      "delete": {
+        "question": "Haluatko varmasti poistaa Budget {{ id }}?"
+      },
+      "detail": {
+        "title": "Budget"
+      },
+      "id": "ID",
+      "name": "Name",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "limit": "Limit",
+      "transactions": "Transactions"
+    }
+  }
+}

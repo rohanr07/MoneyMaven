@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "budget": {
+      "home": {
+        "title": "Budgets",
+        "refreshListLabel": "Värskenda nimekirja",
+        "createLabel": "Lisa uus Budget",
+        "createOrEditLabel": "Lisa või muuda Budget",
+        "notFound": "Ei leitud ühtegi Budgets"
+      },
+      "created": "Uus Budget on loodud identifikaatoriga {{ param }}",
+      "updated": "Budget identifikaatoriga {{ param }} on muudetud",
+      "deleted": "Budget identifikaatoriga {{ param }} on kustutatud",
+      "delete": {
+        "question": "Kas olete kindel, et soovite kustutada Budget {{ id }}?"
+      },
+      "detail": {
+        "title": "Budget"
+      },
+      "id": "ID",
+      "name": "Name",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "limit": "Limit",
+      "transactions": "Transactions"
+    }
+  }
+}

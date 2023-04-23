@@ -1,0 +1,29 @@
+{
+  "teamprojectApp": {
+    "financialTransaction": {
+      "home": {
+        "title": "Financial Transactions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Buat Financial Transaction baru",
+        "createOrEditLabel": "Buat atau edit Financial Transaction",
+        "notFound": "No Financial Transactions found"
+      },
+      "created": "Financial Transaction dengan id {{ param }} telah dibuat",
+      "updated": "Financial Transaction dengan id {{ param }} telah diperbaharui",
+      "deleted": "Financial Transaction dengan id {{ param }} telah dihapus",
+      "delete": {
+        "question": "Apakah anda yakin ingin menghapus Financial Transaction {{ id }}?"
+      },
+      "detail": {
+        "title": "Financial Transaction"
+      },
+      "id": "ID",
+      "description": "Description",
+      "amount": "Amount",
+      "date": "Date",
+      "account": "Account",
+      "category": "Category",
+      "budget": "Budget"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "teamprojectApp": {
+    "category": {
+      "home": {
+        "title": "Categories",
+        "refreshListLabel": "Värskenda nimekirja",
+        "createLabel": "Lisa uus Category",
+        "createOrEditLabel": "Lisa või muuda Category",
+        "notFound": "Ei leitud ühtegi Categories"
+      },
+      "created": "Uus Category on loodud identifikaatoriga {{ param }}",
+      "updated": "Category identifikaatoriga {{ param }} on muudetud",
+      "deleted": "Category identifikaatoriga {{ param }} on kustutatud",
+      "delete": {
+        "question": "Kas olete kindel, et soovite kustutada Category {{ id }}?"
+      },
+      "detail": {
+        "title": "Category"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

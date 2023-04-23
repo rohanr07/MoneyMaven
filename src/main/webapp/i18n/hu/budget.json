@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "budget": {
+      "home": {
+        "title": "Budgets",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Egy új Budget létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Budgett",
+        "notFound": "No Budgets found"
+      },
+      "created": "Egy új Budget lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Budget módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Budget törölve lett {{ param }} azonosítóval",
+      "delete": {
+        "question": "Biztos benne, hogy törölni szeretné az Budgett {{ id }} azonosítóval?"
+      },
+      "detail": {
+        "title": "Budget"
+      },
+      "id": "ID",
+      "name": "Name",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "limit": "Limit",
+      "transactions": "Transactions"
+    }
+  }
+}

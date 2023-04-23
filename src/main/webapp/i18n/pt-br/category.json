@@ -1,0 +1,26 @@
+{
+  "teamprojectApp": {
+    "category": {
+      "home": {
+        "title": "Categories",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Category",
+        "createOrEditLabel": "Criar ou editar Category",
+        "notFound": "Nenhum Category encontrado"
+      },
+      "created": "Um novo Category foi criado com o identificador {{ param }}",
+      "updated": "Um Category foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Category foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Category {{ id }}?"
+      },
+      "detail": {
+        "title": "Category"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

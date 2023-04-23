@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { Component, Renderer2, Injectable } from '@angular/core';
 
 import { SharedLibsModule } from './shared-libs.module';
 import { FindLanguageFromKeyPipe } from './language/find-language-from-key.pipe';

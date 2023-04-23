@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "financialAccount": {
+      "home": {
+        "title": "Financial Accounts",
+        "refreshListLabel": "Värskenda nimekirja",
+        "createLabel": "Lisa uus Financial Account",
+        "createOrEditLabel": "Lisa või muuda Financial Account",
+        "notFound": "Ei leitud ühtegi Financial Accounts"
+      },
+      "created": "Uus Financial Account on loodud identifikaatoriga {{ param }}",
+      "updated": "Financial Account identifikaatoriga {{ param }} on muudetud",
+      "deleted": "Financial Account identifikaatoriga {{ param }} on kustutatud",
+      "delete": {
+        "question": "Kas olete kindel, et soovite kustutada Financial Account {{ id }}?"
+      },
+      "detail": {
+        "title": "Financial Account"
+      },
+      "id": "ID",
+      "name": "Name",
+      "balance": "Balance",
+      "type": "Type",
+      "description": "Description",
+      "transactions": "Transactions"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "budget": {
+      "home": {
+        "title": "Budgets",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नवीन Budget तयार करा",
+        "createOrEditLabel": "Budget तयार किंवा संपादित करा",
+        "notFound": "No Budgets found"
+      },
+      "created": "Budget [identifier: {{ param }}] तयार आहे",
+      "updated": "Budget [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Budget [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Budget [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Budget"
+      },
+      "id": "ID",
+      "name": "Name",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "limit": "Limit",
+      "transactions": "Transactions"
+    }
+  }
+}
