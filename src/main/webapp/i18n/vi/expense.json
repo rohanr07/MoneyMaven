@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "expense": {
+      "home": {
+        "title": "Expenses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Expense",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Expense",
+        "notFound": "No Expenses found"
+      },
+      "created": "Một Expense mới được tạo với định danh {{ param }}",
+      "updated": "Một Expense cập nhật với định danh {{ param }}",
+      "deleted": "Một Expense đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Expense {{ id }}?"
+      },
+      "detail": {
+        "title": "Expense"
+      },
+      "id": "ID",
+      "expenseType": "Expense Type",
+      "amount": "Amount",
+      "description": "Description",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

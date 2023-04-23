@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "income": {
+      "home": {
+        "title": "Incomes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Income-ஐ உருவாக்கு",
+        "createOrEditLabel": "Income -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Incomes found"
+      },
+      "created": "Income புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Income மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Income நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Income {{ id }}?"
+      },
+      "detail": {
+        "title": "Income"
+      },
+      "id": "ID",
+      "amount": "Amount",
+      "companyName": "Company Name",
+      "date": "Date",
+      "currency": "Currency",
+      "user": "User"
+    }
+  }
+}

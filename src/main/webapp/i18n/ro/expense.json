@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "expense": {
+      "home": {
+        "title": "Expenses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Expense",
+        "createOrEditLabel": "Creeare sau editare Expense",
+        "notFound": "No Expenses found"
+      },
+      "created": "A fost creată o nouă entitate Expense cu identificatorul {{ param }}",
+      "updated": "Expense cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Expense cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Expense {{ id }}?"
+      },
+      "detail": {
+        "title": "Expense"
+      },
+      "id": "ID",
+      "expenseType": "Expense Type",
+      "amount": "Amount",
+      "description": "Description",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

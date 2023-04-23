@@ -21,7 +21,7 @@
     "enableHibernateCache": true,
     "enableSwaggerCodegen": false,
     "enableTranslation": true,
-    "entities": ["FinancialTransaction", "Category", "Budget", "FinancialAccount"],
+    "entities": ["Expenses", "Income"],
     "entitySuffix": "",
     "jhiPrefix": "jhi",
     "jhipsterVersion": "7.9.3",
@@ -76,7 +76,7 @@
       "uz-Latn-uz",
       "vi"
     ],
-    "lastLiquibaseTimestamp": 1678805768000,
+    "lastLiquibaseTimestamp": 1682154346000,
     "messageBroker": false,
     "microfrontend": false,
     "microfrontends": [],

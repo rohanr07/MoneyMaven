@@ -41,7 +41,6 @@ public class Expenses implements Serializable {
     private LocalDate date;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
     private User user;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

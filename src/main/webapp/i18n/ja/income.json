@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "income": {
+      "home": {
+        "title": "Incomes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Income を追加",
+        "createOrEditLabel": "Incomeを追加または編集",
+        "notFound": "No Incomes found"
+      },
+      "created": "A new Income is created with identifier {{ param }}",
+      "updated": "A Income is updated with identifier {{ param }}",
+      "deleted": "A Income is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Income {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Income"
+      },
+      "id": "ID",
+      "amount": "Amount",
+      "companyName": "Company Name",
+      "date": "Date",
+      "currency": "Currency",
+      "user": "User"
+    }
+  }
+}

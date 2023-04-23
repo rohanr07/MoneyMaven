@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "income": {
+      "home": {
+        "title": "Incomes",
+        "refreshListLabel": "ਸੂਚੀ ਤਾਜ਼ਾ ਕਰੋ",
+        "createLabel": "ਇੱਕ ਨਵਾਂ Income ਬਣਾਓ",
+        "createOrEditLabel": "ਇੱਕ Income ਬਣਾਓ ਜਾਂ ਸੰਪਾਦਿਤ ਕਰੋ",
+        "notFound": "ਕੋਈ Incomes ਨਹੀਂ ਮਿਲਿਆ"
+      },
+      "created": "ਇੱਕ ਨਵਾਂ Income ਪਛਾਣਕਰਤਾ {{ param }} ਨਾਲ ਬਣਾਇਆ ਗਿਆ ਹੈ",
+      "updated": "ਇੱਕ Income ਪਛਾਣਕਰਤਾ {{ param }} ਨਾਲ ਅਪਡੇਟ ਕੀਤਾ ਗਿਆ ਹੈ",
+      "deleted": "ਇੱਕ Income ਪਛਾਣਕਰਤਾ {{ param }} ਨਾਲ ਮਿਟਾ ਦਿੱਤਾ ਗਿਆ ਹੈ",
+      "delete": {
+        "question": "ਕੀ ਤੁਸੀਂ ਨਿਸ਼ਚਤ ਰੂਪ ਤੋਂ Income {{ id }} ਨੂੰ ਮਿਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
+      },
+      "detail": {
+        "title": "Income"
+      },
+      "id": "ID",
+      "amount": "Amount",
+      "companyName": "Company Name",
+      "date": "Date",
+      "currency": "Currency",
+      "user": "User"
+    }
+  }
+}

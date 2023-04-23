@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "expense": {
+      "home": {
+        "title": "Expenses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नया Expense बनाएँ",
+        "createOrEditLabel": "Expense बनाएँ या संपादित करें",
+        "notFound": "No Expenses found"
+      },
+      "created": "एक नया Expense [identifier: {{ param }}] तैयार है",
+      "updated": "एक Expense [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Expense [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Expense [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Expense"
+      },
+      "id": "ID",
+      "expenseType": "Expense Type",
+      "amount": "Amount",
+      "description": "Description",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

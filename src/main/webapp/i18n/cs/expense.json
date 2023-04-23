@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "expense": {
+      "home": {
+        "title": "Expenses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Vytvořit Expense",
+        "createOrEditLabel": "Vytvořit nebo upravit Expense",
+        "notFound": "No Expenses found"
+      },
+      "created": "Byl vytvořen potomek entity Expense s identifikátorem {{ param }}",
+      "updated": "Potomek entity Expense s identifikátorem {{ param }} byl upravený.",
+      "deleted": "Potomek entity Expense s identifikátorem {{ param }} bol smazaný.",
+      "delete": {
+        "question": "Jste si jisti, že chcete smazat Expense {{ id }}?"
+      },
+      "detail": {
+        "title": "Expense"
+      },
+      "id": "ID",
+      "expenseType": "Expense Type",
+      "amount": "Amount",
+      "description": "Description",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

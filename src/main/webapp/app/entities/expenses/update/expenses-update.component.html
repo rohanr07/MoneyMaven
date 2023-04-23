@@ -2,7 +2,7 @@
   <div class="col-8">
     <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
       <h2 id="jhi-expenses-heading" data-cy="ExpensesCreateUpdateHeading" jhiTranslate="teamprojectApp.expenses.home.createOrEditLabel">
-        Create or edit a Expenses
+        Create an Expense
       </h2>
 
       <div>
@@ -15,14 +15,18 @@
 
         <div class="row mb-3">
           <label class="form-label" jhiTranslate="teamprojectApp.expenses.expenseType" for="field_expenseType">Expense Type</label>
-          <input
-            type="text"
-            class="form-control"
-            name="expenseType"
-            id="field_expenseType"
-            data-cy="expenseType"
-            formControlName="expenseType"
-          />
+
+          <select class="form-control" id="field_expenseType" name="expenseType" formControlName="expenseType">
+            <option value="">--Select a value--</option>
+            <option value="Fixed">Fixed</option>
+            <option value="Variable">Variable</option>
+            <option value="Necessary">Necessary</option>
+            <option value="Discretionary">Discretionary</option>
+            <option value="Savings & Investment">Savings & Investment</option>
+            <option value="Debt Repayment">Debt Repayment</option>
+            <option value="Other">Other</option>
+          </select>
+
           <div *ngIf="editForm.get('expenseType')!.invalid && (editForm.get('expenseType')!.dirty || editForm.get('expenseType')!.touched)">
             <small
               class="form-text text-danger"
@@ -97,8 +101,7 @@
         <div class="row mb-3">
           <label class="form-label" jhiTranslate="teamprojectApp.expenses.user" for="field_user">User</label>
           <select class="form-control" id="field_user" data-cy="user" name="user" formControlName="user" [compareWith]="compareUser">
-            <option [ngValue]="null"></option>
-            <option [ngValue]="userOption" *ngFor="let userOption of usersSharedCollection">{{ userOption.login }}</option>
+            <option [ngValue]="userOption" *ngFor="let userOption of usersSharedCollection">{{ currentUser.login }}</option>
           </select>
         </div>
       </div>

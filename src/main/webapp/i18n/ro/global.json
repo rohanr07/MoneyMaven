@@ -11,6 +11,7 @@
         "label": "Etichetă",
         "operation": "Operație",
         "expenses": "Expenses",
+        "income": "Income",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

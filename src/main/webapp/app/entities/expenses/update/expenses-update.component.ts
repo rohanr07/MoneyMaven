@@ -9,6 +9,7 @@ import { IExpenses } from '../expenses.model';
 import { ExpensesService } from '../service/expenses.service';
 import { IUser } from 'app/entities/user/user.model';
 import { UserService } from 'app/entities/user/user.service';
+import { AccountService } from '../../../core/auth/account.service';
 
 @Component({
   selector: 'jhi-expenses-update',
@@ -17,6 +18,7 @@ import { UserService } from 'app/entities/user/user.service';
 export class ExpensesUpdateComponent implements OnInit {
   isSaving = false;
   expenses: IExpenses | null = null;
+  currentUser: any;
 
   usersSharedCollection: IUser[] = [];
 
@@ -26,7 +28,8 @@ export class ExpensesUpdateComponent implements OnInit {
     protected expensesService: ExpensesService,
     protected expensesFormService: ExpensesFormService,
     protected userService: UserService,
-    protected activatedRoute: ActivatedRoute
+    protected activatedRoute: ActivatedRoute,
+    private accountService: AccountService
   ) {}
 
   compareUser = (o1: IUser | null, o2: IUser | null): boolean => this.userService.compareUser(o1, o2);
@@ -39,6 +42,11 @@ export class ExpensesUpdateComponent implements OnInit {
       }
 
       this.loadRelationshipsOptions();
+
+      this.accountService.identity().subscribe(account => {
+        this.currentUser = account;
+        this.usersSharedCollection = [this.currentUser];
+      });
     });
   }
 

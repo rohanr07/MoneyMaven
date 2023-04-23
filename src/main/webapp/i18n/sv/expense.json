@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "expense": {
+      "home": {
+        "title": "Expenses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Expense",
+        "createOrEditLabel": "Skapa eller ändra en Expense",
+        "notFound": "No Expenses found"
+      },
+      "created": "En ny Expense är skapad med id {{ param }}",
+      "updated": "En Expense är uppdaterad med id  {{ param }}",
+      "deleted": "En Expense är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Expense {{ id }}?"
+      },
+      "detail": {
+        "title": "Expense"
+      },
+      "id": "ID",
+      "expenseType": "Expense Type",
+      "amount": "Amount",
+      "description": "Description",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

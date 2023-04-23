@@ -1,0 +1,11 @@
+id;amount;company_name;date;currency
+1;69559;process Metrics;2023-04-22;GBP
+2;63267;Bedfordshire;2023-04-22;GBP
+3;93946;interface;2023-04-21;GBP
+4;81210;Manager;2023-04-21;GBP
+5;55227;Data;2023-04-21;USD
+6;95317;Borders;2023-04-21;USD
+7;22023;Slovakia;2023-04-21;Euros
+8;31325;technologies auxiliary;2023-04-21;Euros
+9;31652;feed;2023-04-22;GBP
+10;60424;Tennessee Rustic;2023-04-22;USD

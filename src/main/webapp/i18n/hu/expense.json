@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "expense": {
+      "home": {
+        "title": "Expenses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Egy új Expense létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Expenset",
+        "notFound": "No Expenses found"
+      },
+      "created": "Egy új Expense lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Expense módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Expense törölve lett {{ param }} azonosítóval",
+      "delete": {
+        "question": "Biztos benne, hogy törölni szeretné az Expenset {{ id }} azonosítóval?"
+      },
+      "detail": {
+        "title": "Expense"
+      },
+      "id": "ID",
+      "expenseType": "Expense Type",
+      "amount": "Amount",
+      "description": "Description",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

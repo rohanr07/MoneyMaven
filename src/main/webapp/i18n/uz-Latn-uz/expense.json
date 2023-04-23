@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "expense": {
+      "home": {
+        "title": "Expenses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Yangi Expense qo`shish",
+        "createOrEditLabel": "Expenseni tahrirlash",
+        "notFound": "No Expenses found"
+      },
+      "created": "Expense {{ param }} bilan qo`shildi",
+      "updated": "{{ param }}- Expense saqlandi",
+      "deleted": "{{ param }}- Expense o`chirildi",
+      "delete": {
+        "question": "{{ id }}- Expenseni o`chirmoqchimisiz? "
+      },
+      "detail": {
+        "title": "Expense"
+      },
+      "id": "ID",
+      "expenseType": "Expense Type",
+      "amount": "Amount",
+      "description": "Description",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

@@ -8,6 +8,7 @@
       "entities": {
         "main": "Thực thể",
         "expenses": "Expenses",
+        "income": "Income",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

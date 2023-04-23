@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "income": {
+      "home": {
+        "title": "Incomes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "สร้าง Income",
+        "createOrEditLabel": "สร้างหรือแก้ไข Income",
+        "notFound": "No Incomes found"
+      },
+      "created": "Income ถูกสร้างด้วย {{ param }}",
+      "updated": "Income ถูกแก้ไขด้วย {{ param }}",
+      "deleted": "Income ถูกลบด้วย {{ param }}",
+      "delete": {
+        "question": "คุณต้องการที่จะลบ Income {{ id }}?"
+      },
+      "detail": {
+        "title": "Income"
+      },
+      "id": "ID",
+      "amount": "Amount",
+      "companyName": "Company Name",
+      "date": "Date",
+      "currency": "Currency",
+      "user": "User"
+    }
+  }
+}

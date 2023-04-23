@@ -1,0 +1,28 @@
+{
+  "teamprojectApp": {
+    "income": {
+      "home": {
+        "title": "Incomes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Pridať Income",
+        "createOrEditLabel": "Pridať alebo upraviť Income",
+        "notFound": "No Incomes found"
+      },
+      "created": "Bol vytvorený potomok entity Income s identifikátorom {{ param }}",
+      "updated": "Potomok entity Income s identifikátorom {{ param }} bol upravený.",
+      "deleted": "Potomok entity Income s identifikátorom {{ param }} bol vymazaný.",
+      "delete": {
+        "question": "Ste si istý, že chcete vymazať Income {{ id }}?"
+      },
+      "detail": {
+        "title": "Income"
+      },
+      "id": "ID",
+      "amount": "Amount",
+      "companyName": "Company Name",
+      "date": "Date",
+      "currency": "Currency",
+      "user": "User"
+    }
+  }
+}
