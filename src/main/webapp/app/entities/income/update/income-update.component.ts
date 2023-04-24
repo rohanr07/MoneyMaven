@@ -10,6 +10,7 @@ import { IncomeService } from '../service/income.service';
 import { IUser } from 'app/entities/user/user.model';
 import { UserService } from 'app/entities/user/user.service';
 import { Currency } from 'app/entities/enumerations/currency.model';
+import { AccountService } from '../../../core/auth/account.service';
 
 @Component({
   selector: 'jhi-income-update',
@@ -19,6 +20,7 @@ export class IncomeUpdateComponent implements OnInit {
   isSaving = false;
   income: IIncome | null = null;
   currencyValues = Object.keys(Currency);
+  currentUser: any;
 
   usersSharedCollection: IUser[] = [];
 
@@ -28,7 +30,8 @@ export class IncomeUpdateComponent implements OnInit {
     protected incomeService: IncomeService,
     protected incomeFormService: IncomeFormService,
     protected userService: UserService,
-    protected activatedRoute: ActivatedRoute
+    protected activatedRoute: ActivatedRoute,
+    private accountService: AccountService
   ) {}
 
   compareUser = (o1: IUser | null, o2: IUser | null): boolean => this.userService.compareUser(o1, o2);
@@ -41,6 +44,10 @@ export class IncomeUpdateComponent implements OnInit {
       }
 
       this.loadRelationshipsOptions();
+      this.accountService.identity().subscribe(account => {
+        this.currentUser = account;
+        this.usersSharedCollection = [this.currentUser];
+      });
     });
   }
 

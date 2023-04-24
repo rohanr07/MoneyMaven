@@ -9,6 +9,7 @@ import { DATE_FORMAT } from 'app/config/input.constants';
 import { ApplicationConfigService } from 'app/core/config/application-config.service';
 import { createRequestOption } from 'app/core/request/request-util';
 import { IIncome, NewIncome } from '../income.model';
+import { IExpenses } from '../../expenses/expenses.model';
 
 export type PartialUpdateIncome = Partial<IIncome> & Pick<IIncome, 'id'>;
 
@@ -102,6 +103,13 @@ export class IncomeService {
       ...income,
       date: income.date?.format(DATE_FORMAT) ?? null,
     };
+  }
+
+  getIncomeBetweenDates(start: Date, end: Date, login: string): Observable<IIncome[]> {
+    const startIso = start.toISOString();
+    const endIso = end.toISOString();
+    const url = `${this.resourceUrl}?created_dt.greaterThanOrEqual=${startIso}&created_dt.lessThanOrEqual=${endIso}`;
+    return this.http.get<IIncome[]>(url);
   }
 
   protected convertDateFromServer(restIncome: RestIncome): IIncome {

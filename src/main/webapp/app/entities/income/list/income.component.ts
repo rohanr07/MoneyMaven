@@ -8,6 +8,7 @@ import { ASC, DESC, SORT, ITEM_DELETED_EVENT, DEFAULT_SORT_DATA } from 'app/conf
 import { EntityArrayResponseType, IncomeService } from '../service/income.service';
 import { IncomeDeleteDialogComponent } from '../delete/income-delete-dialog.component';
 import { SortService } from 'app/shared/sort/sort.service';
+import { AccountService } from 'app/core/auth/account.service';
 
 @Component({
   selector: 'jhi-income',
@@ -16,22 +17,32 @@ import { SortService } from 'app/shared/sort/sort.service';
 export class IncomeComponent implements OnInit {
   incomes?: IIncome[];
   isLoading = false;
+  currentUser: any;
+  totalMonthlyIncome: number = 0;
+
+  searchTerm: string = '';
 
   predicate = 'id';
   ascending = true;
+  today: Date = new Date();
 
   constructor(
     protected incomeService: IncomeService,
     protected activatedRoute: ActivatedRoute,
     public router: Router,
     protected sortService: SortService,
-    protected modalService: NgbModal
+    protected modalService: NgbModal,
+    protected accountService: AccountService
   ) {}
 
   trackId = (_index: number, item: IIncome): number => this.incomeService.getIncomeIdentifier(item);
 
   ngOnInit(): void {
     this.load();
+    this.accountService.identity().subscribe(account => {
+      this.currentUser = account;
+    });
+    this.getTotalMonthlyIncome();
   }
 
   delete(income: IIncome): void {
@@ -60,6 +71,22 @@ export class IncomeComponent implements OnInit {
 
   navigateToWithComponentValues(): void {
     this.handleNavigation(this.predicate, this.ascending);
+  }
+
+  filterByDescription(searchTerm: string) {
+    this.incomeService.query().subscribe(res => {
+      this.incomes = res.body?.filter(income => income?.companyName?.toLowerCase().includes(searchTerm.toLowerCase()));
+    });
+  }
+
+  getTotalMonthlyIncome(): void {
+    const now = new Date();
+    const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+    const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+    this.incomeService.getIncomeBetweenDates(startOfMonth, endOfMonth, this.currentUser.login).subscribe(incomes => {
+      // @ts-ignore
+      this.totalMonthlyIncome = incomes.reduce((total, income) => total + income.amount, 0);
+    });
   }
 
   protected loadFromBackendWithRouteInformations(): Observable<EntityArrayResponseType> {

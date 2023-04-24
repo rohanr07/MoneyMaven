@@ -1,6 +1,20 @@
 <div>
   <h2 id="page-heading" data-cy="IncomeHeading">
     <span>Income</span>
+    <h5 class="text-end">{{ today | date: 'MM/dd/yyyy' }}</h5>
+    <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-start">
+        <input type="text" class="form-control me-2 small-search-box" [(ngModel)]="searchTerm" placeholder="Search by reference..." />
+        <button class="btn btn-success h5-font-size" (click)="filterByDescription(searchTerm)">Search</button>
+      </div>
+      <div class="d-flex justify-content-end">
+        <h5><b>Logged in: </b>{{ currentUser?.login }}</h5>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-end">
+      <h5><b>Total Monthly Income: </b>${{ totalMonthlyIncome }}</h5>
+    </div>
 
     <div class="d-flex justify-content-end">
       <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
@@ -62,12 +76,12 @@
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
-          <!--<th scope="col" jhiSortBy="user.login">
+          <th scope="col" jhiSortBy="user.login">
             <div class="d-flex">
-              <span jhiTranslate="teamprojectApp.income.user">Type</span>
+              <span jhiTranslate="teamprojectApp.income.user">User</span>
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
-          </th>-->
+          </th>
           <th scope="col"></th>
         </tr>
       </thead>
