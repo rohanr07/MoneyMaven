@@ -22,13 +22,16 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/expenses">Expenses</a>
           </li>
-
-          <li>Budget</li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/budget">Budget</a>
+          </li>
         </ul>
 
         <ul class="menu">
           <li>Account</li>
-          <li>Help and support</li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="loadSettings()">Settings</a>
+          </li>
         </ul>
         <pre><span class="alert alert-success" id="home-logged-message" *ngIf="account" jhiTranslate="home.logged.message" [translateValues]="{ username: account.login }"
         >User: "{{ account.login }}".</span></pre>

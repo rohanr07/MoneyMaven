@@ -33,4 +33,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.destroy$.next();
     this.destroy$.complete();
   }
+  loadSettings() {
+    this.router.navigate(['/account/settings']);
+  }
 }
