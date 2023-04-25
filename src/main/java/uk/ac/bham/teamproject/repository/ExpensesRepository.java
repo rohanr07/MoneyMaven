@@ -2,13 +2,13 @@ package uk.ac.bham.teamproject.repository;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors; // added by JR
+import java.util.stream.Collectors;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.*;
 import org.springframework.data.repository.query.Param;
-import org.springframework.security.core.annotation.AuthenticationPrincipal; //added by JR
-import org.springframework.security.core.userdetails.UserDetails; //added by JR
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Repository;
 import uk.ac.bham.teamproject.domain.Expenses;
 
