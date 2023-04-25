@@ -11,6 +11,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+// added by Rohan
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import tech.jhipster.web.util.HeaderUtil;
@@ -156,11 +160,15 @@ public class IncomeResource {
      */
     @GetMapping("/incomes")
     public List<Income> getAllIncomes(@RequestParam(required = false, defaultValue = "false") boolean eagerload) {
-        log.debug("REST request to get all Incomes");
+        // added by Rohan
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+
         if (eagerload) {
-            return incomeRepository.findAllWithEagerRelationships();
+            return incomeRepository.findAllWithEagerRelationships(userDetails);
         } else {
-            return incomeRepository.findAll();
+            log.debug("REST request in else");
+            return incomeRepository.findIncomeByCurrentUser(userDetails);
         }
     }
 

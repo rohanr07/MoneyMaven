@@ -24,6 +24,7 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
@@ -189,18 +190,20 @@ class IncomeResourceIT {
             .andExpect(jsonPath("$.[*].currency").value(hasItem(DEFAULT_CURRENCY.toString())));
     }
 
-    @SuppressWarnings({ "unchecked" })
+    @SuppressWarnings({ "unchecked" }) // edited by Rohan
     void getAllIncomesWithEagerRelationshipsIsEnabled() throws Exception {
-        when(incomeRepositoryMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
+        when(incomeRepositoryMock.findAllWithEagerRelationships((UserDetails) any()))
+            .thenReturn((List<Income>) new PageImpl(new ArrayList<>()));
 
         restIncomeMockMvc.perform(get(ENTITY_API_URL + "?eagerload=true")).andExpect(status().isOk());
 
-        verify(incomeRepositoryMock, times(1)).findAllWithEagerRelationships(any());
+        verify(incomeRepositoryMock, times(1)).findAllWithEagerRelationships((UserDetails) any());
     }
 
-    @SuppressWarnings({ "unchecked" })
+    @SuppressWarnings({ "unchecked" }) // edited by Rohan
     void getAllIncomesWithEagerRelationshipsIsNotEnabled() throws Exception {
-        when(incomeRepositoryMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
+        when(incomeRepositoryMock.findAllWithEagerRelationships((UserDetails) any()))
+            .thenReturn((List<Income>) new PageImpl(new ArrayList<>()));
 
         restIncomeMockMvc.perform(get(ENTITY_API_URL + "?eagerload=false")).andExpect(status().isOk());
         verify(incomeRepositoryMock, times(1)).findAll(any(Pageable.class));
