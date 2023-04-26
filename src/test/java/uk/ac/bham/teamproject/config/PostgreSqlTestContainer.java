@@ -4,8 +4,8 @@ import java.util.Collections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testcontainers.containers.JdbcDatabaseContainer;
-import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.containers.output.Slf4jLogConsumer;
+import org.testcontainers.containerspn.PostgreSQLContainer;
 
 public class PostgreSqlTestContainer implements SqlTestContainer {
 
