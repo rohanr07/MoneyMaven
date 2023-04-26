@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
     <meta charset="UTF-8" />
     <title>Title</title>
@@ -42,75 +42,45 @@
   <div class="col-md-8" [ngSwitch]="account != null">
     <div id="content" *ngSwitchCase="true">
       <div id="titleBar">
+        <h5 class="text-end">Date:{{ today | date: 'dd/MM/yyyy' }}</h5>
+        <br />
         <h1>Dashboard</h1>
-        <h2>Monthly Income Summary</h2>
+        <h2>Monthly Financial Summary</h2>
       </div>
       <br />
       <br />
 
       <div class="clearFix"></div>
 
+      <br />
+      <br />
+
       <div id="totalSales">
         <div class="col">
           <h4>Income</h4>
-          <h3>£36,059.00</h3>
+          <h3>${{ totalMonthlyIncome }}</h3>
         </div>
         <div class="col">
-          <h5>Expenses</h5>
-          <h3>£24,834.00</h3>
+          <h4>Expenses</h4>
+          <h3>${{ totalMonthlyExpenses }}</h3>
         </div>
         <div class="col">
-          <h6>Budget</h6>
-          <h3>£15,650.50</h3>
+          <h4>Budget</h4>
+          <h3>$XXXXXX</h3>
         </div>
       </div>
 
-      <table>
-        <tr>
-          <th>Recent Income</th>
-          <th>Amount</th>
-        </tr>
-
-        <tr>
-          <td>Process Metrics</td>
-          <td>£69,559.00</td>
-        </tr>
-
-        <tr>
-          <td>LLC Bedfordshire</td>
-          <td>£63,267.00</td>
-        </tr>
-
-        <tr>
-          <td>Technologies Auxiliary</td>
-          <td>£93,946.00</td>
-        </tr>
-      </table>
+      <img src="../../content/images/MoneyMavenlogo.png" alt="Money Maven" width="600" height="264" />
 
       <br />
       <br />
-      <br />
-      <table>
-        <tr>
-          <th>Recent Expenses</th>
-          <th>Amount</th>
-        </tr>
 
-        <tr>
-          <td>Senior Montegoro</td>
-          <td>£15,823.00</td>
-        </tr>
+      <h6>How Money Maven works:</h6>
 
-        <tr>
-          <td>Arkansas Arizona</td>
-          <td>£39,836.00</td>
-        </tr>
-
-        <tr>
-          <td>Lavender Toolset</td>
-          <td>£58,133.00</td>
-        </tr>
-      </table>
+      <h6>
+        Our easy-to-use web app lets you record and track your finances all in one place. By monitoring your income, spending, and budget,
+        you can get a complete picture of your financial health and find ways to improve it.
+      </h6>
     </div>
   </div>
 

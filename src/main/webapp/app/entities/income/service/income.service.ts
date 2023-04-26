@@ -24,7 +24,7 @@ export type NewRestIncome = RestOf<NewIncome>;
 export type PartialUpdateRestIncome = RestOf<PartialUpdateIncome>;
 
 export type EntityResponseType = HttpResponse<IIncome>;
-export type EntityArrayResponseType = HttpResponse<IIncome[]>;
+export type EntityArrayResponseType2 = HttpResponse<IIncome[]>;
 
 @Injectable({ providedIn: 'root' })
 export class IncomeService {
@@ -59,7 +59,7 @@ export class IncomeService {
       .pipe(map(res => this.convertResponseFromServer(res)));
   }
 
-  query(req?: any): Observable<EntityArrayResponseType> {
+  query(req?: any): Observable<EntityArrayResponseType2> {
     const options = createRequestOption(req);
     return this.http
       .get<RestIncome[]>(this.resourceUrl, { params: options, observe: 'response' })

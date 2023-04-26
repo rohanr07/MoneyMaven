@@ -5,7 +5,7 @@
     <div class="d-flex justify-content-between">
       <div class="d-flex justify-content-start">
         <input type="text" class="form-control me-2 small-search-box" [(ngModel)]="searchTerm" placeholder="Search by reference..." />
-        <button class="btn btn-success h5-font-size" (click)="filterByDescription(searchTerm)">Search</button>
+        <button class="btn btn-success h5-font-size" (click)="filterByDescription2(searchTerm)">Search</button>
       </div>
       <div class="d-flex justify-content-end">
         <h5><b>Logged in: </b>{{ currentUser?.login }}</h5>
@@ -17,7 +17,7 @@
     </div>
 
     <div class="d-flex justify-content-end">
-      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+      <button class="btn btn-info me-2" (click)="load2()" [disabled]="isLoading">
         <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
         <span jhiTranslate="teamprojectApp.income.home.refreshListLabel">Refresh list</span>
       </button>
@@ -45,7 +45,7 @@
   <div class="table-responsive table-entities" id="entities" *ngIf="incomes && incomes.length > 0">
     <table class="table table-striped" aria-describedby="page-heading">
       <thead>
-        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues2()">
           <th scope="col" jhiSortBy="id">
             <div class="d-flex">
               <span jhiTranslate="global.field.id">ID</span>
@@ -109,7 +109,7 @@
                 <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
               </button>
 
-              <button type="submit" (click)="delete(income)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+              <button type="submit" (click)="delete2(income)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
                 <fa-icon icon="times"></fa-icon>
                 <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
               </button>
