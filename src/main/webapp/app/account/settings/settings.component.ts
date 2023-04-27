@@ -6,8 +6,8 @@ import { AccountService } from 'app/core/auth/account.service';
 import { Account } from 'app/core/auth/account.model';
 import { LANGUAGES } from 'app/config/language.constants';
 import { LoginService } from '../../login/login.service';
-
 const initialAccount: Account = {} as Account;
+import Darkmode from 'darkmode-js';
 
 @Component({
   selector: 'jhi-settings',
@@ -46,6 +46,27 @@ export class SettingsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    const options = {
+      bottom: '64px',
+      right: 'unset',
+      left: '32px',
+      time: '0.5s',
+      mixColor: '#fff',
+      backgroundColor: '#fff',
+      buttonColorDark: '#100f2c',
+      buttonColorLight: '#fff',
+      saveInCookies: true,
+      label: '🌓',
+      autoMatchOsTheme: true,
+      toggleable: true,
+    };
+
+    const darkmode = new Darkmode(options);
+
+    // @ts-ignore
+    document.querySelector('#toggle-darkmode').addEventListener('click', () => {
+      darkmode.toggle();
+    });
     this.accountService.identity().subscribe(account => {
       if (account) {
         this.settingsForm.patchValue(account);
@@ -70,5 +91,8 @@ export class SettingsComponent implements OnInit {
   logout(): void {
     this.loginService.logout();
     this.router.navigate(['']);
+  }
+  loadChangePassword() {
+    this.router.navigate(['/account/password']);
   }
 }

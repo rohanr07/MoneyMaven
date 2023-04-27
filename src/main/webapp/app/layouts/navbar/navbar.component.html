@@ -129,25 +129,6 @@
             </li>
           </ul>
         </li>
-        <li ngbDropdown class="nav-item dropdown pointer" display="dynamic" *ngIf="languages && languages.length > 1">
-          <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="languagesnavBarDropdown">
-            <span>
-              <fa-icon icon="flag"></fa-icon>
-              <span jhiTranslate="global.menu.language">Language</span>
-            </span>
-          </a>
-          <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="languagesnavBarDropdown">
-            <li *ngFor="let language of languages">
-              <a
-                class="dropdown-item"
-                [jhiActiveMenu]="language"
-                href="javascript:void(0);"
-                (click)="changeLanguage(language); collapseNavbar()"
-                >{{ language | findLanguageFromKey }}</a
-              >
-            </li>
-          </ul>
-        </li>
         <li
           ngbDropdown
           class="nav-item dropdown pointer"
@@ -175,18 +156,6 @@
               >
                 <fa-icon icon="wrench" [fixedWidth]="true"></fa-icon>
                 <span jhiTranslate="global.menu.account.settings">Settings</span>
-              </a>
-            </li>
-            <li *ngSwitchCase="true">
-              <a
-                class="dropdown-item"
-                routerLink="account/password"
-                routerLinkActive="active"
-                (click)="collapseNavbar()"
-                data-cy="passwordItem"
-              >
-                <fa-icon icon="lock" [fixedWidth]="true"></fa-icon>
-                <span jhiTranslate="global.menu.account.password">Password</span>
               </a>
             </li>
             <li *ngSwitchCase="true">
