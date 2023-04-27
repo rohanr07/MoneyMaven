@@ -59,6 +59,7 @@ export class SettingsComponent implements OnInit {
       label: '🌓',
       autoMatchOsTheme: true,
       toggleable: true,
+      middle: '32px',
     };
 
     const darkmode = new Darkmode(options);
