@@ -56,6 +56,7 @@ export class ExpensesComponent implements OnInit {
       .subscribe({
         next: (res: EntityArrayResponseType) => {
           this.onResponseSuccess(res);
+          this.reloadPage();
         },
       });
   }
@@ -92,6 +93,10 @@ export class ExpensesComponent implements OnInit {
       // @ts-ignore
       this.totalMonthlyExpenses = expenses.reduce((total, expense) => total + expense.amount, 0);
     });
+  }
+
+  reloadPage() {
+    window.location.href = window.location.href;
   }
 
   protected loadFromBackendWithRouteInformations(): Observable<EntityArrayResponseType> {
