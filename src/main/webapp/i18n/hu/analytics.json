@@ -1,0 +1,27 @@
+{
+  "teamprojectApp": {
+    "analytics": {
+      "home": {
+        "title": "Analytics",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Egy új Analytics létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Analyticst",
+        "notFound": "No Analytics found"
+      },
+      "created": "Egy új Analytics lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Analytics módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Analytics törölve lett {{ param }} azonosítóval",
+      "delete": {
+        "question": "Biztos benne, hogy törölni szeretné az Analyticst {{ id }} azonosítóval?"
+      },
+      "detail": {
+        "title": "Analytics"
+      },
+      "id": "ID",
+      "transaction": "Transaction",
+      "amount": "Amount",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

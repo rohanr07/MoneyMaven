@@ -1,0 +1,75 @@
+<div>
+  <h2 id="page-heading" data-cy="AnalyticsHeading">
+    <span><strong>Analytics</strong></span>
+
+    <div class="d-flex justify-content-end">
+      <!--      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">-->
+      <!--        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>-->
+      <!--        <span jhiTranslate="teamprojectApp.analytics.home.refreshListLabel">Refresh list</span>-->
+      <!--      </button>-->
+    </div>
+  </h2>
+
+  <br />
+  <br />
+
+  <div style="background-color: #fff; height: 340px; width: 100%; display: flex; justify-content: center; justify-items: center">
+    <h2>
+      Your this Month's total Income is <b>${{ totalMonthlyIncome }}</b
+      >, and your total expenses are <b>${{ totalMonthlyExpenses }}</b>
+      <br />
+      <span *ngIf="totalMonthlyIncome > totalMonthlyExpenses"
+        >Cheers, you are in a profit of <b>${{ totalMonthlyIncome - totalMonthlyExpenses }} </b>this Month
+      </span>
+      <span *ngIf="totalMonthlyIncome < totalMonthlyExpenses"
+        >you are in a loss of: <b>${{ totalMonthlyIncome - totalMonthlyExpenses }} </b>this Month
+      </span>
+
+      <br />
+
+      On Average you spend <b>${{ Math.round(totalMonthlyIncome / 30 - totalMonthlyExpenses / 30) }}</b> each day
+    </h2>
+
+    <div
+      #pieChart
+      style="background-color: #fff; height: 340px; width: 100%; display: flex; justify-content: center; justify-items: center"
+    ></div>
+  </div>
+  <hr style="box-shadow: 5px 3px #888888" />
+
+  <br />
+  <h5>Graphical Representation of your Financial Data</h5>
+  <br />
+  <div #chartdiv style="background-color: #fff; height: 700px; width: 100%"></div>
+  <br />
+  <div style="display: flex; flex-direction: row; justify-content: space-around">
+    <div style="display: flex; flex-direction: row; gap: 10px">
+      <h5>Change Graph Type:</h5>
+
+      <button #line class="btn btn-secondary" (click)="line_fn()">Line</button>
+      <button #bar class="btn btn-secondary" (click)="bar_fn()">Bar</button>
+    </div>
+    <div style="display: flex; flex-direction: row; gap: 10px"></div>
+    <div style="display: flex; flex-direction: row; gap: 10px">
+      <h5>No of points:</h5>
+      <button #no_5 class="btn btn-outline-secondary" (click)="five_points_fn()">5</button>
+      <button #no_10 class="btn btn-outline-secondary" (click)="ten_points_fn()">10</button>
+      <button #no_20 class="btn btn-outline-secondary" (click)="twenty_points_fn()">20</button>
+      <button #no_30 class="btn btn-outline-secondary" (click)="thirty_points_fn()">30</button>
+      <button #no_50 class="btn btn-outline-secondary" (click)="fifty_points_fn()">50</button>
+      <button #no_max class="btn btn-outline-secondary" (click)="max_points_fn()">Max</button>
+    </div>
+  </div>
+  <br /><br />
+  <br />
+  <hr style="box-shadow: 1px 3px #888888" />
+
+  <h1 #opera></h1>
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="analytics?.length === 0">
+    <span jhiTranslate="teamprojectApp.analytics.home.notFound">No Analytics found</span>
+  </div>
+</div>

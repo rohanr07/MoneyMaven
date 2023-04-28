@@ -1,0 +1,27 @@
+{
+  "teamprojectApp": {
+    "analytics": {
+      "home": {
+        "title": "Analytics",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Янги Analytics қўшиш",
+        "createOrEditLabel": "Analyticsни таҳрирлаш",
+        "notFound": "No Analytics found"
+      },
+      "created": "Analytics {{ param }} билан қўшилди.",
+      "updated": "{{ param }}- Analytics сақланди.",
+      "deleted": "{{ param }}- Analytics ўчирилди.",
+      "delete": {
+        "question": "{{ id }}- Analyticsни ўчирмоқчимисиз? "
+      },
+      "detail": {
+        "title": "Analytics"
+      },
+      "id": "ID",
+      "transaction": "Transaction",
+      "amount": "Amount",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

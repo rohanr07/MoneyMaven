@@ -1,0 +1,27 @@
+{
+  "teamprojectApp": {
+    "analytics": {
+      "home": {
+        "title": "Analytics",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Luo Analytics",
+        "createOrEditLabel": "Luo tai muokkaa Analytics",
+        "notFound": "Analytics ei löytynyt"
+      },
+      "created": "Uusi Analytics on luotu, id: {{ param }}",
+      "updated": "Analytics on päivitetty, id: {{ param }}",
+      "deleted": "Analytics on päivitetty, id: {{ param }}",
+      "delete": {
+        "question": "Haluatko varmasti poistaa Analytics {{ id }}?"
+      },
+      "detail": {
+        "title": "Analytics"
+      },
+      "id": "ID",
+      "transaction": "Transaction",
+      "amount": "Amount",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

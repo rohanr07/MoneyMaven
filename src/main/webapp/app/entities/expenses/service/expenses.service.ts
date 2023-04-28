@@ -37,7 +37,9 @@ export class ExpensesService {
       .post<RestExpenses>(this.resourceUrl, copy, { observe: 'response' })
       .pipe(map(res => this.convertResponseFromServer(res)));
   }
-
+  getExpenses(): Observable<IExpenses[]> {
+    return this.http.get<IExpenses[]>(this.resourceUrl);
+  }
   update(expenses: IExpenses): Observable<EntityResponseType> {
     const copy = this.convertDateFromClient(expenses);
     return this.http

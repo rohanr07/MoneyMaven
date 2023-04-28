@@ -1,0 +1,27 @@
+{
+  "teamprojectApp": {
+    "analytics": {
+      "home": {
+        "title": "Analytics",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Analytics を追加",
+        "createOrEditLabel": "Analyticsを追加または編集",
+        "notFound": "No Analytics found"
+      },
+      "created": "A new Analytics is created with identifier {{ param }}",
+      "updated": "A Analytics is updated with identifier {{ param }}",
+      "deleted": "A Analytics is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Analytics {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Analytics"
+      },
+      "id": "ID",
+      "transaction": "Transaction",
+      "amount": "Amount",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

@@ -9,6 +9,7 @@
         "main": "Entiter",
         "expenses": "Expenses",
         "income": "Income",
+        "analytics": "Analytics",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

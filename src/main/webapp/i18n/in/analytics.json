@@ -1,0 +1,27 @@
+{
+  "teamprojectApp": {
+    "analytics": {
+      "home": {
+        "title": "Analytics",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Buat Analytics baru",
+        "createOrEditLabel": "Buat atau edit Analytics",
+        "notFound": "No Analytics found"
+      },
+      "created": "Analytics dengan id {{ param }} telah dibuat",
+      "updated": "Analytics dengan id {{ param }} telah diperbaharui",
+      "deleted": "Analytics dengan id {{ param }} telah dihapus",
+      "delete": {
+        "question": "Apakah anda yakin ingin menghapus Analytics {{ id }}?"
+      },
+      "detail": {
+        "title": "Analytics"
+      },
+      "id": "ID",
+      "transaction": "Transaction",
+      "amount": "Amount",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

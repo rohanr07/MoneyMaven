@@ -1,0 +1,27 @@
+{
+  "teamprojectApp": {
+    "analytics": {
+      "home": {
+        "title": "Analytics",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "สร้าง Analytics",
+        "createOrEditLabel": "สร้างหรือแก้ไข Analytics",
+        "notFound": "No Analytics found"
+      },
+      "created": "Analytics ถูกสร้างด้วย {{ param }}",
+      "updated": "Analytics ถูกแก้ไขด้วย {{ param }}",
+      "deleted": "Analytics ถูกลบด้วย {{ param }}",
+      "delete": {
+        "question": "คุณต้องการที่จะลบ Analytics {{ id }}?"
+      },
+      "detail": {
+        "title": "Analytics"
+      },
+      "id": "ID",
+      "transaction": "Transaction",
+      "amount": "Amount",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

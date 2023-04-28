@@ -1,0 +1,27 @@
+{
+  "teamprojectApp": {
+    "analytics": {
+      "home": {
+        "title": "Analytics",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "නව Analytics එකක් සාදන්න",
+        "createOrEditLabel": "Analytics සාදන්න හෝ සංස්කරණය කරන්න",
+        "notFound": "Analytics හමු නොවීය"
+      },
+      "created": "{{ param }} හඳුනාගැනීමෙන් නව Analytics සාදනු ලැබේ",
+      "updated": "{{ param }} හඳුනාගැනීමෙන් Analytics යාවත්කාලීන වේ",
+      "deleted": "{{ param }} හඳුනාගැනීමෙන් Analytics මකා දමනු ලැබේ",
+      "delete": {
+        "question": "Analytics {{ id }} මකා දැමීමට ඔබට විශ්වාසද?"
+      },
+      "detail": {
+        "title": "Analytics"
+      },
+      "id": "ID",
+      "transaction": "Transaction",
+      "amount": "Amount",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

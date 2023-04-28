@@ -1,0 +1,27 @@
+{
+  "teamprojectApp": {
+    "analytics": {
+      "home": {
+        "title": "Analytics",
+        "refreshListLabel": "Liste aktualisieren",
+        "createLabel": "Analytics erstellen",
+        "createOrEditLabel": "Analytics erstellen oder bearbeiten",
+        "notFound": "Keine Analytics gefunden"
+      },
+      "created": "Analytics erstellt mit ID {{ param }}",
+      "updated": "Analytics aktualisiert mit ID {{ param }}",
+      "deleted": "Analytics gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Analytics {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Analytics"
+      },
+      "id": "ID",
+      "transaction": "Transaction",
+      "amount": "Amount",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

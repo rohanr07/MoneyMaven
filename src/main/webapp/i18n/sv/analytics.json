@@ -1,0 +1,27 @@
+{
+  "teamprojectApp": {
+    "analytics": {
+      "home": {
+        "title": "Analytics",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Analytics",
+        "createOrEditLabel": "Skapa eller ändra en Analytics",
+        "notFound": "No Analytics found"
+      },
+      "created": "En ny Analytics är skapad med id {{ param }}",
+      "updated": "En Analytics är uppdaterad med id  {{ param }}",
+      "deleted": "En Analytics är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Analytics {{ id }}?"
+      },
+      "detail": {
+        "title": "Analytics"
+      },
+      "id": "ID",
+      "transaction": "Transaction",
+      "amount": "Amount",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

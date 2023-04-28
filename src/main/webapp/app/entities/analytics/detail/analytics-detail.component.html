@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="analytics">
+      <h2 data-cy="analyticsDetailsHeading"><span jhiTranslate="teamprojectApp.analytics.detail.title">Analytics</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ analytics.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="teamprojectApp.analytics.transaction">Transaction</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'teamprojectApp.Transaction.' + analytics.transaction }}">{{ analytics.transaction }}</span>
+        </dd>
+        <dt><span jhiTranslate="teamprojectApp.analytics.amount">Amount</span></dt>
+        <dd>
+          <span>{{ analytics.amount }}</span>
+        </dd>
+        <dt><span jhiTranslate="teamprojectApp.analytics.date">Date</span></dt>
+        <dd>
+          <span>{{ analytics.date | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="teamprojectApp.analytics.user">User</span></dt>
+        <dd>
+          <span>{{ analytics.user?.login }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/analytics', analytics.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+{
+  "teamprojectApp": {
+    "analytics": {
+      "home": {
+        "title": "Analytics",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Maak een nieuwe Analytics",
+        "createOrEditLabel": "Maak of wijzig een Analytics",
+        "notFound": "No Analytics found"
+      },
+      "created": "A new Analytics is created with identifier {{ param }}",
+      "updated": "A Analytics is updated with identifier {{ param }}",
+      "deleted": "A Analytics is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Analytics {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Analytics"
+      },
+      "id": "ID",
+      "transaction": "Transaction",
+      "amount": "Amount",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}
