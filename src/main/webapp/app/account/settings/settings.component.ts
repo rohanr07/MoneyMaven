@@ -50,8 +50,6 @@ export class SettingsComponent implements OnInit {
   ngOnInit(): void {
     const options = {
       time: '0.5s',
-      mixColor: '#fff',
-      backgroundColor: '#fff',
       saveInCookies: true,
       autoMatchOsTheme: true,
       toggleable: true,
