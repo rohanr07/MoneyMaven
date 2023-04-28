@@ -39,6 +39,7 @@ export class AnalyticsComponent implements OnInit {
   totalMonthlyIncome: number = 0;
   totalMonthlyExpenses: number = 0;
   profit_loss_statement: String = '';
+  load_no = 0;
 
   currentUser: any;
 
@@ -191,11 +192,14 @@ export class AnalyticsComponent implements OnInit {
 
     setTimeout(() => this.drawpieChart(), 100);
     this.drawpieChart();
-    this.reloadPage();
+    this.load_no++;
+    if (this.load_no < 1) {
+      this.reloadPage();
+    }
   }
 
   reloadPage() {
-    window.location.href = window.location.href;
+    location.reload();
   }
 
   profit_loss_statement_fn() {
