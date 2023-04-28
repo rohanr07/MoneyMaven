@@ -40,31 +40,30 @@ export class SettingsComponent implements OnInit {
 
   constructor(
     private accountService: AccountService,
+
     private translateService: TranslateService,
+
     private router: Router,
     private loginService: LoginService
   ) {}
 
   ngOnInit(): void {
     const options = {
-      bottom: '64px',
-      right: 'unset',
-      left: '32px',
       time: '0.5s',
       mixColor: '#fff',
       backgroundColor: '#fff',
-      buttonColorDark: '#100f2c',
-      buttonColorLight: '#fff',
       saveInCookies: true,
-      label: '🌓',
       autoMatchOsTheme: true,
       toggleable: true,
     };
+
     const darkmode = new Darkmode(options);
-    // @ts-ignore
-    document.querySelector('#toggle-darkmode').addEventListener('click', () => {
-      darkmode.toggle();
-    });
+    const toggleDarkMode = document.querySelector('#toggle-darkmode');
+    if (toggleDarkMode) {
+      toggleDarkMode.addEventListener('click', () => {
+        darkmode.toggle();
+      });
+    }
 
     this.accountService.identity().subscribe(account => {
       if (account) {
@@ -93,5 +92,26 @@ export class SettingsComponent implements OnInit {
   }
   loadChangePassword() {
     this.router.navigate(['/account/password']);
+  }
+
+  increaseFontSize(): void {
+    // Get the current font size of the root element
+    const currentSize = parseInt(getComputedStyle(document.documentElement).fontSize);
+
+    // Calculate the new font size
+    const newSize = currentSize + 1;
+
+    // Set the new font size on the root element
+    document.documentElement.style.fontSize = newSize + 'px';
+  }
+  decreaseFontSize(): void {
+    // Get the current font size of the root element
+    const currentSize = parseInt(getComputedStyle(document.documentElement).fontSize);
+
+    // Calculate the new font size
+    const newSize = currentSize - 1;
+
+    // Set the new font size on the root element
+    document.documentElement.style.fontSize = newSize + 'px';
   }
 }
