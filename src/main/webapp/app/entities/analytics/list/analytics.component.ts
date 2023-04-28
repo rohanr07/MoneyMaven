@@ -191,6 +191,11 @@ export class AnalyticsComponent implements OnInit {
 
     setTimeout(() => this.drawpieChart(), 100);
     this.drawpieChart();
+    this.reloadPage();
+  }
+
+  reloadPage() {
+    window.location.href = window.location.href;
   }
 
   profit_loss_statement_fn() {
