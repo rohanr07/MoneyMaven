@@ -13,24 +13,22 @@
 
   <br />
   <br />
-
+  <h3>
+    <span *ngIf="totalMonthlyIncome > totalMonthlyExpenses"
+      >Cheers, you are in a profit of <b>${{ totalMonthlyIncome - totalMonthlyExpenses }} </b>this Month
+    </span>
+    <span *ngIf="totalMonthlyIncome < totalMonthlyExpenses"
+      >you are in a loss of: <b>${{ totalMonthlyIncome - totalMonthlyExpenses }} </b>this Month
+    </span>
+    <br />
+    Your this Month's total Income is <b>${{ totalMonthlyIncome }}</b
+    >, and your total expenses are <b>${{ totalMonthlyExpenses }}.</b>
+    <br />
+    On Average you spend <b>${{ Math.round(totalMonthlyIncome / 30 - totalMonthlyExpenses / 30) }}</b> each day
+  </h3>
+  <br />
+  <br />
   <div style="background-color: #fff; height: 340px; width: 100%; display: flex; justify-content: space-around">
-    <h3>
-      Your this Month's total Income is <b>${{ totalMonthlyIncome }}</b
-      >, and your total expenses are <b>${{ totalMonthlyExpenses }}</b>
-      <br />
-      <span *ngIf="totalMonthlyIncome > totalMonthlyExpenses"
-        >Cheers, you are in a profit of <b>${{ totalMonthlyIncome - totalMonthlyExpenses }} </b>this Month
-      </span>
-      <span *ngIf="totalMonthlyIncome < totalMonthlyExpenses"
-        >you are in a loss of: <b>${{ totalMonthlyIncome - totalMonthlyExpenses }} </b>this Month
-      </span>
-
-      <br />
-
-      On Average you spend <b>${{ Math.round(totalMonthlyIncome / 30 - totalMonthlyExpenses / 30) }}</b> each day
-    </h3>
-
     <div
       #pieChart
       style="
