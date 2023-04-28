@@ -7,6 +7,7 @@ import { Account } from 'app/core/auth/account.model';
 import { LANGUAGES } from 'app/config/language.constants';
 import { LoginService } from '../../login/login.service';
 const initialAccount: Account = {} as Account;
+import Darkmode from 'darkmode-js';
 
 @Component({
   selector: 'jhi-settings',
@@ -39,12 +40,31 @@ export class SettingsComponent implements OnInit {
 
   constructor(
     private accountService: AccountService,
+
     private translateService: TranslateService,
+
     private router: Router,
     private loginService: LoginService
   ) {}
 
   ngOnInit(): void {
+    const options = {
+      time: '0.5s',
+      mixColor: '#fff',
+      backgroundColor: '#fff',
+      saveInCookies: true,
+      autoMatchOsTheme: true,
+      toggleable: true,
+    };
+
+    const darkmode = new Darkmode(options);
+    const toggleDarkMode = document.querySelector('#toggle-darkmode');
+    if (toggleDarkMode) {
+      toggleDarkMode.addEventListener('click', () => {
+        darkmode.toggle();
+      });
+    }
+
     this.accountService.identity().subscribe(account => {
       if (account) {
         this.settingsForm.patchValue(account);
@@ -72,5 +92,26 @@ export class SettingsComponent implements OnInit {
   }
   loadChangePassword() {
     this.router.navigate(['/account/password']);
+  }
+
+  increaseFontSize(): void {
+    // Get the current font size of the root element
+    const currentSize = parseInt(getComputedStyle(document.documentElement).fontSize);
+
+    // Calculate the new font size
+    const newSize = currentSize + 1;
+
+    // Set the new font size on the root element
+    document.documentElement.style.fontSize = newSize + 'px';
+  }
+  decreaseFontSize(): void {
+    // Get the current font size of the root element
+    const currentSize = parseInt(getComputedStyle(document.documentElement).fontSize);
+
+    // Calculate the new font size
+    const newSize = currentSize - 1;
+
+    // Set the new font size on the root element
+    document.documentElement.style.fontSize = newSize + 'px';
   }
 }
