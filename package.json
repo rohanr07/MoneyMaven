@@ -100,6 +100,8 @@
     "@ngx-translate/core": "14.0.0",
     "@ngx-translate/http-loader": "7.0.0",
     "@popperjs/core": "2.11.6",
+    "accessibility": "^4.5.6",
+    "accessibilityjs": "^1.1.2",
     "bootstrap": "5.2.0",
     "chart.js": "^4.2.1",
     "darkreader": "^4.9.58",

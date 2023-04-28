@@ -8,6 +8,7 @@ import { LANGUAGES } from 'app/config/language.constants';
 import { LoginService } from '../../login/login.service';
 const initialAccount: Account = {} as Account;
 import * as DarkReader from 'darkreader';
+import { Accessibility } from 'accessibility';
 
 @Component({
   selector: 'jhi-settings',
@@ -17,6 +18,8 @@ export class SettingsComponent implements OnInit {
   isDarkModeEnabled = false;
   success = false;
   languages = LANGUAGES;
+
+  accessibility: Accessibility | undefined;
 
   settingsForm = new FormGroup({
     firstName: new FormControl(initialAccount.firstName, {
@@ -49,6 +52,7 @@ export class SettingsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.accessibility = new Accessibility();
     this.accountService.identity().subscribe(account => {
       if (account) {
         this.settingsForm.patchValue(account);
