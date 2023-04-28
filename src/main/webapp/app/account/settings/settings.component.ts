@@ -7,13 +7,14 @@ import { Account } from 'app/core/auth/account.model';
 import { LANGUAGES } from 'app/config/language.constants';
 import { LoginService } from '../../login/login.service';
 const initialAccount: Account = {} as Account;
-import Darkmode from 'darkmode-js';
+import * as DarkReader from 'darkreader';
 
 @Component({
   selector: 'jhi-settings',
   templateUrl: './settings.component.html',
 })
 export class SettingsComponent implements OnInit {
+  isDarkModeEnabled = false;
   success = false;
   languages = LANGUAGES;
 
@@ -48,21 +49,6 @@ export class SettingsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const options = {
-      time: '0.5s',
-      saveInCookies: true,
-      autoMatchOsTheme: true,
-      toggleable: true,
-    };
-
-    const darkmode = new Darkmode(options);
-    const toggleDarkMode = document.querySelector('#toggle-darkmode');
-    if (toggleDarkMode) {
-      toggleDarkMode.addEventListener('click', () => {
-        darkmode.toggle();
-      });
-    }
-
     this.accountService.identity().subscribe(account => {
       if (account) {
         this.settingsForm.patchValue(account);
@@ -111,5 +97,16 @@ export class SettingsComponent implements OnInit {
 
     // Set the new font size on the root element
     document.documentElement.style.fontSize = newSize + 'px';
+  }
+
+  toggleDarkMode() {
+    this.isDarkModeEnabled = !this.isDarkModeEnabled;
+
+    if (this.isDarkModeEnabled) {
+      // @ts-ignore
+      DarkReader.enable();
+    } else {
+      DarkReader.disable();
+    }
   }
 }
