@@ -1,0 +1,27 @@
+{
+  "teamprojectApp": {
+    "analytics": {
+      "home": {
+        "title": "Analytics",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Krijo një të ri Analytics",
+        "createOrEditLabel": "Krijo ose përpuno një Analytics",
+        "notFound": "No Analytics found"
+      },
+      "created": "Një Analytics i ri u krijua me identifikues {{ param }}",
+      "updated": "Një Analytics u përpunua me identifikues {{ param }}",
+      "deleted": "Një Analytics u fshi me identifikues {{ param }}",
+      "delete": {
+        "question": "Jeni i sigurtë që doni të fshini Analytics {{ id }}?"
+      },
+      "detail": {
+        "title": "Analytics"
+      },
+      "id": "ID",
+      "transaction": "Transaction",
+      "amount": "Amount",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

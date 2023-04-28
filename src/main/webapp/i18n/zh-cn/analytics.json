@@ -1,0 +1,27 @@
+{
+  "teamprojectApp": {
+    "analytics": {
+      "home": {
+        "title": "Analytics",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Analytics",
+        "createOrEditLabel": "创建或编辑 Analytics",
+        "notFound": "No Analytics found"
+      },
+      "created": "Analytics {{ param }} 创建成功",
+      "updated": "Analytics {{ param }} 更新成功",
+      "deleted": "Analytics {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Analytics {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Analytics"
+      },
+      "id": "ID",
+      "transaction": "Transaction",
+      "amount": "Amount",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

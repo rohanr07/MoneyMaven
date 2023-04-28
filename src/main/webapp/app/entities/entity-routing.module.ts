@@ -15,6 +15,11 @@ import { RouterModule } from '@angular/router';
         loadChildren: () => import('./income/income.module').then(m => m.IncomeModule),
       },
 
+      {
+        path: 'analytics',
+        data: { pageTitle: 'teamprojectApp.analytics.home.title' },
+        loadChildren: () => import('./analytics/analytics.module').then(m => m.AnalyticsModule),
+      },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
   ],

@@ -1,0 +1,27 @@
+{
+  "teamprojectApp": {
+    "analytics": {
+      "home": {
+        "title": "Analytics",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Ստեղծել նոր Analytics",
+        "createOrEditLabel": "Ստեղծել կամ փոփոխել Analytics",
+        "notFound": "No Analytics found"
+      },
+      "created": "Նոր Analytics ստեղծված է {{ param }} նունացուցիչով",
+      "updated": "Analytics թարմացվաց է {{ param }} նունացուցիչով",
+      "deleted": "Analytics հեռացված է {{ param }}  նունացուցիչով",
+      "delete": {
+        "question": "Դուք վստահ ե՞ք, որ ցանկանում եք հեռացնել Analytics {{ id }}?"
+      },
+      "detail": {
+        "title": "Analytics"
+      },
+      "id": "ID",
+      "transaction": "Transaction",
+      "amount": "Amount",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "teamprojectApp": {
+    "analytics": {
+      "home": {
+        "title": "Analytics",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Analytics",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Analytics",
+        "notFound": "No Analytics found"
+      },
+      "created": "Một Analytics mới được tạo với định danh {{ param }}",
+      "updated": "Một Analytics cập nhật với định danh {{ param }}",
+      "deleted": "Một Analytics đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Analytics {{ id }}?"
+      },
+      "detail": {
+        "title": "Analytics"
+      },
+      "id": "ID",
+      "transaction": "Transaction",
+      "amount": "Amount",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

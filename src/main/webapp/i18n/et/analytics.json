@@ -1,0 +1,27 @@
+{
+  "teamprojectApp": {
+    "analytics": {
+      "home": {
+        "title": "Analytics",
+        "refreshListLabel": "Värskenda nimekirja",
+        "createLabel": "Lisa uus Analytics",
+        "createOrEditLabel": "Lisa või muuda Analytics",
+        "notFound": "Ei leitud ühtegi Analytics"
+      },
+      "created": "Uus Analytics on loodud identifikaatoriga {{ param }}",
+      "updated": "Analytics identifikaatoriga {{ param }} on muudetud",
+      "deleted": "Analytics identifikaatoriga {{ param }} on kustutatud",
+      "delete": {
+        "question": "Kas olete kindel, et soovite kustutada Analytics {{ id }}?"
+      },
+      "detail": {
+        "title": "Analytics"
+      },
+      "id": "ID",
+      "transaction": "Transaction",
+      "amount": "Amount",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

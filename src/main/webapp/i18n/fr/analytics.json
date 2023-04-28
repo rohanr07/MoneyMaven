@@ -1,0 +1,27 @@
+{
+  "teamprojectApp": {
+    "analytics": {
+      "home": {
+        "title": "Analytics",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Analytics",
+        "createOrEditLabel": "Créer ou éditer un Analytics",
+        "notFound": "Aucun Analytics trouvé"
+      },
+      "created": "Un nouveau Analytics a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Analytics avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Analytics avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Analytics {{ id }} ?"
+      },
+      "detail": {
+        "title": "Analytics"
+      },
+      "id": "ID",
+      "transaction": "Transaction",
+      "amount": "Amount",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

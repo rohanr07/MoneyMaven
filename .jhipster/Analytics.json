@@ -1,33 +1,27 @@
 {
   "applications": "*",
-  "changelogDate": "20230422090546",
+  "changelogDate": "20230428032254",
   "dto": "no",
   "embedded": false,
-  "entityTableName": "income",
+  "entityTableName": "analytics",
   "fields": [
     {
-      "fieldName": "amount",
-      "fieldType": "Double",
-      "fieldValidateRules": ["required"]
+      "fieldName": "transaction",
+      "fieldType": "Transaction",
+      "fieldValues": "Earned,Spend"
     },
     {
-      "fieldName": "companyName",
-      "fieldType": "String",
-      "fieldValidateRules": ["required"]
+      "fieldName": "amount",
+      "fieldType": "Double"
     },
     {
       "fieldName": "date",
       "fieldType": "LocalDate"
-    },
-    {
-      "fieldName": "currency",
-      "fieldType": "Currency",
-      "fieldValues": "GBP,USD,Euros"
     }
   ],
   "fluentMethods": true,
   "jpaMetamodelFiltering": false,
-  "name": "Income",
+  "name": "Analytics",
   "pagination": "no",
   "readOnly": false,
   "relationships": [

@@ -1,0 +1,27 @@
+{
+  "teamprojectApp": {
+    "analytics": {
+      "home": {
+        "title": "Analytics",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Analytics",
+        "createOrEditLabel": "Creeare sau editare Analytics",
+        "notFound": "No Analytics found"
+      },
+      "created": "A fost creată o nouă entitate Analytics cu identificatorul {{ param }}",
+      "updated": "Analytics cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Analytics cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Analytics {{ id }}?"
+      },
+      "detail": {
+        "title": "Analytics"
+      },
+      "id": "ID",
+      "transaction": "Transaction",
+      "amount": "Amount",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

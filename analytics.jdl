@@ -1,0 +1,15 @@
+entity Analytics{
+    transaction Transaction,
+    amount Double,
+    date LocalDate
+
+}
+enum Transaction{
+    Earned
+    Spend
+}
+
+relationship ManyToOne {
+    Analytics{user(login)} to User
+}
+

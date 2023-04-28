@@ -1,0 +1,27 @@
+{
+  "teamprojectApp": {
+    "analytics": {
+      "home": {
+        "title": "Analytics",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Analytics-ஐ உருவாக்கு",
+        "createOrEditLabel": "Analytics -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Analytics found"
+      },
+      "created": "Analytics புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Analytics மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Analytics நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Analytics {{ id }}?"
+      },
+      "detail": {
+        "title": "Analytics"
+      },
+      "id": "ID",
+      "transaction": "Transaction",
+      "amount": "Amount",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

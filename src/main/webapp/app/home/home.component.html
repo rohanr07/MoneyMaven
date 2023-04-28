@@ -15,7 +15,9 @@
         <ul class="menu">
           <li>Main</li>
           <li class="dashboard_btn">Dashboard</li>
-          <li>Reports</li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/analytics">Analytics</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/income">Income</a>
           </li>
@@ -33,8 +35,7 @@
             <a class="nav-link" (click)="loadSettings()">Settings</a>
           </li>
         </ul>
-        <pre><span class="alert alert-success" id="home-logged-message" *ngIf="account" jhiTranslate="home.logged.message" [translateValues]="{ username: account.login }"
-        >User: "{{ account.login }}".</span></pre>
+        <p *ngIf="account">Logged in as {{ account.login }}</p>
       </div>
     </div>
   </div>

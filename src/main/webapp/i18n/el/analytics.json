@@ -1,0 +1,27 @@
+{
+  "teamprojectApp": {
+    "analytics": {
+      "home": {
+        "title": "Analytics",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Δημιουργήστε ένα νέο Analytics",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Analytics",
+        "notFound": "No Analytics found"
+      },
+      "created": "Ένα νέο Analytics έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα Analytics έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα Analytics έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Analytics {{ id }};"
+      },
+      "detail": {
+        "title": "Analytics"
+      },
+      "id": "ID",
+      "transaction": "Transaction",
+      "amount": "Amount",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}

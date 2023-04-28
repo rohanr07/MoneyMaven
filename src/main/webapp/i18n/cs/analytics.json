@@ -1,0 +1,27 @@
+{
+  "teamprojectApp": {
+    "analytics": {
+      "home": {
+        "title": "Analytics",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Vytvořit Analytics",
+        "createOrEditLabel": "Vytvořit nebo upravit Analytics",
+        "notFound": "No Analytics found"
+      },
+      "created": "Byl vytvořen potomek entity Analytics s identifikátorem {{ param }}",
+      "updated": "Potomek entity Analytics s identifikátorem {{ param }} byl upravený.",
+      "deleted": "Potomek entity Analytics s identifikátorem {{ param }} bol smazaný.",
+      "delete": {
+        "question": "Jste si jisti, že chcete smazat Analytics {{ id }}?"
+      },
+      "detail": {
+        "title": "Analytics"
+      },
+      "id": "ID",
+      "transaction": "Transaction",
+      "amount": "Amount",
+      "date": "Date",
+      "user": "User"
+    }
+  }
+}
