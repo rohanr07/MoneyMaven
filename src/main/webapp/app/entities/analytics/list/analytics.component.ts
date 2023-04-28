@@ -17,6 +17,7 @@ import { INFINITY } from 'chart.js/helpers';
 import { AccountService } from '../../../core/auth/account.service';
 import _default from 'chart.js/dist/core/core.interaction';
 import dataset = _default.modes.dataset;
+import { IExpenses } from '../../expenses/expenses.model';
 
 @Component({
   selector: 'jhi-analytics',
@@ -24,6 +25,7 @@ import dataset = _default.modes.dataset;
 })
 export class AnalyticsComponent implements OnInit {
   analytics?: IAnalytics[];
+
   // chartCanvas: any;
   @ViewChild('chartCanvas', { static: true }) chartCanvas!: ElementRef;
   @ViewChild('opera', { static: true }) opera!: ElementRef;
@@ -32,6 +34,7 @@ export class AnalyticsComponent implements OnInit {
   @ViewChild('chartdiv', { static: true }) chartDiv!: ElementRef;
   @ViewChild('focusdiv', { static: true }) focusDiv!: ElementRef;
   @ViewChild('pieChart', { static: true }) pieChartDiv!: ElementRef;
+  @ViewChild('catagoryWisePieChart', { static: true }) catagoryWisePieChartDiv!: ElementRef;
 
   public lineChartType: ChartType = 'line';
   isLoading = false;
@@ -45,6 +48,21 @@ export class AnalyticsComponent implements OnInit {
 
   predicate = 'id';
   ascending = true;
+
+  fixed_expenses?: IExpenses[];
+  totalFixedExpense: number = 0;
+  variable_expenses?: IExpenses[];
+  totalVariableExpense: number = 0;
+  necessary_expenses?: IExpenses[];
+  totalNecessaryExpense: number = 0;
+  discretionary_expenses?: IExpenses[];
+  totalDiscreationaryExpense: number = 0;
+  savingInvestment_expenses?: IExpenses[];
+  totalSavingInvestmentExpense: number = 0;
+  other_expenses?: IExpenses[];
+  totalOtherExpense: number = 0;
+  debt_expenses?: IExpenses[];
+  totalDebtExpense: number = 0;
 
   constructor(
     protected expensesService: ExpensesService,
@@ -63,34 +81,64 @@ export class AnalyticsComponent implements OnInit {
 
   trackId = (_index: number, item: IAnalytics): number => this.analyticsService.getAnalyticsIdentifier(item);
 
-  drawpieChart() {
-    const data = {
-      labels: ['Expenses', 'Income'],
-      datasets: [
-        {
-          label: 'Doughnut',
-          data: [this.totalMonthlyExpenses, this.totalMonthlyIncome],
-          backgroundColor: ['rgba(255, 99, 132, 1)', 'rgb(35,255,0)'],
-          hoverOffset: 4,
-        },
-      ],
-    };
+  ngOnInit(): void {
+    this.load();
+    this.getTotalMonthlyIncome();
+    this.getTotalMonthlyExpenses();
+    this.profit_loss_statement_fn();
+    this.fillTotalCatagoryWiseExpenses();
+    this.drawChart();
 
-    const canvas = document.createElement('canvas');
-    canvas.style.height = '100%';
-    canvas.style.width = '100%';
-
-    // this.chartDiv.nativeElement.remove();
-    if (this.pieChartDiv.nativeElement.children.length == 1) {
-      this.pieChartDiv.nativeElement.children[0].remove();
+    setTimeout(() => this.drawpieChart(), 200);
+    this.drawpieChart();
+    this.load_no++;
+    if (this.load_no < 1) {
+      this.reloadPage();
     }
-    this.pieChartDiv.nativeElement.appendChild(canvas);
-    canvas.getContext('2d');
-    const chart = new Chart(canvas, {
-      type: 'doughnut',
-      data: data,
+  }
+
+  fillTotalCatagoryWiseExpenses() {
+    this.expensesService.query().subscribe(res => {
+      this.fixed_expenses = res.body?.filter(expense => expense.expenseType === 'Fixed');
+      // @ts-ignore
+      this.totalFixedExpense = this.fixed_expenses.reduce((total, expense) => total + expense.amount, 0);
+    });
+    this.expensesService.query().subscribe(res => {
+      this.necessary_expenses = res.body?.filter(expense => expense.expenseType === 'Necessary');
+      // @ts-ignore
+      this.totalNecessaryExpense = this.necessary_expenses.reduce((total, expense) => total + expense.amount, 0);
+    });
+    this.expensesService.query().subscribe(res => {
+      this.discretionary_expenses = res.body?.filter(expense => expense.expenseType === 'Discretionary');
+      // @ts-ignore
+      this.totalDiscreationaryExpense = this.discretionary_expenses.reduce((total, expense) => total + expense.amount, 0);
+    });
+    this.expensesService.query().subscribe(res => {
+      this.savingInvestment_expenses = res.body?.filter(expense => expense.expenseType === 'Savings & Investment');
+      // @ts-ignore
+      this.totalSavingInvestmentExpense = this.savingInvestment_expenses.reduce((total, expense) => total + expense.amount, 0);
+    });
+    this.expensesService.query().subscribe(res => {
+      this.variable_expenses = res.body?.filter(expense => expense.expenseType === 'Variable');
+      // @ts-ignore
+      this.totalVariableExpense = this.variable_expenses.reduce((total, expense) => total + expense.amount, 0);
+    });
+    this.expensesService.query().subscribe(res => {
+      this.debt_expenses = res.body?.filter(expense => expense.expenseType === 'Debt Repayment');
+      // @ts-ignore
+      this.totalDebtExpense = this.debt_expenses.reduce((total, expense) => total + expense.amount, 0);
+    });
+    this.expensesService.query().subscribe(res => {
+      this.other_expenses = res.body?.filter(expense => expense.expenseType === 'Other');
+      // @ts-ignore
+      this.totalOtherExpense = this.other_expenses.reduce((total, expense) => total + expense.amount, 0);
     });
   }
+
+  reloadPage() {
+    location.reload();
+  }
+
   drawChart() {
     // Retrieve data from the database, for example:
     this.expensesService.getExpenses().subscribe(data => {
@@ -124,10 +172,10 @@ export class AnalyticsComponent implements OnInit {
 
               animations: {
                 tension: {
-                  duration: 2000,
-                  easing: 'easeInElastic',
+                  duration: 3000,
+                  easing: 'Linear',
                   from: 0.5,
-                  to: 1,
+                  to: 0.8,
                   loop: true,
                 },
               },
@@ -139,10 +187,10 @@ export class AnalyticsComponent implements OnInit {
 
               animations: {
                 tension: {
-                  duration: 2000,
-                  easing: 'easeInElastic',
+                  duration: 3000,
+                  easing: 'Linear',
                   from: 0.5,
-                  to: 1,
+                  to: 0.8,
                   loop: true,
                 },
               },
@@ -181,27 +229,77 @@ export class AnalyticsComponent implements OnInit {
       });
     });
   }
+  drawpieChart() {
+    const data = {
+      labels: ['Expenses', 'Income'],
+      datasets: [
+        {
+          label: '$',
+          data: [this.totalMonthlyExpenses, this.totalMonthlyIncome],
+          backgroundColor: ['rgba(255, 99, 132, 1)', 'rgb(35,255,0)'],
+          hoverOffset: 4,
+        },
+      ],
+    };
 
-  ngOnInit(): void {
-    this.load();
-    this.getTotalMonthlyIncome();
-    this.getTotalMonthlyExpenses();
-    this.profit_loss_statement_fn();
+    const canvas = document.createElement('canvas');
+    canvas.style.height = '100%';
+    canvas.style.width = '100%';
 
-    this.drawChart();
-
-    setTimeout(() => this.drawpieChart(), 100);
-    this.drawpieChart();
-    this.load_no++;
-    if (this.load_no < 1) {
-      this.reloadPage();
+    // this.chartDiv.nativeElement.remove();
+    if (this.pieChartDiv.nativeElement.children.length == 1) {
+      this.pieChartDiv.nativeElement.children[0].remove();
     }
-  }
+    this.pieChartDiv.nativeElement.appendChild(canvas);
+    canvas.getContext('2d');
+    const chart = new Chart(canvas, {
+      type: 'doughnut',
+      data: data,
+    });
 
-  reloadPage() {
-    location.reload();
-  }
+    const catagoryWiseData = {
+      labels: ['Fixed', 'Variable', 'Necessary', 'Discretionary', 'Saving & Investment', 'Debt', 'Other'],
+      datasets: [
+        {
+          label: '$',
+          data: [
+            this.totalFixedExpense,
+            this.totalVariableExpense,
+            this.totalNecessaryExpense,
+            this.totalDiscreationaryExpense,
+            this.totalSavingInvestmentExpense,
+            this.totalDebtExpense,
+            this.totalOtherExpense,
+          ],
+          backgroundColor: [
+            'rgba(255,107,53,1)',
+            'rgba(4,231,98,1)',
+            'rgba(245,183,0,1)',
+            'rgba(0,161,228,1)',
+            'rgba(220,0,115,1)',
+            'rgba(162,136,227,1)',
+            'rgba(225,170,125,1)',
+          ],
+          hoverOffset: 4,
+        },
+      ],
+    };
 
+    const canvas2 = document.createElement('canvas');
+    canvas2.style.height = '100%';
+    canvas2.style.width = '100%';
+
+    // this.chartDiv.nativeElement.remove();
+    if (this.catagoryWisePieChartDiv.nativeElement.children.length == 1) {
+      this.catagoryWisePieChartDiv.nativeElement.children[0].remove();
+    }
+    this.catagoryWisePieChartDiv.nativeElement.appendChild(canvas2);
+    canvas2.getContext('2d');
+    const chart2 = new Chart(canvas2, {
+      type: 'doughnut',
+      data: catagoryWiseData,
+    });
+  }
   profit_loss_statement_fn() {
     if (this.totalMonthlyIncome > this.totalMonthlyExpenses) {
       let saved = this.totalMonthlyIncome - this.totalMonthlyExpenses;

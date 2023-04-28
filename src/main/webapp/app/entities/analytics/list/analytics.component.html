@@ -1,4 +1,5 @@
 <div>
+  <!--  <h1>{{totalFixedExpense}} , {{totalDebtExpense}}, {{totalVariableExpense}} , {{totalNecessaryExpense}}, {{totalDiscreationaryExpense}}, {{totalSavingInvestmentExpense}}, {{totalOtherExpense}}</h1>-->
   <h2 id="page-heading" data-cy="AnalyticsHeading">
     <span><strong>Analytics</strong></span>
 
@@ -13,8 +14,8 @@
   <br />
   <br />
 
-  <div style="background-color: #fff; height: 340px; width: 100%; display: flex; justify-content: center; justify-items: center">
-    <h2>
+  <div style="background-color: #fff; height: 340px; width: 100%; display: flex; justify-content: space-around">
+    <h3>
       Your this Month's total Income is <b>${{ totalMonthlyIncome }}</b
       >, and your total expenses are <b>${{ totalMonthlyExpenses }}</b>
       <br />
@@ -28,11 +29,31 @@
       <br />
 
       On Average you spend <b>${{ Math.round(totalMonthlyIncome / 30 - totalMonthlyExpenses / 30) }}</b> each day
-    </h2>
+    </h3>
 
     <div
       #pieChart
-      style="background-color: #fff; height: 340px; width: 100%; display: flex; justify-content: center; justify-items: center"
+      style="
+        background-color: #fff;
+        height: 340px;
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        justify-items: right;
+        margin-right: 100px;
+      "
+    ></div>
+    <div
+      #catagoryWisePieChart
+      style="
+        background-color: #fff;
+        height: 340px;
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        justify-items: right;
+        margin-right: 100px;
+      "
     ></div>
   </div>
   <hr style="box-shadow: 5px 3px #888888" />
