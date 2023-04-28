@@ -52,7 +52,13 @@ export class SettingsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.accessibility = new Accessibility();
+    var options = {
+      icon: {
+        useEmojis: true,
+      },
+    };
+
+    this.accessibility = new Accessibility(options);
     this.accountService.identity().subscribe(account => {
       if (account) {
         this.settingsForm.patchValue(account);
