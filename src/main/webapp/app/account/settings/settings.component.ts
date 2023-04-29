@@ -7,15 +7,26 @@ import { Account } from 'app/core/auth/account.model';
 import { LANGUAGES } from 'app/config/language.constants';
 import { LoginService } from '../../login/login.service';
 const initialAccount: Account = {} as Account;
-import Darkmode from 'darkmode-js';
+import * as DarkReader from 'darkreader';
+import { Accessibility } from 'accessibility';
+import * as FileSaver from 'file-saver';
+import { IncomeService } from 'app/entities/income/service/income.service';
+import { ExpensesService } from 'app/entities/expenses/service/expenses.service';
 
 @Component({
   selector: 'jhi-settings',
   templateUrl: './settings.component.html',
 })
 export class SettingsComponent implements OnInit {
+  isDarkModeEnabled = false;
   success = false;
   languages = LANGUAGES;
+
+  accessibility: Accessibility | undefined;
+
+  incomes: any[] = [];
+
+  expenses: any[] = [];
 
   settingsForm = new FormGroup({
     firstName: new FormControl(initialAccount.firstName, {
@@ -40,31 +51,31 @@ export class SettingsComponent implements OnInit {
 
   constructor(
     private accountService: AccountService,
-
     private translateService: TranslateService,
-
     private router: Router,
+
+    protected incomeService: IncomeService,
+
+    protected expensesService: ExpensesService,
     private loginService: LoginService
   ) {}
 
   ngOnInit(): void {
-    const options = {
-      time: '0.5s',
-      mixColor: '#fff',
-      backgroundColor: '#fff',
-      saveInCookies: true,
-      autoMatchOsTheme: true,
-      toggleable: true,
+    this.incomeService.getIncome().subscribe(data => {
+      this.incomes = data;
+    });
+
+    this.expensesService.getExpenses().subscribe(data => {
+      this.expenses = data;
+    });
+
+    var options = {
+      icon: {
+        useEmojis: true,
+      },
     };
 
-    const darkmode = new Darkmode(options);
-    const toggleDarkMode = document.querySelector('#toggle-darkmode');
-    if (toggleDarkMode) {
-      toggleDarkMode.addEventListener('click', () => {
-        darkmode.toggle();
-      });
-    }
-
+    this.accessibility = new Accessibility(options);
     this.accountService.identity().subscribe(account => {
       if (account) {
         this.settingsForm.patchValue(account);
@@ -86,32 +97,51 @@ export class SettingsComponent implements OnInit {
       }
     });
   }
+
   logout(): void {
     this.loginService.logout();
     this.router.navigate(['']);
   }
+
   loadChangePassword() {
     this.router.navigate(['/account/password']);
   }
 
-  increaseFontSize(): void {
-    // Get the current font size of the root element
-    const currentSize = parseInt(getComputedStyle(document.documentElement).fontSize);
+  toggleDarkMode() {
+    this.isDarkModeEnabled = !this.isDarkModeEnabled;
 
-    // Calculate the new font size
-    const newSize = currentSize + 1;
-
-    // Set the new font size on the root element
-    document.documentElement.style.fontSize = newSize + 'px';
+    if (this.isDarkModeEnabled) {
+      // @ts-ignore
+      DarkReader.enable();
+    } else {
+      DarkReader.disable();
+    }
   }
-  decreaseFontSize(): void {
-    // Get the current font size of the root element
-    const currentSize = parseInt(getComputedStyle(document.documentElement).fontSize);
 
-    // Calculate the new font size
-    const newSize = currentSize - 1;
+  exportToCSV() {
+    const csvData = this.convertToCSV(this.incomes);
+    const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
+    const fileName = 'income-data.csv';
+    FileSaver.saveAs(blob, fileName);
+  }
 
-    // Set the new font size on the root element
-    document.documentElement.style.fontSize = newSize + 'px';
+  exportToCSVExp() {
+    const csvData = this.convertToCSV(this.expenses);
+    const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
+    const fileName = 'expense-data.csv';
+    FileSaver.saveAs(blob, fileName);
+  }
+  convertToCSV(data: any[]) {
+    const separator = ',';
+    const keys = Object.keys(data[0]);
+    const csvHeader = keys.join(separator);
+    const csvRows = data.map(item => {
+      return keys
+        .map(key => {
+          return item[key];
+        })
+        .join(separator);
+    });
+    return `${csvHeader}\n${csvRows.join('\n')}`;
   }
 }

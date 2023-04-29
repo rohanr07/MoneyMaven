@@ -74,11 +74,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     //protected accountService: AccountService
 
     protected incomeService: IncomeService //protected activatedRoute: ActivatedRoute,
-  ) //public router: Router,
+  ) // public router: Router,
   //protected sortService: SortService,
   //protected modalService: NgbModal,
   //protected accountService: AccountService
-
   {}
 
   //trackId = (_index: number, item: IExpenses): number => this.expensesService.getExpensesIdentifier(item);
@@ -93,9 +92,10 @@ export class HomeComponent implements OnInit, OnDestroy {
       .subscribe(account => (this.account = account));
     this.accountService.identity().subscribe(account => {
       this.currentUser = account;
+
+      this.getTotalMonthlyExpenses();
+      this.getTotalMonthlyIncome2();
     });
-    this.getTotalMonthlyExpenses();
-    this.getTotalMonthlyIncome2();
   }
 
   login(): void {

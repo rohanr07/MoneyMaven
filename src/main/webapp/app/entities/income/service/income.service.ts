@@ -45,6 +45,7 @@ export class IncomeService {
       .put<RestIncome>(`${this.resourceUrl}/${this.getIncomeIdentifier(income)}`, copy, { observe: 'response' })
       .pipe(map(res => this.convertResponseFromServer(res)));
   }
+
   getIncome(): Observable<IIncome[]> {
     return this.http.get<IIncome[]>(this.resourceUrl);
   }
