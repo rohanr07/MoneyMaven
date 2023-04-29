@@ -13,8 +13,7 @@
       <div id="sideMenuFixed"></div>
       <div id="sidecontent">
         <ul class="menu">
-          <li>Main</li>
-          <li class="dashboard_btn">Dashboard</li>
+          <li>Dashboard</li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/analytics">Analytics</a>
           </li>
@@ -72,7 +71,7 @@
       </div>
 
       <img
-        src="../../content/images/dashboard_image.jpg"
+        src="../../content/images/dashboard_transparent_image.png"
         alt="Money Maven dashboard picture showing a bag with the dollar symbol of it and dollar coins beside it"
         width="600"
         height="600"
@@ -101,11 +100,7 @@
     </div>
 
     <div class="alert alert-warning" *ngSwitchCase="false">
-      <a class="alert-link" (click)="login()">Log in</a
-      ><span>
-        - you can try the default accounts:<br />- Administrator (login="admin" and password="admin") <br />- User (login="user" and
-        password="user").</span
-      >
+      <a class="alert-link" (click)="login()">Log in</a>
     </div>
 
     <div class="alert alert-warning" *ngSwitchCase="false">
