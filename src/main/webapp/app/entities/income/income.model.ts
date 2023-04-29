@@ -1,6 +1,7 @@
 import dayjs from 'dayjs/esm';
 import { IUser } from 'app/entities/user/user.model';
 import { Currency } from 'app/entities/enumerations/currency.model';
+import * as FileSaver from 'file-saver';
 
 export interface IIncome {
   id: number;

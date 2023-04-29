@@ -9,6 +9,9 @@ import { LoginService } from '../../login/login.service';
 const initialAccount: Account = {} as Account;
 import * as DarkReader from 'darkreader';
 import { Accessibility } from 'accessibility';
+import * as FileSaver from 'file-saver';
+import { IncomeService } from 'app/entities/income/service/income.service';
+import { ExpensesService } from 'app/entities/expenses/service/expenses.service';
 
 @Component({
   selector: 'jhi-settings',
@@ -20,6 +23,10 @@ export class SettingsComponent implements OnInit {
   languages = LANGUAGES;
 
   accessibility: Accessibility | undefined;
+
+  incomes: any[] = [];
+
+  expenses: any[] = [];
 
   settingsForm = new FormGroup({
     firstName: new FormControl(initialAccount.firstName, {
@@ -44,14 +51,24 @@ export class SettingsComponent implements OnInit {
 
   constructor(
     private accountService: AccountService,
-
     private translateService: TranslateService,
-
     private router: Router,
+
+    protected incomeService: IncomeService,
+
+    protected expensesService: ExpensesService,
     private loginService: LoginService
   ) {}
 
   ngOnInit(): void {
+    this.incomeService.getIncome().subscribe(data => {
+      this.incomes = data;
+    });
+
+    this.expensesService.getExpenses().subscribe(data => {
+      this.expenses = data;
+    });
+
     var options = {
       icon: {
         useEmojis: true,
@@ -80,33 +97,14 @@ export class SettingsComponent implements OnInit {
       }
     });
   }
+
   logout(): void {
     this.loginService.logout();
     this.router.navigate(['']);
   }
+
   loadChangePassword() {
     this.router.navigate(['/account/password']);
-  }
-
-  increaseFontSize(): void {
-    // Get the current font size of the root element
-    const currentSize = parseInt(getComputedStyle(document.documentElement).fontSize);
-
-    // Calculate the new font size
-    const newSize = currentSize + 1;
-
-    // Set the new font size on the root element
-    document.documentElement.style.fontSize = newSize + 'px';
-  }
-  decreaseFontSize(): void {
-    // Get the current font size of the root element
-    const currentSize = parseInt(getComputedStyle(document.documentElement).fontSize);
-
-    // Calculate the new font size
-    const newSize = currentSize - 1;
-
-    // Set the new font size on the root element
-    document.documentElement.style.fontSize = newSize + 'px';
   }
 
   toggleDarkMode() {
@@ -118,5 +116,32 @@ export class SettingsComponent implements OnInit {
     } else {
       DarkReader.disable();
     }
+  }
+
+  exportToCSV() {
+    const csvData = this.convertToCSV(this.incomes);
+    const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
+    const fileName = 'income-data.csv';
+    FileSaver.saveAs(blob, fileName);
+  }
+
+  exportToCSVExp() {
+    const csvData = this.convertToCSV(this.expenses);
+    const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
+    const fileName = 'expense-data.csv';
+    FileSaver.saveAs(blob, fileName);
+  }
+  convertToCSV(data: any[]) {
+    const separator = ',';
+    const keys = Object.keys(data[0]);
+    const csvHeader = keys.join(separator);
+    const csvRows = data.map(item => {
+      return keys
+        .map(key => {
+          return item[key];
+        })
+        .join(separator);
+    });
+    return `${csvHeader}\n${csvRows.join('\n')}`;
   }
 }
