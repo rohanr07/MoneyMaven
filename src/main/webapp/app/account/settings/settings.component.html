@@ -25,7 +25,7 @@
         </style>
 
         <img src="../../content/images/persons.png" alt="Image description" width="25" height="25" />
-        <a class="personal-information-link">Personal Information</a><br /><br />
+        <span class="personal-information-link">Personal Information</span><br /><br />
 
         <form name="form" role="form" (ngSubmit)="save()" [formGroup]="settingsForm" *ngIf="settingsForm.value.login" novalidate>
           <div class="mb-3">
@@ -160,6 +160,12 @@
               </small>
             </div>
           </div>
+          <div class="mb-3" *ngIf="languages && languages.length > 0">
+            <label for="langKey" jhiTranslate="settings.form.language">Language</label>
+            <select class="form-control" id="langKey" name="langKey" formControlName="langKey" data-cy="langKey">
+              <option *ngFor="let language of languages" [value]="language">{{ language | findLanguageFromKey }}</option>
+            </select>
+          </div>
           <button
             type="submit"
             [disabled]="settingsForm.invalid"
@@ -169,36 +175,19 @@
           >
             Save</button
           ><br /><br />
-          <img src="../../content/images/security.png" alt="Image description" width="25" height="25" />
-          <a class="password-link" (click)="loadChangePassword()">Change Password</a><br /><br />
-          <img src="../../content/images/globe.png" alt="Image description" width="25" height="25" />
-          <a class="language-preferences-link">Language Preferences</a><br />
-          <div class="mb-3" *ngIf="languages && languages.length > 0">
-            <label for="langKey" jhiTranslate="settings.form.language">Language</label>
-            <select class="form-control" id="langKey" name="langKey" formControlName="langKey" data-cy="langKey">
-              <option *ngFor="let language of languages" [value]="language">{{ language | findLanguageFromKey }}</option>
-            </select>
-          </div>
-
-          <button
-            type="submit"
-            [disabled]="settingsForm.invalid"
-            class="btn btn-primary"
-            jhiTranslate="settings.form.button"
-            data-cy="submit"
-          >
-            Save
-          </button>
         </form>
 
+        <img src="../../content/images/security.png" alt="Image description" width="25" height="25" />
+        <button class="password-link" style="border: none" (click)="loadChangePassword()">Change Password</button><br /><br />
+
         <img src="../../content/images/pallete.png" alt="Image description" width="25" height="25" />
-        <a class="change-theme-link" (click)="toggleDarkMode()">Change Theme</a><br /><br />
+        <button class="change-theme-link" style="border: none" (click)="toggleDarkMode()">Change Theme</button><br /><br />
         <img src="../../content/images/income.png" alt="Image description" width="25" height="25" />
-        <a class="change-theme-link" (click)="exportToCSV()">Export Income Data</a><br /><br />
+        <button class="change-theme-link" style="border: none" (click)="exportToCSV()">Export Income Data</button><br /><br />
         <img src="../../content/images/expense.png" alt="Image description" width="25" height="25" />
-        <a class="change-theme-link" (click)="exportToCSVExp()">Export Expense Data</a><br /><br />
+        <button class="change-theme-link" style="border: none" (click)="exportToCSVExp()">Export Expense Data</button><br /><br />
         <img src="../../content/images/logout.png" alt="Image description" width="25" height="25" />
-        <a class="log-out-link" (click)="logout()" id="logout" data-cy="logout">LogOut </a><br /><br />
+        <button class="log-out-link" style="border: none" (click)="logout()" id="logout" data-cy="logout">LogOut</button><br /><br />
       </div>
     </div>
   </div>
