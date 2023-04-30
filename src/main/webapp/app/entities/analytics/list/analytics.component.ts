@@ -162,6 +162,11 @@ export class AnalyticsComponent implements OnInit {
               label: 'Expenses',
               tension: 0.4,
               data: y,
+              fill: {
+                target: 'origin',
+                above: 'rgb(255, 99, 132, 0.2)', // shading color
+              },
+
               backgroundColor: 'rgba(255, 99, 132, 0.2)',
               borderColor: 'rgba(255, 99, 132, 1)',
               hoverBorderWidth: 7,
@@ -172,7 +177,7 @@ export class AnalyticsComponent implements OnInit {
 
               animations: {
                 tension: {
-                  duration: 3000,
+                  duration: 5000,
                   easing: 'Linear',
                   from: 0.5,
                   to: 0.8,
@@ -183,11 +188,15 @@ export class AnalyticsComponent implements OnInit {
             {
               label: 'Incomes',
               data: b,
+              fill: {
+                target: 'origin',
+                above: 'rgba(35,255,0,0.2)', // shading color
+              },
               maxBarThickness: 20,
 
               animations: {
                 tension: {
-                  duration: 3000,
+                  duration: 5000,
                   easing: 'Linear',
                   from: 0.5,
                   to: 0.8,
