@@ -15,16 +15,15 @@
   <br />
   <h3 style="padding: 40px">
     <span *ngIf="totalMonthlyIncome > totalMonthlyExpenses"
-      >Cheers, you are in a profit of <b>${{ totalMonthlyIncome - totalMonthlyExpenses }} </b>this Month
+      >Your profit this month is <b>${{ totalMonthlyIncome - totalMonthlyExpenses }} </b>
     </span>
     <span *ngIf="totalMonthlyIncome < totalMonthlyExpenses"
-      >you are in a loss of: <b>${{ totalMonthlyIncome - totalMonthlyExpenses }} </b>this Month
+      >You are in a loss of <b>${{ totalMonthlyIncome - totalMonthlyExpenses }} </b>this month
     </span>
     <br />
-    Your this Month's total Income is <b>${{ totalMonthlyIncome }}</b
-    >, and your total expenses are <b>${{ totalMonthlyExpenses }}.</b>
+    Your monthly income is <b>${{ totalMonthlyIncome }}</b> and your monthly expense is <b>${{ totalMonthlyExpenses }}</b>
     <br />
-    On Average you spend <b>${{ Math.round(totalMonthlyIncome / 30 - totalMonthlyExpenses / 30) }}</b> each day
+    On average you spend <b>${{ Math.round(totalMonthlyIncome / 30 - totalMonthlyExpenses / 30) }}</b> each day
   </h3>
   <br />
   <br />
@@ -57,20 +56,24 @@
   <hr style="box-shadow: 5px 3px #888888" />
 
   <br />
+  <<<<<<< HEAD
   <h3 style="padding: 30px">Graphical Representation of your Financial Data is as follows:</h3>
+  =======
+  <h5>Your Financial Data</h5>
+  >>>>>>> 5e92334e88f4ccfccebbc9728eec597cc559e0f0
   <br />
   <div #chartdiv style="padding: 0px 25px 25px 25px; background-color: #fff; height: 700px; width: 100%"></div>
   <br />
   <div style="display: flex; flex-direction: row; justify-content: space-around">
     <div style="display: flex; flex-direction: row; gap: 10px">
-      <h5>Change Graph Type:</h5>
+      <h5>Change Graph Type</h5>
 
       <button #line class="btn btn-secondary" (click)="line_fn()">Line</button>
       <button #bar class="btn btn-secondary" (click)="bar_fn()">Bar</button>
     </div>
     <div style="display: flex; flex-direction: row; gap: 10px"></div>
     <div style="display: flex; flex-direction: row; gap: 10px">
-      <h5>No of points:</h5>
+      <h5>No. of points</h5>
       <button #no_5 class="btn btn-outline-secondary" (click)="five_points_fn()">5</button>
       <button #no_10 class="btn btn-outline-secondary" (click)="ten_points_fn()">10</button>
       <button #no_20 class="btn btn-outline-secondary" (click)="twenty_points_fn()">20</button>
