@@ -1,7 +1,7 @@
 <div>
   <!--  <h1>{{totalFixedExpense}} , {{totalDebtExpense}}, {{totalVariableExpense}} , {{totalNecessaryExpense}}, {{totalDiscreationaryExpense}}, {{totalSavingInvestmentExpense}}, {{totalOtherExpense}}</h1>-->
   <h2 id="page-heading" data-cy="AnalyticsHeading">
-    <span><strong>Analytics</strong></span>
+    <span style="position: absolute; margin-top: 15px; margin-left: 40px; font-family: 'Lato', sans-serif"><strong>Analytics</strong></span>
 
     <div class="d-flex justify-content-end">
       <!--      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">-->
@@ -13,7 +13,7 @@
 
   <br />
   <br />
-  <h3>
+  <h3 style="padding: 40px">
     <span *ngIf="totalMonthlyIncome > totalMonthlyExpenses"
       >Cheers, you are in a profit of <b>${{ totalMonthlyIncome - totalMonthlyExpenses }} </b>this Month
     </span>
@@ -57,9 +57,9 @@
   <hr style="box-shadow: 5px 3px #888888" />
 
   <br />
-  <h5>Graphical Representation of your Financial Data</h5>
+  <h3 style="padding: 30px">Graphical Representation of your Financial Data is as follows:</h3>
   <br />
-  <div #chartdiv style="background-color: #fff; height: 700px; width: 100%"></div>
+  <div #chartdiv style="padding: 0px 25px 25px 25px; background-color: #fff; height: 700px; width: 100%"></div>
   <br />
   <div style="display: flex; flex-direction: row; justify-content: space-around">
     <div style="display: flex; flex-direction: row; gap: 10px">

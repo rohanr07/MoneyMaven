@@ -7,6 +7,7 @@ Navbar
 
 .navbar-version {
   font-size: 0.65em;
+  //color: $navbar-dark-color;
   color: $navbar-dark-color;
 }
 
@@ -31,8 +32,8 @@ Navbar
 Logo styles
 ========================================================================== */
 .logo-img {
-  height: 70px;
-  width: 70px;
+  height: 100px;
+  width: 100px;
   display: inline-block;
   vertical-align: middle;
   background: url('../../../content/images/MoneyMavenlogo.png') no-repeat center center;
