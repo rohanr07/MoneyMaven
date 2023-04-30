@@ -18,10 +18,10 @@
       >Your profit this month is <b>${{ totalMonthlyIncome - totalMonthlyExpenses }} </b>
     </span>
     <span *ngIf="totalMonthlyIncome < totalMonthlyExpenses"
-      >you are in a loss of: <b>${{ totalMonthlyIncome - totalMonthlyExpenses }} </b>this Month
+      >You are in a loss of <b>${{ totalMonthlyIncome - totalMonthlyExpenses }} </b>this month
     </span>
     <br />
-    Your monthly income is <b>${{ totalMonthlyIncome }}</b> and monthly expense is <b>${{ totalMonthlyExpenses }}</b>
+    Your monthly income is <b>${{ totalMonthlyIncome }}</b> and your monthly expense is <b>${{ totalMonthlyExpenses }}</b>
     <br />
     On average you spend <b>${{ Math.round(totalMonthlyIncome / 30 - totalMonthlyExpenses / 30) }}</b> each day
   </h3>
