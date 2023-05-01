@@ -70,7 +70,8 @@ class CategoryResourceIT {
         Category category = new Category()
             .categoryId(DEFAULT_CATEGORY_ID)
             .categoryName(DEFAULT_CATEGORY_NAME)
-            .description(DEFAULT_DESCRIPTION);
+            .description(DEFAULT_DESCRIPTION)
+            .budgetTarget(DEFAULT_BUDGET_TARGET);
         return category;
     }
 
@@ -84,7 +85,8 @@ class CategoryResourceIT {
         Category category = new Category()
             .categoryId(UPDATED_CATEGORY_ID)
             .categoryName(UPDATED_CATEGORY_NAME)
-            .description(UPDATED_DESCRIPTION);
+            .description(UPDATED_DESCRIPTION)
+            .budgetTarget(UPDATED_BUDGET_TARGET);
         return category;
     }
 
@@ -109,6 +111,7 @@ class CategoryResourceIT {
         assertThat(testCategory.getCategoryId()).isEqualTo(DEFAULT_CATEGORY_ID);
         assertThat(testCategory.getCategoryName()).isEqualTo(DEFAULT_CATEGORY_NAME);
         assertThat(testCategory.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
+        assertThat(testCategory.getBudgetTarget()).isEqualByComparingTo(DEFAULT_BUDGET_TARGET);
     }
 
     @Test
@@ -148,6 +151,23 @@ class CategoryResourceIT {
 
     @Test
     @Transactional
+    void checkBudgetTargetIsRequired() throws Exception {
+        int databaseSizeBeforeTest = categoryRepository.findAll().size();
+        // set the field null
+        category.setBudgetTarget(null);
+
+        // Create the Category, which fails.
+
+        restCategoryMockMvc
+            .perform(post(ENTITY_API_URL).contentType(MediaType.APPLICATION_JSON).content(TestUtil.convertObjectToJsonBytes(category)))
+            .andExpect(status().isBadRequest());
+
+        List<Category> categoryList = categoryRepository.findAll();
+        assertThat(categoryList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
     void getAllCategories() throws Exception {
         // Initialize the database
         categoryRepository.saveAndFlush(category);
@@ -160,7 +180,8 @@ class CategoryResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(category.getId().intValue())))
             .andExpect(jsonPath("$.[*].categoryId").value(hasItem(DEFAULT_CATEGORY_ID.intValue())))
             .andExpect(jsonPath("$.[*].categoryName").value(hasItem(DEFAULT_CATEGORY_NAME)))
-            .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION)));
+            .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION)))
+            .andExpect(jsonPath("$.[*].budgetTarget").value(hasItem(sameNumber(DEFAULT_BUDGET_TARGET))));
     }
 
     @Test
@@ -177,7 +198,8 @@ class CategoryResourceIT {
             .andExpect(jsonPath("$.id").value(category.getId().intValue()))
             .andExpect(jsonPath("$.categoryId").value(DEFAULT_CATEGORY_ID.intValue()))
             .andExpect(jsonPath("$.categoryName").value(DEFAULT_CATEGORY_NAME))
-            .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION));
+            .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION))
+            .andExpect(jsonPath("$.budgetTarget").value(sameNumber(DEFAULT_BUDGET_TARGET)));
     }
 
     @Test
@@ -199,7 +221,11 @@ class CategoryResourceIT {
         Category updatedCategory = categoryRepository.findById(category.getId()).get();
         // Disconnect from session so that the updates on updatedCategory are not directly saved in db
         em.detach(updatedCategory);
-        updatedCategory.categoryId(UPDATED_CATEGORY_ID).categoryName(UPDATED_CATEGORY_NAME).description(UPDATED_DESCRIPTION);
+        updatedCategory
+            .categoryId(UPDATED_CATEGORY_ID)
+            .categoryName(UPDATED_CATEGORY_NAME)
+            .description(UPDATED_DESCRIPTION)
+            .budgetTarget(UPDATED_BUDGET_TARGET);
 
         restCategoryMockMvc
             .perform(
@@ -216,6 +242,7 @@ class CategoryResourceIT {
         assertThat(testCategory.getCategoryId()).isEqualTo(UPDATED_CATEGORY_ID);
         assertThat(testCategory.getCategoryName()).isEqualTo(UPDATED_CATEGORY_NAME);
         assertThat(testCategory.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
+        assertThat(testCategory.getBudgetTarget()).isEqualByComparingTo(UPDATED_BUDGET_TARGET);
     }
 
     @Test
@@ -286,6 +313,8 @@ class CategoryResourceIT {
         Category partialUpdatedCategory = new Category();
         partialUpdatedCategory.setId(category.getId());
 
+        partialUpdatedCategory.categoryId(UPDATED_CATEGORY_ID).budgetTarget(UPDATED_BUDGET_TARGET);
+
         restCategoryMockMvc
             .perform(
                 patch(ENTITY_API_URL_ID, partialUpdatedCategory.getId())
@@ -301,6 +330,7 @@ class CategoryResourceIT {
         assertThat(testCategory.getCategoryId()).isEqualTo(UPDATED_CATEGORY_ID);
         assertThat(testCategory.getCategoryName()).isEqualTo(DEFAULT_CATEGORY_NAME);
         assertThat(testCategory.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
+        assertThat(testCategory.getBudgetTarget()).isEqualByComparingTo(UPDATED_BUDGET_TARGET);
     }
 
     @Test
@@ -315,7 +345,11 @@ class CategoryResourceIT {
         Category partialUpdatedCategory = new Category();
         partialUpdatedCategory.setId(category.getId());
 
-        partialUpdatedCategory.categoryId(UPDATED_CATEGORY_ID).categoryName(UPDATED_CATEGORY_NAME).description(UPDATED_DESCRIPTION);
+        partialUpdatedCategory
+            .categoryId(UPDATED_CATEGORY_ID)
+            .categoryName(UPDATED_CATEGORY_NAME)
+            .description(UPDATED_DESCRIPTION)
+            .budgetTarget(UPDATED_BUDGET_TARGET);
 
         restCategoryMockMvc
             .perform(
@@ -332,6 +366,7 @@ class CategoryResourceIT {
         assertThat(testCategory.getCategoryId()).isEqualTo(UPDATED_CATEGORY_ID);
         assertThat(testCategory.getCategoryName()).isEqualTo(UPDATED_CATEGORY_NAME);
         assertThat(testCategory.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
+        assertThat(testCategory.getBudgetTarget()).isEqualByComparingTo(UPDATED_BUDGET_TARGET);
     }
 
     @Test

@@ -23,6 +23,9 @@
             <column name="description" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="budget_target" type="decimal(21,2)">
+                <constraints nullable="false" />
+            </column>
             <column name="budget_id" type="bigint">
                 <constraints nullable="true" />
             </column>
@@ -50,13 +53,8 @@
             <column name="category_id" type="numeric"/>
             <column name="category_name" type="string"/>
             <column name="description" type="string"/>
+            <column name="budget_target" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>
-
-    <changeSet id="20230501055720-1-update" author="kylie">
-        <dropColumn tableName="category" columnName="budget_target"/>
-    </changeSet>
-
-
 </databaseChangeLog>

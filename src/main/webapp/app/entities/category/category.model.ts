@@ -5,6 +5,7 @@ export interface ICategory {
   categoryId?: number | null;
   categoryName?: string | null;
   description?: string | null;
+  budgetTarget?: number | null;
   budget?: Pick<IBudget, 'id'> | null;
 }
 

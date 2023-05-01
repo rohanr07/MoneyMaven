@@ -21,6 +21,7 @@ type CategoryFormGroupContent = {
   categoryId: FormControl<ICategory['categoryId']>;
   categoryName: FormControl<ICategory['categoryName']>;
   description: FormControl<ICategory['description']>;
+  budgetTarget: FormControl<ICategory['budgetTarget']>;
   budget: FormControl<ICategory['budget']>;
 };
 
@@ -46,6 +47,9 @@ export class CategoryFormService {
         validators: [Validators.required],
       }),
       description: new FormControl(categoryRawValue.description),
+      budgetTarget: new FormControl(categoryRawValue.budgetTarget, {
+        validators: [Validators.required],
+      }),
       budget: new FormControl(categoryRawValue.budget),
     });
   }

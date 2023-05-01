@@ -23,6 +23,9 @@ describe('Category Form Service', () => {
             categoryId: expect.any(Object),
             categoryName: expect.any(Object),
             description: expect.any(Object),
+            budgetTarget: expect.any(Object),
+            budget: expect.any(Object),
+            budget: expect.any(Object),
           })
         );
       });
@@ -36,6 +39,9 @@ describe('Category Form Service', () => {
             categoryId: expect.any(Object),
             categoryName: expect.any(Object),
             description: expect.any(Object),
+            budgetTarget: expect.any(Object),
+            budget: expect.any(Object),
+            budget: expect.any(Object),
           })
         );
       });
