@@ -21,6 +21,7 @@
       "categoryId": "Category Id",
       "categoryName": "Category Name",
       "description": "Description",
+      "budgetTarget": "Budget Target",
       "transactions": "Transactions",
       "budget": "Budget",
       "budget": "Budget"
