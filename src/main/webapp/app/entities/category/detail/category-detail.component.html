@@ -1,7 +1,9 @@
 <div class="d-flex justify-content-center">
   <div class="col-8">
     <div *ngIf="category">
-      <h2 data-cy="categoryDetailsHeading"><span jhiTranslate="teamprojectApp.category.detail.title">Category</span></h2>
+      <h2 data-cy="categoryDetailsHeading">
+        <span><Strong>Category</Strong></span>
+      </h2>
 
       <hr />
 
@@ -14,14 +16,34 @@
         <dd>
           <span>{{ category.id }}</span>
         </dd>
-        <dt><span jhiTranslate="teamprojectApp.category.name">Name</span></dt>
+        <dt><span jhiTranslate="teamprojectApp.category.categoryId">Category Id</span></dt>
         <dd>
-          <span>{{ category.name }}</span>
+          <span>{{ category.categoryId }}</span>
+        </dd>
+        <dt><span jhiTranslate="teamprojectApp.category.categoryName">Category Name</span></dt>
+        <dd>
+          <span>{{ category.categoryName }}</span>
         </dd>
         <dt><span jhiTranslate="teamprojectApp.category.description">Description</span></dt>
         <dd>
           <span>{{ category.description }}</span>
         </dd>
+        <dt><span jhiTranslate="teamprojectApp.category.budgetTarget">Budget Target</span></dt>
+        <dd>
+          <span>{{ category.budgetTarget }}</span>
+        </dd>
+        <!--<dt><span jhiTranslate="teamprojectApp.category.budget">Budget</span></dt>
+        <dd>
+          <div *ngIf="category.budget">
+            <a [routerLink]="['/budget', category.budget.id, 'view']">{{ category.budget.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="teamprojectApp.category.budget">Budget</span></dt>
+        <dd>
+          <div *ngIf="category.budget">
+            <a [routerLink]="['/budget', category.budget.id, 'view']">{{ category.budget.id }}</a>
+          </div>
+        </dd>-->
       </dl>
 
       <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

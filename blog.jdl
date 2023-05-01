@@ -1,5 +1,3 @@
-
-
 entity FinancialTransaction {
     description String required,
     amount Double required,
@@ -7,15 +5,18 @@ entity FinancialTransaction {
 }
 
 entity Category {
-    name String required,
-    description String
+    categoryId Long,
+    categoryName String required,
+    description String,
+    budgetTarget BigDecimal required
 }
 
 entity Budget {
-    name String required,
-    startDate Instant required,
-    endDate Instant required,
-    limit Double required
+    budgetId Long,
+    monthOfTheTime LocalDate required,
+    totalBudget BigDecimal required,
+    totalSpent BigDecimal required,
+    amountRemaining BigDecimal required
 }
 
 entity FinancialAccount {
@@ -32,12 +33,13 @@ enum AccountType {
     CREDIT_CARD
 }
 
-
-
 relationship OneToMany {
     FinancialAccount{transactions} to FinancialTransaction{account}
     Category{transactions} to FinancialTransaction{category}
     Budget{transactions} to FinancialTransaction{budget}
+    Budget{category} to Category{budget}
 }
 
-
+relationship ManyToOne {
+    Category{budget} to Budget
+}

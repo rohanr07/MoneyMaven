@@ -125,17 +125,20 @@ public class BudgetResource {
         Optional<Budget> result = budgetRepository
             .findById(budget.getId())
             .map(existingBudget -> {
-                if (budget.getName() != null) {
-                    existingBudget.setName(budget.getName());
+                if (budget.getBudgetId() != null) {
+                    existingBudget.setBudgetId(budget.getBudgetId());
                 }
-                if (budget.getStartDate() != null) {
-                    existingBudget.setStartDate(budget.getStartDate());
+                if (budget.getMonthOfTheTime() != null) {
+                    existingBudget.setMonthOfTheTime(budget.getMonthOfTheTime());
                 }
-                if (budget.getEndDate() != null) {
-                    existingBudget.setEndDate(budget.getEndDate());
+                if (budget.getTotalBudget() != null) {
+                    existingBudget.setTotalBudget(budget.getTotalBudget());
                 }
-                if (budget.getLimit() != null) {
-                    existingBudget.setLimit(budget.getLimit());
+                if (budget.getTotalSpent() != null) {
+                    existingBudget.setTotalSpent(budget.getTotalSpent());
+                }
+                if (budget.getAmountRemaining() != null) {
+                    existingBudget.setAmountRemaining(budget.getAmountRemaining());
                 }
 
                 return existingBudget;

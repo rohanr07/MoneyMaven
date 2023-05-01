@@ -1,8 +1,13 @@
 <div>
   <h2 id="page-heading" data-cy="BudgetHeading">
-    <span jhiTranslate="teamprojectApp.budget.home.title">Budgets</span>
+    <span><Strong>Budgets</Strong></span>
 
     <div class="d-flex justify-content-end">
+      <button id="jh-go-to-categories" data-cy="goToCategoriesButton" class="btn btn-info me-2" [routerLink]="['/category']">
+        <fa-icon icon="list"></fa-icon>
+        <span>Categories</span>
+      </button>
+
       <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
         <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
         <span jhiTranslate="teamprojectApp.budget.home.refreshListLabel">Refresh list</span>
@@ -19,6 +24,46 @@
       </button>
     </div>
   </h2>
+
+  <style>
+    table.my-table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    table.my-table th,
+    table.my-table td {
+      border: none;
+      padding: 10px;
+      text-align: left;
+    }
+    table.my-table th {
+      font-size: 20px;
+      font-weight: normal;
+      width: 20%;
+    }
+    table.my-table td {
+      font-size: 25px;
+      font-weight: bold;
+      width: 50%;
+      padding: 5px 10px;
+    }
+  </style>
+
+  <table class="my-table">
+    <tr>
+      <th>Total Budget for the Month:</th>
+      <td>{{ totalBudgetForMonth }}</td>
+    </tr>
+    <tr>
+      <th>Total Spending for the Month:</th>
+      <td>{{ totalSpendingForMonth }}</td>
+    </tr>
+    <tr>
+      <th>Amount Remaining for the Month:</th>
+      <td>{{ amountRemainingForMonth }}</td>
+    </tr>
+  </table>
+  <br />
 
   <jhi-alert-error></jhi-alert-error>
 
@@ -38,27 +83,33 @@
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
-          <th scope="col" jhiSortBy="name">
+          <th scope="col" jhiSortBy="budgetId">
             <div class="d-flex">
-              <span jhiTranslate="teamprojectApp.budget.name">Name</span>
+              <span jhiTranslate="teamprojectApp.budget.budgetId">Budget Id</span>
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
-          <th scope="col" jhiSortBy="startDate">
+          <th scope="col" jhiSortBy="monthOfTheTime">
             <div class="d-flex">
-              <span jhiTranslate="teamprojectApp.budget.startDate">Start Date</span>
+              <span jhiTranslate="teamprojectApp.budget.monthOfTheTime">Month</span>
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
-          <th scope="col" jhiSortBy="endDate">
+          <th scope="col" jhiSortBy="totalBudget">
             <div class="d-flex">
-              <span jhiTranslate="teamprojectApp.budget.endDate">End Date</span>
+              <span jhiTranslate="teamprojectApp.budget.totalBudget">Total Budget</span>
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
-          <th scope="col" jhiSortBy="limit">
+          <th scope="col" jhiSortBy="totalSpent">
             <div class="d-flex">
-              <span jhiTranslate="teamprojectApp.budget.limit">Limit</span>
+              <span jhiTranslate="teamprojectApp.budget.totalSpent">Total Spent</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="amountRemaining">
+            <div class="d-flex">
+              <span jhiTranslate="teamprojectApp.budget.amountRemaining">Amount Remaining</span>
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
@@ -70,10 +121,11 @@
           <td>
             <a [routerLink]="['/budget', budget.id, 'view']">{{ budget.id }}</a>
           </td>
-          <td>{{ budget.name }}</td>
-          <td>{{ budget.startDate | formatMediumDatetime }}</td>
-          <td>{{ budget.endDate | formatMediumDatetime }}</td>
-          <td>{{ budget.limit }}</td>
+          <td>{{ budget.budgetId }}</td>
+          <td>{{ budget.monthOfTheTime | formatMediumDate }}</td>
+          <td>{{ budget.totalBudget }}</td>
+          <td>{{ budget.totalSpent }}</td>
+          <td>{{ budget.amountRemaining }}</td>
           <td class="text-end">
             <div class="btn-group">
               <button type="submit" [routerLink]="['/budget', budget.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">

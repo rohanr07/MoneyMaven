@@ -2,7 +2,8 @@ package uk.ac.bham.teamproject.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
-import java.time.Instant;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.*;
@@ -27,26 +28,34 @@ public class Budget implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @NotNull
-    @Column(name = "name", nullable = false)
-    private String name;
+    @Column(name = "budget_id")
+    private Long budgetId;
 
     @NotNull
-    @Column(name = "start_date", nullable = false)
-    private Instant startDate;
+    @Column(name = "month_of_the_time", nullable = false)
+    private LocalDate monthOfTheTime;
 
     @NotNull
-    @Column(name = "end_date", nullable = false)
-    private Instant endDate;
+    @Column(name = "total_budget", precision = 21, scale = 2, nullable = false)
+    private BigDecimal totalBudget;
 
     @NotNull
-    @Column(name = "jhi_limit", nullable = false)
-    private Double limit;
+    @Column(name = "total_spent", precision = 21, scale = 2, nullable = false)
+    private BigDecimal totalSpent;
+
+    @NotNull
+    @Column(name = "amount_remaining", precision = 21, scale = 2, nullable = false)
+    private BigDecimal amountRemaining;
 
     @OneToMany(mappedBy = "budget")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(value = { "account", "category", "budget" }, allowSetters = true)
     private Set<FinancialTransaction> transactions = new HashSet<>();
+
+    @OneToMany(mappedBy = "budget")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "transactions", "budget", "budget" }, allowSetters = true)
+    private Set<Category> categories = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -63,56 +72,69 @@ public class Budget implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return this.name;
+    public Long getBudgetId() {
+        return this.budgetId;
     }
 
-    public Budget name(String name) {
-        this.setName(name);
+    public Budget budgetId(Long budgetId) {
+        this.setBudgetId(budgetId);
         return this;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setBudgetId(Long budgetId) {
+        this.budgetId = budgetId;
     }
 
-    public Instant getStartDate() {
-        return this.startDate;
+    public LocalDate getMonthOfTheTime() {
+        return this.monthOfTheTime;
     }
 
-    public Budget startDate(Instant startDate) {
-        this.setStartDate(startDate);
+    public Budget monthOfTheTime(LocalDate monthOfTheTime) {
+        this.setMonthOfTheTime(monthOfTheTime);
         return this;
     }
 
-    public void setStartDate(Instant startDate) {
-        this.startDate = startDate;
+    public void setMonthOfTheTime(LocalDate monthOfTheTime) {
+        this.monthOfTheTime = monthOfTheTime;
     }
 
-    public Instant getEndDate() {
-        return this.endDate;
+    public BigDecimal getTotalBudget() {
+        return this.totalBudget;
     }
 
-    public Budget endDate(Instant endDate) {
-        this.setEndDate(endDate);
+    public Budget totalBudget(BigDecimal totalBudget) {
+        this.setTotalBudget(totalBudget);
         return this;
     }
 
-    public void setEndDate(Instant endDate) {
-        this.endDate = endDate;
+    public void setTotalBudget(BigDecimal totalBudget) {
+        this.totalBudget = totalBudget;
     }
 
-    public Double getLimit() {
-        return this.limit;
+    public BigDecimal getTotalSpent() {
+        return this.totalSpent;
     }
 
-    public Budget limit(Double limit) {
-        this.setLimit(limit);
+    public Budget totalSpent(BigDecimal totalSpent) {
+        this.setTotalSpent(totalSpent);
         return this;
     }
 
-    public void setLimit(Double limit) {
-        this.limit = limit;
+    public void setTotalSpent(BigDecimal totalSpent) {
+        this.totalSpent = totalSpent;
+    }
+
+    public BigDecimal getAmountRemaining() {
+        return this.amountRemaining;
+    }
+
+    public Budget amountRemaining(BigDecimal amountRemaining) {
+        this.setAmountRemaining(amountRemaining);
+        return this;
+    }
+
+    public void setAmountRemaining(BigDecimal amountRemaining) {
+        this.amountRemaining = amountRemaining;
     }
 
     public Set<FinancialTransaction> getTransactions() {
@@ -146,6 +168,37 @@ public class Budget implements Serializable {
         return this;
     }
 
+    public Set<Category> getCategories() {
+        return this.categories;
+    }
+
+    public void setCategories(Set<Category> categories) {
+        if (this.categories != null) {
+            this.categories.forEach(i -> i.setBudget(null));
+        }
+        if (categories != null) {
+            categories.forEach(i -> i.setBudget(this));
+        }
+        this.categories = categories;
+    }
+
+    public Budget categories(Set<Category> categories) {
+        this.setCategories(categories);
+        return this;
+    }
+
+    public Budget addCategory(Category category) {
+        this.categories.add(category);
+        category.setBudget(this);
+        return this;
+    }
+
+    public Budget removeCategory(Category category) {
+        this.categories.remove(category);
+        category.setBudget(null);
+        return this;
+    }
+
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -170,10 +223,11 @@ public class Budget implements Serializable {
     public String toString() {
         return "Budget{" +
             "id=" + getId() +
-            ", name='" + getName() + "'" +
-            ", startDate='" + getStartDate() + "'" +
-            ", endDate='" + getEndDate() + "'" +
-            ", limit=" + getLimit() +
+            ", budgetId=" + getBudgetId() +
+            ", monthOfTheTime='" + getMonthOfTheTime() + "'" +
+            ", totalBudget=" + getTotalBudget() +
+            ", totalSpent=" + getTotalSpent() +
+            ", amountRemaining=" + getAmountRemaining() +
             "}";
     }
 }

@@ -2,6 +2,7 @@ package uk.ac.bham.teamproject.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.*;
@@ -26,17 +27,28 @@ public class Category implements Serializable {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "category_id")
+    private Long categoryId;
+
     @NotNull
-    @Column(name = "name", nullable = false)
-    private String name;
+    @Column(name = "category_name", nullable = false)
+    private String categoryName;
 
     @Column(name = "description")
     private String description;
+
+    @NotNull
+    @Column(name = "budget_target", precision = 21, scale = 2, nullable = false)
+    private BigDecimal budgetTarget;
 
     @OneToMany(mappedBy = "category")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(value = { "account", "category", "budget" }, allowSetters = true)
     private Set<FinancialTransaction> transactions = new HashSet<>();
+
+    @ManyToOne
+    @JsonIgnoreProperties(value = { "transactions", "categories" }, allowSetters = true)
+    private Budget budget;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -53,17 +65,30 @@ public class Category implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return this.name;
+    public Long getCategoryId() {
+        return this.categoryId;
     }
 
-    public Category name(String name) {
-        this.setName(name);
+    public Category categoryId(Long categoryId) {
+        this.setCategoryId(categoryId);
         return this;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public String getCategoryName() {
+        return this.categoryName;
+    }
+
+    public Category categoryName(String categoryName) {
+        this.setCategoryName(categoryName);
+        return this;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
     public String getDescription() {
@@ -77,6 +102,19 @@ public class Category implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public BigDecimal getBudgetTarget() {
+        return this.budgetTarget;
+    }
+
+    public Category budgetTarget(BigDecimal budgetTarget) {
+        this.setBudgetTarget(budgetTarget);
+        return this;
+    }
+
+    public void setBudgetTarget(BigDecimal budgetTarget) {
+        this.budgetTarget = budgetTarget;
     }
 
     public Set<FinancialTransaction> getTransactions() {
@@ -110,6 +148,19 @@ public class Category implements Serializable {
         return this;
     }
 
+    public Budget getBudget() {
+        return this.budget;
+    }
+
+    public void setBudget(Budget budget) {
+        this.budget = budget;
+    }
+
+    public Category budget(Budget budget) {
+        this.setBudget(budget);
+        return this;
+    }
+
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -134,8 +185,10 @@ public class Category implements Serializable {
     public String toString() {
         return "Category{" +
             "id=" + getId() +
-            ", name='" + getName() + "'" +
+            ", categoryId=" + getCategoryId() +
+            ", categoryName='" + getCategoryName() + "'" +
             ", description='" + getDescription() + "'" +
+            ", budgetTarget=" + getBudgetTarget() +
             "}";
     }
 }

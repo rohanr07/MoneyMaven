@@ -16,9 +16,11 @@ import { SortService } from 'app/shared/sort/sort.service';
 export class BudgetComponent implements OnInit {
   budgets?: IBudget[];
   isLoading = false;
-
   predicate = 'id';
   ascending = true;
+  totalBudgetForMonth: number = 0;
+  totalSpendingForMonth: number = 0;
+  amountRemainingForMonth: number = 0;
 
   constructor(
     protected budgetService: BudgetService,
@@ -78,10 +80,23 @@ export class BudgetComponent implements OnInit {
   protected onResponseSuccess(response: EntityArrayResponseType): void {
     const dataFromBody = this.fillComponentAttributesFromResponseBody(response.body);
     this.budgets = this.refineData(dataFromBody);
+
+    this.totalBudgetForMonth = 0;
+    this.totalSpendingForMonth = 0;
+    this.amountRemainingForMonth = 0;
+
+    this.budgets.forEach(budget => {
+      this.totalBudgetForMonth += budget.totalBudget ?? 0;
+      this.totalSpendingForMonth += budget.totalSpent ?? 0;
+    });
+    this.amountRemainingForMonth = this.totalBudgetForMonth - this.totalSpendingForMonth;
   }
 
   protected refineData(data: IBudget[]): IBudget[] {
-    return data.sort(this.sortService.startSort(this.predicate, this.ascending ? 1 : -1));
+    return data.sort(this.sortService.startSort(this.predicate, this.ascending ? 1 : -1)).map(budget => {
+      budget.amountRemaining = (budget.totalBudget || 0) - (budget.totalSpent || 0);
+      return budget;
+    });
   }
 
   protected fillComponentAttributesFromResponseBody(data: IBudget[] | null): IBudget[] {

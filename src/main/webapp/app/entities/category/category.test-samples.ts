@@ -2,23 +2,28 @@ import { ICategory, NewCategory } from './category.model';
 
 export const sampleWithRequiredData: ICategory = {
   id: 2529,
-  name: 'Namibia Sausages',
+  categoryName: 'Namibia Sausages',
+  budgetTarget: 77300,
 };
 
 export const sampleWithPartialData: ICategory = {
-  id: 554,
-  name: 'USB Down-sized Principal',
-  description: 'synthesizing Directives',
+  id: 87066,
+  categoryName: 'one-to-one programming PCI',
+  description: 'task-force Garden target',
+  budgetTarget: 25578,
 };
 
 export const sampleWithFullData: ICategory = {
-  id: 32315,
-  name: 'target Realigned Handmade',
-  description: 'Concrete Steel transform',
+  id: 71269,
+  categoryId: 87357,
+  categoryName: 'capacitor',
+  description: 'Computer',
+  budgetTarget: 7459,
 };
 
 export const sampleWithNewData: NewCategory = {
-  name: 'Account Utah',
+  categoryName: 'transform Mexico pixel',
+  budgetTarget: 38430,
   id: null,
 };
 

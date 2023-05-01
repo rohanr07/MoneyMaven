@@ -20,6 +20,26 @@ import { RouterModule } from '@angular/router';
         data: { pageTitle: 'teamprojectApp.analytics.home.title' },
         loadChildren: () => import('./analytics/analytics.module').then(m => m.AnalyticsModule),
       },
+      {
+        path: 'financial-transaction',
+        data: { pageTitle: 'teamprojectApp.financialTransaction.home.title' },
+        loadChildren: () => import('./financial-transaction/financial-transaction.module').then(m => m.FinancialTransactionModule),
+      },
+      {
+        path: 'category',
+        data: { pageTitle: 'teamprojectApp.category.home.title' },
+        loadChildren: () => import('./category/category.module').then(m => m.CategoryModule),
+      },
+      {
+        path: 'budget',
+        data: { pageTitle: 'teamprojectApp.budget.home.title' },
+        loadChildren: () => import('./budget/budget.module').then(m => m.BudgetModule),
+      },
+      {
+        path: 'financial-account',
+        data: { pageTitle: 'teamprojectApp.financialAccount.home.title' },
+        loadChildren: () => import('./financial-account/financial-account.module').then(m => m.FinancialAccountModule),
+      },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
   ],

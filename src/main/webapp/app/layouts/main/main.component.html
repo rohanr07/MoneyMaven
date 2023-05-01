@@ -15,7 +15,6 @@
   <div *ngIf="account != null" class="card jh-card" style="margin: 0; height: 100%; width: 100%">
     <router-outlet></router-outlet>
   </div>
-  <div *ngIf="isNotLandingPage()">
-    <jhi-footer></jhi-footer>
-  </div>
+  <jhi-footer></jhi-footer>
+  <div *ngIf="isNotLandingPage()"></div>
 </div>

@@ -1,8 +1,8 @@
 <div class="d-flex justify-content-center">
   <div class="col-8">
     <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-      <h2 id="jhi-budget-heading" data-cy="BudgetCreateUpdateHeading" jhiTranslate="teamprojectApp.budget.home.createOrEditLabel">
-        Create or edit a Budget
+      <h2 id="jhi-budget-heading" data-cy="BudgetCreateUpdateHeading">
+        <Strong>Create or edit budget</Strong>
       </h2>
 
       <div>
@@ -14,85 +14,114 @@
         </div>
 
         <div class="row mb-3">
-          <label class="form-label" jhiTranslate="teamprojectApp.budget.name" for="field_name">Name</label>
-          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
-          <div *ngIf="editForm.get('name')!.invalid && (editForm.get('name')!.dirty || editForm.get('name')!.touched)">
-            <small class="form-text text-danger" *ngIf="editForm.get('name')?.errors?.required" jhiTranslate="entity.validation.required">
+          <label class="form-label" jhiTranslate="teamprojectApp.budget.monthOfTheTime" for="field_monthOfTheTime">Month Of The Time</label>
+          <div class="input-group">
+            <select
+              id="field_monthOfTheTime"
+              data-cy="monthOfTheTime"
+              class="form-control"
+              name="monthOfTheTime"
+              formControlName="monthOfTheTime"
+            >
+              <option [value]="month" *ngFor="let month of months">{{ month }}</option>
+            </select>
+          </div>
+          <div
+            *ngIf="
+              editForm.get('monthOfTheTime')!.invalid && (editForm.get('monthOfTheTime')!.dirty || editForm.get('monthOfTheTime')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('monthOfTheTime')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
               This field is required.
             </small>
           </div>
         </div>
 
         <div class="row mb-3">
-          <label class="form-label" jhiTranslate="teamprojectApp.budget.startDate" for="field_startDate">Start Date</label>
-          <div class="d-flex">
-            <input
-              id="field_startDate"
-              data-cy="startDate"
-              type="datetime-local"
-              class="form-control"
-              name="startDate"
-              formControlName="startDate"
-              placeholder="YYYY-MM-DD HH:mm"
-            />
-          </div>
-          <div *ngIf="editForm.get('startDate')!.invalid && (editForm.get('startDate')!.dirty || editForm.get('startDate')!.touched)">
+          <label class="form-label" jhiTranslate="teamprojectApp.budget.totalBudget" for="field_totalBudget">Total Budget</label>
+          <input
+            type="number"
+            class="form-control"
+            name="totalBudget"
+            id="field_totalBudget"
+            data-cy="totalBudget"
+            formControlName="totalBudget"
+          />
+          <div *ngIf="editForm.get('totalBudget')!.invalid && (editForm.get('totalBudget')!.dirty || editForm.get('totalBudget')!.touched)">
             <small
               class="form-text text-danger"
-              *ngIf="editForm.get('startDate')?.errors?.required"
+              *ngIf="editForm.get('totalBudget')?.errors?.required"
               jhiTranslate="entity.validation.required"
             >
               This field is required.
             </small>
             <small
               class="form-text text-danger"
-              [hidden]="!editForm.get('startDate')?.errors?.datetimelocal"
-              jhiTranslate="entity.validation.datetimelocal"
+              [hidden]="!editForm.get('totalBudget')?.errors?.number"
+              jhiTranslate="entity.validation.number"
             >
-              This field should be a date and time.
+              This field should be a number.
             </small>
           </div>
         </div>
 
         <div class="row mb-3">
-          <label class="form-label" jhiTranslate="teamprojectApp.budget.endDate" for="field_endDate">End Date</label>
-          <div class="d-flex">
-            <input
-              id="field_endDate"
-              data-cy="endDate"
-              type="datetime-local"
-              class="form-control"
-              name="endDate"
-              formControlName="endDate"
-              placeholder="YYYY-MM-DD HH:mm"
-            />
-          </div>
-          <div *ngIf="editForm.get('endDate')!.invalid && (editForm.get('endDate')!.dirty || editForm.get('endDate')!.touched)">
+          <label class="form-label" jhiTranslate="teamprojectApp.budget.totalSpent" for="field_totalSpent">Total Spent</label>
+          <input
+            type="number"
+            class="form-control"
+            name="totalSpent"
+            id="field_totalSpent"
+            data-cy="totalSpent"
+            formControlName="totalSpent"
+          />
+          <div *ngIf="editForm.get('totalSpent')!.invalid && (editForm.get('totalSpent')!.dirty || editForm.get('totalSpent')!.touched)">
             <small
               class="form-text text-danger"
-              *ngIf="editForm.get('endDate')?.errors?.required"
+              *ngIf="editForm.get('totalSpent')?.errors?.required"
               jhiTranslate="entity.validation.required"
             >
               This field is required.
             </small>
             <small
               class="form-text text-danger"
-              [hidden]="!editForm.get('endDate')?.errors?.datetimelocal"
-              jhiTranslate="entity.validation.datetimelocal"
+              [hidden]="!editForm.get('totalSpent')?.errors?.number"
+              jhiTranslate="entity.validation.number"
             >
-              This field should be a date and time.
+              This field should be a number.
             </small>
           </div>
         </div>
 
         <div class="row mb-3">
-          <label class="form-label" jhiTranslate="teamprojectApp.budget.limit" for="field_limit">Limit</label>
-          <input type="number" class="form-control" name="limit" id="field_limit" data-cy="limit" formControlName="limit" />
-          <div *ngIf="editForm.get('limit')!.invalid && (editForm.get('limit')!.dirty || editForm.get('limit')!.touched)">
-            <small class="form-text text-danger" *ngIf="editForm.get('limit')?.errors?.required" jhiTranslate="entity.validation.required">
-              This field is required.
-            </small>
-            <small class="form-text text-danger" [hidden]="!editForm.get('limit')?.errors?.number" jhiTranslate="entity.validation.number">
+          <label class="form-label" jhiTranslate="teamprojectApp.budget.amountRemaining" for="field_amountRemaining"
+            >Amount Remaining</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="amountRemaining"
+            id="field_amountRemaining"
+            data-cy="amountRemaining"
+            formControlName="amountRemaining"
+            [readonly]="true"
+            [value]="getAmountRemaining()"
+          />
+          <div
+            *ngIf="
+              editForm.get('amountRemaining')!.invalid &&
+              (editForm.get('amountRemaining')!.dirty || editForm.get('amountRemaining')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('amountRemaining')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
               This field should be a number.
             </small>
           </div>

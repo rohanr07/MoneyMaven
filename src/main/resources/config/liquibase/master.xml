@@ -20,10 +20,16 @@
     <include file="config/liquibase/changelog/20230415170750_added_entity_Expenses.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20230422090546_added_entity_Income.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20230428032254_added_entity_Analytics.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230501055719_added_entity_FinancialTransaction.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230501055720_added_entity_Category.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230501055721_added_entity_Budget.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230501055722_added_entity_FinancialAccount.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20230415170750_added_entity_constraints_Expenses.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20230422090546_added_entity_constraints_Income.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20230428032254_added_entity_constraints_Analytics.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230501055719_added_entity_constraints_FinancialTransaction.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230501055720_added_entity_constraints_Category.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

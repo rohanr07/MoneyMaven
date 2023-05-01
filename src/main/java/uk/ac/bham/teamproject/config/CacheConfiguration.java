@@ -51,6 +51,14 @@ public class CacheConfiguration {
             createCache(cm, uk.ac.bham.teamproject.domain.Expenses.class.getName());
             createCache(cm, uk.ac.bham.teamproject.domain.Income.class.getName());
             createCache(cm, uk.ac.bham.teamproject.domain.Analytics.class.getName());
+            createCache(cm, uk.ac.bham.teamproject.domain.FinancialTransaction.class.getName());
+            createCache(cm, uk.ac.bham.teamproject.domain.Category.class.getName());
+            createCache(cm, uk.ac.bham.teamproject.domain.Category.class.getName() + ".transactions");
+            createCache(cm, uk.ac.bham.teamproject.domain.Budget.class.getName());
+            createCache(cm, uk.ac.bham.teamproject.domain.Budget.class.getName() + ".transactions");
+            createCache(cm, uk.ac.bham.teamproject.domain.Budget.class.getName() + ".categories");
+            createCache(cm, uk.ac.bham.teamproject.domain.FinancialAccount.class.getName());
+            createCache(cm, uk.ac.bham.teamproject.domain.FinancialAccount.class.getName() + ".transactions");
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,52 @@
+{
+  "applications": "*",
+  "changelogDate": "20230501055720",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "category",
+  "fields": [
+    {
+      "fieldName": "categoryId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "categoryName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "budgetTarget",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Category",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "financialTransaction",
+      "otherEntityRelationshipName": "category",
+      "relationshipName": "transactions",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "budget",
+      "relationshipName": "budget",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "budget",
+      "otherEntityRelationshipName": "category",
+      "relationshipName": "budget",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

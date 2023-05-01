@@ -18,11 +18,13 @@
         "title": "Budget"
       },
       "id": "ID",
-      "name": "Name",
-      "startDate": "Start Date",
-      "endDate": "End Date",
-      "limit": "Limit",
-      "transactions": "Transactions"
+      "budgetId": "Budget Id",
+      "monthOfTheTime": "Month Of The Time",
+      "totalBudget": "Total Budget",
+      "totalSpent": "Total Spent",
+      "amountRemaining": "Amount Remaining",
+      "transactions": "Transactions",
+      "category": "Category"
     }
   }
 }
