@@ -60,36 +60,6 @@
           />
         </div>
 
-        <div class="row mb-3">
-          <label class="form-label" jhiTranslate="teamprojectApp.category.budgetTarget" for="field_budgetTarget">Budget Target</label>
-          <input
-            type="number"
-            class="form-control"
-            name="budgetTarget"
-            id="field_budgetTarget"
-            data-cy="budgetTarget"
-            formControlName="budgetTarget"
-          />
-          <div
-            *ngIf="editForm.get('budgetTarget')!.invalid && (editForm.get('budgetTarget')!.dirty || editForm.get('budgetTarget')!.touched)"
-          >
-            <small
-              class="form-text text-danger"
-              *ngIf="editForm.get('budgetTarget')?.errors?.required"
-              jhiTranslate="entity.validation.required"
-            >
-              This field is required.
-            </small>
-            <small
-              class="form-text text-danger"
-              [hidden]="!editForm.get('budgetTarget')?.errors?.number"
-              jhiTranslate="entity.validation.number"
-            >
-              This field should be a number.
-            </small>
-          </div>
-        </div>
-
         <!--<div class="row mb-3">
           <label class="form-label" jhiTranslate="teamprojectApp.category.budget" for="field_budget">Budget</label>
           <select

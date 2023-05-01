@@ -15,7 +15,7 @@ describe('Category e2e test', () => {
   const categoryPageUrlPattern = new RegExp('/category(\\?.*)?$');
   const username = Cypress.env('E2E_USERNAME') ?? 'user';
   const password = Cypress.env('E2E_PASSWORD') ?? 'user';
-  const categorySample = { categoryName: 'Paradigm Account', budgetTarget: 79306 };
+  const categorySample = { categoryName: 'Paradigm Account' };
 
   let category;
 
@@ -162,8 +162,6 @@ describe('Category e2e test', () => {
       cy.get(`[data-cy="categoryName"]`).type('Harbor interface service-desk').should('have.value', 'Harbor interface service-desk');
 
       cy.get(`[data-cy="description"]`).type('Realigned Sports').should('have.value', 'Realigned Sports');
-
-      cy.get(`[data-cy="budgetTarget"]`).type('75945').should('have.value', '75945');
 
       cy.get(entityCreateSaveButtonSelector).click();
 

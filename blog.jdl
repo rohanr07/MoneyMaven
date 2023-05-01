@@ -8,7 +8,6 @@ entity Category {
     categoryId Long,
     categoryName String required,
     description String,
-    budgetTarget BigDecimal required
 }
 
 entity Budget {

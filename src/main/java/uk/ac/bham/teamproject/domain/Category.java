@@ -37,10 +37,6 @@ public class Category implements Serializable {
     @Column(name = "description")
     private String description;
 
-    @NotNull
-    @Column(name = "budget_target", precision = 21, scale = 2, nullable = false)
-    private BigDecimal budgetTarget;
-
     @OneToMany(mappedBy = "category")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(value = { "account", "category", "budget" }, allowSetters = true)
@@ -102,19 +98,6 @@ public class Category implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public BigDecimal getBudgetTarget() {
-        return this.budgetTarget;
-    }
-
-    public Category budgetTarget(BigDecimal budgetTarget) {
-        this.setBudgetTarget(budgetTarget);
-        return this;
-    }
-
-    public void setBudgetTarget(BigDecimal budgetTarget) {
-        this.budgetTarget = budgetTarget;
     }
 
     public Set<FinancialTransaction> getTransactions() {
@@ -188,7 +171,6 @@ public class Category implements Serializable {
             ", categoryId=" + getCategoryId() +
             ", categoryName='" + getCategoryName() + "'" +
             ", description='" + getDescription() + "'" +
-            ", budgetTarget=" + getBudgetTarget() +
             "}";
     }
 }

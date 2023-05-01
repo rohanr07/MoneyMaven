@@ -134,9 +134,6 @@ public class CategoryResource {
                 if (category.getDescription() != null) {
                     existingCategory.setDescription(category.getDescription());
                 }
-                if (category.getBudgetTarget() != null) {
-                    existingCategory.setBudgetTarget(category.getBudgetTarget());
-                }
 
                 return existingCategory;
             })
