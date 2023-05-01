@@ -15,15 +15,17 @@
   <br />
   <h3 style="padding: 40px">
     <span *ngIf="totalMonthlyIncome > totalMonthlyExpenses"
-      >Your profit this month is <b>${{ totalMonthlyIncome - totalMonthlyExpenses }} </b>
+      >Your profit this month is <b style="color: rgb(0, 149, 0)">${{ totalMonthlyIncome - totalMonthlyExpenses }} </b>
     </span>
     <span *ngIf="totalMonthlyIncome < totalMonthlyExpenses"
-      >You are in a loss of <b>${{ totalMonthlyIncome - totalMonthlyExpenses }} </b>this month
+      >You are in a loss of <b style="color: rgb(189, 0, 0)">${{ totalMonthlyIncome - totalMonthlyExpenses }} </b>this month
     </span>
     <br />
-    Your monthly income is <b>${{ totalMonthlyIncome }}</b> and your monthly expense is <b>${{ totalMonthlyExpenses }}</b>
+    Your monthly income is <b style="color: rgb(0, 149, 0)">${{ totalMonthlyIncome }}</b> and your monthly expense is
+    <b style="color: rgb(189, 0, 0)">${{ totalMonthlyExpenses }}</b>
     <br />
-    On average you spend <b>${{ Math.round(totalMonthlyIncome / 30 - totalMonthlyExpenses / 30) }}</b> each day
+    On average you spend <b style="color: rgb(189, 0, 0)">${{ Math.round(totalMonthlyIncome / 30 - totalMonthlyExpenses / 30) }}</b> each
+    day
   </h3>
   <br />
   <br />
@@ -58,7 +60,6 @@
   <br />
 
   <h3 style="padding: 30px">Graphical Representation of your Financial Data is as follows:</h3>
-  <h5>Your Financial Data</h5>
   <br />
   <div #chartdiv style="padding: 0px 25px 25px 25px; background-color: #fff; height: 700px; width: 100%"></div>
   <br />
