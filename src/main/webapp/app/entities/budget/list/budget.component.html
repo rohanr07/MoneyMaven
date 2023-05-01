@@ -3,6 +3,11 @@
     <span jhiTranslate="teamprojectApp.budget.home.title">Budgets</span>
 
     <div class="d-flex justify-content-end">
+      <button id="jh-go-to-categories" data-cy="goToCategoriesButton" class="btn btn-info me-2" [routerLink]="['/category']">
+        <fa-icon icon="list"></fa-icon>
+        <span>Categories</span>
+      </button>
+
       <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
         <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
         <span jhiTranslate="teamprojectApp.budget.home.refreshListLabel">Refresh list</span>
@@ -86,7 +91,7 @@
           </th>
           <th scope="col" jhiSortBy="monthOfTheTime">
             <div class="d-flex">
-              <span jhiTranslate="teamprojectApp.budget.monthOfTheTime">Month Of The Time</span>
+              <span jhiTranslate="teamprojectApp.budget.monthOfTheTime">Month</span>
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>

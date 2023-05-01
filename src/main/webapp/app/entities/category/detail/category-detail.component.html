@@ -30,7 +30,7 @@
         <dd>
           <span>{{ category.budgetTarget }}</span>
         </dd>
-        <dt><span jhiTranslate="teamprojectApp.category.budget">Budget</span></dt>
+        <!--<dt><span jhiTranslate="teamprojectApp.category.budget">Budget</span></dt>
         <dd>
           <div *ngIf="category.budget">
             <a [routerLink]="['/budget', category.budget.id, 'view']">{{ category.budget.id }}</a>
@@ -41,7 +41,7 @@
           <div *ngIf="category.budget">
             <a [routerLink]="['/budget', category.budget.id, 'view']">{{ category.budget.id }}</a>
           </div>
-        </dd>
+        </dd>-->
       </dl>
 
       <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
