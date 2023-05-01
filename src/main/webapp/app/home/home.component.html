@@ -321,18 +321,22 @@
     <!--    <span jhiTranslate="global.messages.info.register.noaccount">You don't have an account yet?</span>&nbsp;-->
     <!--    <a class="alert-link" routerLink="account/register">Sign up - it's free</a>-->
     <!--  </div>-->
-  </div>
-  <div class="footer disclaimer">
-    <span
-      class="projectDisclaimer"
-      style="font-family: 'Leelawadee UI'; margin-left: 20px; font-weight: 100; font-size: small; letter-spacing: 1px"
-      >Alpha Project Disclaimer</span
-    >
-    <p class="ftrContent" style="font-family: 'Leelawadee UI'; margin-left: 20px; font-weight: 100; font-size: small; letter-spacing: 1px">
-      This server is provided by the School of Computer Science at the University of Birmingham to allow users to provide feedback on
-      software developed by students as part of an assignment. While we take reasonable precautions, we cannot guarantee the security of the
-      data entered into the system. Do NOT enter any real personal data (e.g., financial information or otherwise) into the system. The
-      assignment runs until May 31st 2023, at which time the server and all associated data will be destroyed.
-    </p>
+    <!--    *ngSwitchCase="false"-->
+    <div class="footer disclaimer" *ngSwitchCase="false" style="margin-top: 75px">
+      <span
+        class="projectDisclaimer"
+        style="font-family: 'Leelawadee UI'; margin-left: 20px; font-weight: 100; font-size: small; letter-spacing: 1px"
+        >Alpha Project Disclaimer (hover to read)</span
+      >
+      <p
+        class="ftrContent"
+        style="font-family: 'Leelawadee UI'; margin-left: 20px; font-weight: 100; font-size: small; letter-spacing: 1px"
+      >
+        This server is provided by the School of Computer Science at the University of Birmingham to allow users to provide feedback on
+        software developed by students as part of an assignment. While we take reasonable precautions, we cannot guarantee the security of
+        the data entered into the system. Do NOT enter any real personal data (e.g., financial information or otherwise) into the system.
+        The assignment runs until May 31st 2023, at which time the server and all associated data will be destroyed.
+      </p>
+    </div>
   </div>
 </html>
