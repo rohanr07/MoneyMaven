@@ -43,7 +43,8 @@
     .herobg {
       position: relative;
       overflow: hidden;
-      background-image: linear-gradient(to top, #810ca7 30%, #27273c 80%);
+      background-image: linear-gradient(to top, #810ca7 40%, rgb(81, 27, 101) 80%);
+      /*background-image: linear-gradient(to top, #810ca7 40%, #27273c 80%);*/
       /*background: rgb(129, 12, 168); !*change color of the div*!*/
     }
     /*#810CA7*/
@@ -117,178 +118,179 @@
       }
     }
   </style>
-</html>
+  <!--</html>-->
 
-<div class="row">
-  <div class="col-md-4" [ngSwitch]="account != null">
-    <div id="sideMenu" *ngSwitchCase="true">
-      <div id="sideMenuFixed"></div>
-      <div id="sidecontent">
-        <ul class="menu">
-          <li>Dashboard</li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/analytics">Analytics</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/income">Income</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/expenses">Expenses</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/budget">Budget</a>
-          </li>
-        </ul>
+  <div class="row">
+    <div class="col-md-4" [ngSwitch]="account != null">
+      <div id="sideMenu" *ngSwitchCase="true">
+        <div id="sideMenuFixed"></div>
+        <div id="sidecontent">
+          <ul class="menu">
+            <li>Dashboard</li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/analytics">Analytics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/income">Income</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/expenses">Expenses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/budget">Budget</a>
+            </li>
+          </ul>
 
-        <ul class="menu">
-          <li>Account</li>
-          <li class="nav-item">
-            <a class="nav-link" (click)="loadSettings()">Settings</a>
-          </li>
-        </ul>
-        <p *ngIf="account">Logged in as {{ account.login }}</p>
+          <ul class="menu">
+            <li>Account</li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="loadSettings()">Settings</a>
+            </li>
+          </ul>
+          <p *ngIf="account">Logged in as {{ account.login }}</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="col-md-8" [ngSwitch]="account != null">
-    <div id="content" *ngSwitchCase="true">
-      <div id="titleBar">
-        <h5 class="text-end">Date: {{ today | date: 'dd/MM/yyyy' }}</h5>
+    <div class="col-md-8" [ngSwitch]="account != null">
+      <div id="content" *ngSwitchCase="true">
+        <div id="titleBar">
+          <h5 class="text-end">Date: {{ today | date: 'dd/MM/yyyy' }}</h5>
+          <br />
+          <h1>Dashboard</h1>
+          <h2>Monthly Financial Summary</h2>
+        </div>
         <br />
-        <h1>Dashboard</h1>
-        <h2>Monthly Financial Summary</h2>
+        <br />
+
+        <div class="clearFix"></div>
+
+        <br />
+        <br />
+
+        <div id="totalSales">
+          <div class="col">
+            <h4>Income</h4>
+            <h3>${{ totalMonthlyIncome }}</h3>
+          </div>
+          <div class="col">
+            <h4>Expenses</h4>
+            <h3>${{ totalMonthlyExpenses }}</h3>
+          </div>
+          <div class="col">
+            <h4>Balance</h4>
+            <h3>${{ totalMonthlyIncome - totalMonthlyExpenses }}</h3>
+          </div>
+        </div>
+
+        <img
+          src="../../content/images/dashboard_transparent_image.png"
+          alt="Money Maven dashboard picture showing a bag with the dollar symbol of it and dollar coins beside it"
+          width="600"
+          height="600"
+        />
+
+        <br />
+        <br />
+
+        <h6>How Money Maven works:</h6>
+
+        <h6>
+          Our easy-to-use application lets you record and track your finances all in one place. By monitoring your income, spending, and
+          budget, you can get a complete picture of your financial health and find ways to improve it!
+        </h6>
       </div>
-      <br />
-      <br />
-
-      <div class="clearFix"></div>
-
-      <br />
-      <br />
-
-      <div id="totalSales">
-        <div class="col">
-          <h4>Income</h4>
-          <h3>${{ totalMonthlyIncome }}</h3>
-        </div>
-        <div class="col">
-          <h4>Expenses</h4>
-          <h3>${{ totalMonthlyExpenses }}</h3>
-        </div>
-        <div class="col">
-          <h4>Balance</h4>
-          <h3>${{ totalMonthlyIncome - totalMonthlyExpenses }}</h3>
-        </div>
-      </div>
-
-      <img
-        src="../../content/images/dashboard_transparent_image.png"
-        alt="Money Maven dashboard picture showing a bag with the dollar symbol of it and dollar coins beside it"
-        width="600"
-        height="600"
-      />
-
-      <br />
-      <br />
-
-      <h6>How Money Maven works:</h6>
-
-      <h6>
-        Our easy-to-use application lets you record and track your finances all in one place. By monitoring your income, spending, and
-        budget, you can get a complete picture of your financial health and find ways to improve it!
-      </h6>
     </div>
   </div>
-</div>
 
-<div class="col-md-6" [ngSwitch]="account != null" style="width: 100%; height: 780px; margin: 0">
-  <div class="wrapper herobg" *ngSwitchCase="false">
-    <div class="wave wave1"></div>
-    <div class="wave wave2"></div>
+  <div class="col-md-6" [ngSwitch]="account != null" style="width: 100%; height: 780px; margin: 0">
+    <div class="wrapper herobg" *ngSwitchCase="false">
+      <div class="wave wave1"></div>
+      <div class="wave wave2"></div>
 
-    <div class="wave wave3"></div>
-    <div class="wave wave4"></div>
-    <div class="container">
-      <!--your content here-->
-      <div
-        style="
-          position: absolute;
-          margin-top: -85px;
-          margin-left: 22%;
-          display: flex;
-          flex-direction: column;
-          align-content: center;
-          align-items: center;
-        "
-      >
-        <span class="logo-img"></span>
-      </div>
-
-      <p
-        style="
-          mso-hansi-font-family: cursive;
-          font-size: 18px;
-          line-height: 1.5;
-          letter-spacing: 0.5px;
-          font-weight: 100;
-          position: absolute;
-          margin-top: 370px;
-          margin-left: 2%;
-        "
-      >
-        MoneyMaven is a digital tool that allows individuals or businesses to manage their finances by keeping track of their expenses and
-        income in <br />
-        one central location.
-      </p>
-      <div
-        class="btn"
-        style="
-          border: 2px solid white;
-          border-radius: 50px;
-          position: absolute;
-          margin-top: 450px;
-          margin-left: 30.5%;
-          display: flex;
-          flex-direction: column;
-          align-content: center;
-          align-items: center;
-        "
-      >
-        <a
-          class="alert-link"
-          (click)="login()"
+      <div class="wave wave3"></div>
+      <div class="wave wave4"></div>
+      <div class="container">
+        <!--your content here-->
+        <div
           style="
-            letter-spacing: 1px;
-            height: 100%;
-            width: 100%;
-            font-family: 'Lato', sans-serif;
-            padding: 5px;
-            border-color: #ffffff;
-            border-radius: 50px;
-            text-decoration: none;
+            position: absolute;
+            margin-top: -85px;
+            margin-left: 22%;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
           "
-          >Access MoneyMaven >
-        </a>
+        >
+          <span class="logo-img"></span>
+        </div>
+
+        <p
+          style="
+            mso-hansi-font-family: cursive;
+            font-size: 18px;
+            line-height: 1.5;
+            letter-spacing: 0.5px;
+            font-weight: 100;
+            position: absolute;
+            margin-top: 370px;
+            margin-left: 2%;
+          "
+        >
+          MoneyMaven is a digital tool that allows individuals or businesses to manage their finances by keeping track of their expenses and
+          income in <br />
+          one central location.
+        </p>
+        <div
+          class="btn"
+          style="
+            border: 2px solid white;
+            border-radius: 50px;
+            position: absolute;
+            margin-top: 450px;
+            margin-left: 30.5%;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+          "
+        >
+          <a
+            class="alert-link"
+            (click)="login()"
+            style="
+              letter-spacing: 1px;
+              height: 100%;
+              width: 100%;
+              font-family: 'Lato', sans-serif;
+              padding: 5px;
+              border-color: #ffffff;
+              border-radius: 50px;
+              text-decoration: none;
+            "
+            >Access MoneyMaven >
+          </a>
+        </div>
       </div>
     </div>
+
+    <!--  <div *ngSwitchCase="false">-->
+    <!--    <h1 class="display-4"><span jhiTranslate="home.title">Welcome to </span> MoneyMaven!</h1>-->
+    <!--    <br />-->
+    <!--    <h1>Spend Less.</h1>-->
+    <!--    <h1>Save More.</h1>-->
+
+    <!--    <p>Log in or create your account now to grow your savings!</p>-->
+    <!--  </div>-->
+
+    <!--  <div class="alert alert-warning" *ngSwitchCase="false">-->
+    <!--    <a class="alert-link" (click)="login()">Log in</a>-->
+    <!--  </div>-->
+
+    <!--  <div class="alert alert-warning" *ngSwitchCase="false">-->
+    <!--    <span jhiTranslate="global.messages.info.register.noaccount">You don't have an account yet?</span>&nbsp;-->
+    <!--    <a class="alert-link" routerLink="account/register">Sign up - it's free</a>-->
+    <!--  </div>-->
   </div>
-
-  <!--  <div *ngSwitchCase="false">-->
-  <!--    <h1 class="display-4"><span jhiTranslate="home.title">Welcome to </span> MoneyMaven!</h1>-->
-  <!--    <br />-->
-  <!--    <h1>Spend Less.</h1>-->
-  <!--    <h1>Save More.</h1>-->
-
-  <!--    <p>Log in or create your account now to grow your savings!</p>-->
-  <!--  </div>-->
-
-  <!--  <div class="alert alert-warning" *ngSwitchCase="false">-->
-  <!--    <a class="alert-link" (click)="login()">Log in</a>-->
-  <!--  </div>-->
-
-  <!--  <div class="alert alert-warning" *ngSwitchCase="false">-->
-  <!--    <span jhiTranslate="global.messages.info.register.noaccount">You don't have an account yet?</span>&nbsp;-->
-  <!--    <a class="alert-link" routerLink="account/register">Sign up - it's free</a>-->
-  <!--  </div>-->
-</div>
+</html>
