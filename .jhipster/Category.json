@@ -19,7 +19,6 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "budgetTarget",
       "fieldType": "BigDecimal",
       "fieldValidateRules": ["required"]
     }
