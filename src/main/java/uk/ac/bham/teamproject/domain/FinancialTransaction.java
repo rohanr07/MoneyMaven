@@ -42,11 +42,11 @@ public class FinancialTransaction implements Serializable {
     private FinancialAccount account;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "transactions" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "transactions", "budget", "budget" }, allowSetters = true)
     private Category category;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "transactions" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "transactions", "categories" }, allowSetters = true)
     private Budget budget;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

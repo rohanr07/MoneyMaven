@@ -14,13 +14,33 @@
         <dd>
           <span>{{ category.id }}</span>
         </dd>
-        <dt><span jhiTranslate="teamprojectApp.category.name">Name</span></dt>
+        <dt><span jhiTranslate="teamprojectApp.category.categoryId">Category Id</span></dt>
         <dd>
-          <span>{{ category.name }}</span>
+          <span>{{ category.categoryId }}</span>
+        </dd>
+        <dt><span jhiTranslate="teamprojectApp.category.categoryName">Category Name</span></dt>
+        <dd>
+          <span>{{ category.categoryName }}</span>
         </dd>
         <dt><span jhiTranslate="teamprojectApp.category.description">Description</span></dt>
         <dd>
           <span>{{ category.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="teamprojectApp.category.budgetTarget">Budget Target</span></dt>
+        <dd>
+          <span>{{ category.budgetTarget }}</span>
+        </dd>
+        <dt><span jhiTranslate="teamprojectApp.category.budget">Budget</span></dt>
+        <dd>
+          <div *ngIf="category.budget">
+            <a [routerLink]="['/budget', category.budget.id, 'view']">{{ category.budget.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="teamprojectApp.category.budget">Budget</span></dt>
+        <dd>
+          <div *ngIf="category.budget">
+            <a [routerLink]="['/budget', category.budget.id, 'view']">{{ category.budget.id }}</a>
+          </div>
         </dd>
       </dl>
 

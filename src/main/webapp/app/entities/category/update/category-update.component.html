@@ -14,10 +14,35 @@
         </div>
 
         <div class="row mb-3">
-          <label class="form-label" jhiTranslate="teamprojectApp.category.name" for="field_name">Name</label>
-          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
-          <div *ngIf="editForm.get('name')!.invalid && (editForm.get('name')!.dirty || editForm.get('name')!.touched)">
-            <small class="form-text text-danger" *ngIf="editForm.get('name')?.errors?.required" jhiTranslate="entity.validation.required">
+          <label class="form-label" jhiTranslate="teamprojectApp.category.categoryId" for="field_categoryId">Category Id</label>
+          <input
+            type="number"
+            class="form-control"
+            name="categoryId"
+            id="field_categoryId"
+            data-cy="categoryId"
+            formControlName="categoryId"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="teamprojectApp.category.categoryName" for="field_categoryName">Category Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="categoryName"
+            id="field_categoryName"
+            data-cy="categoryName"
+            formControlName="categoryName"
+          />
+          <div
+            *ngIf="editForm.get('categoryName')!.invalid && (editForm.get('categoryName')!.dirty || editForm.get('categoryName')!.touched)"
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('categoryName')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
               This field is required.
             </small>
           </div>
@@ -33,6 +58,66 @@
             data-cy="description"
             formControlName="description"
           />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="teamprojectApp.category.budgetTarget" for="field_budgetTarget">Budget Target</label>
+          <input
+            type="number"
+            class="form-control"
+            name="budgetTarget"
+            id="field_budgetTarget"
+            data-cy="budgetTarget"
+            formControlName="budgetTarget"
+          />
+          <div
+            *ngIf="editForm.get('budgetTarget')!.invalid && (editForm.get('budgetTarget')!.dirty || editForm.get('budgetTarget')!.touched)"
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('budgetTarget')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('budgetTarget')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="teamprojectApp.category.budget" for="field_budget">Budget</label>
+          <select
+            class="form-control"
+            id="field_budget"
+            data-cy="budget"
+            name="budget"
+            formControlName="budget"
+            [compareWith]="compareBudget"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="budgetOption" *ngFor="let budgetOption of budgetsSharedCollection">{{ budgetOption.id }}</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="teamprojectApp.category.budget" for="field_budget">Budget</label>
+          <select
+            class="form-control"
+            id="field_budget"
+            data-cy="budget"
+            name="budget"
+            formControlName="budget"
+            [compareWith]="compareBudget"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="budgetOption" *ngFor="let budgetOption of budgetsSharedCollection">{{ budgetOption.id }}</option>
+          </select>
         </div>
       </div>
 

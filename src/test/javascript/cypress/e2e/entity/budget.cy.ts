@@ -15,12 +15,7 @@ describe('Budget e2e test', () => {
   const budgetPageUrlPattern = new RegExp('/budget(\\?.*)?$');
   const username = Cypress.env('E2E_USERNAME') ?? 'user';
   const password = Cypress.env('E2E_PASSWORD') ?? 'user';
-  const budgetSample = {
-    name: 'Practical invoice',
-    startDate: '2023-03-14T00:22:40.649Z',
-    endDate: '2023-03-14T07:16:40.819Z',
-    limit: 91339,
-  };
+  const budgetSample = { monthOfTheTime: '2023-04-30', totalBudget: 67599, totalSpent: 6621, amountRemaining: 26497 };
 
   let budget;
 
@@ -162,13 +157,15 @@ describe('Budget e2e test', () => {
     });
 
     it('should create an instance of Budget', () => {
-      cy.get(`[data-cy="name"]`).type('incubate cross-platform').should('have.value', 'incubate cross-platform');
+      cy.get(`[data-cy="budgetId"]`).type('58014').should('have.value', '58014');
 
-      cy.get(`[data-cy="startDate"]`).type('2023-03-14T13:20').blur().should('have.value', '2023-03-14T13:20');
+      cy.get(`[data-cy="monthOfTheTime"]`).type('2023-04-30').blur().should('have.value', '2023-04-30');
 
-      cy.get(`[data-cy="endDate"]`).type('2023-03-14T08:34').blur().should('have.value', '2023-03-14T08:34');
+      cy.get(`[data-cy="totalBudget"]`).type('58069').should('have.value', '58069');
 
-      cy.get(`[data-cy="limit"]`).type('55224').should('have.value', '55224');
+      cy.get(`[data-cy="totalSpent"]`).type('6900').should('have.value', '6900');
+
+      cy.get(`[data-cy="amountRemaining"]`).type('81347').should('have.value', '81347');
 
       cy.get(entityCreateSaveButtonSelector).click();
 

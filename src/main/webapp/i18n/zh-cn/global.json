@@ -11,6 +11,10 @@
         "expense": "Expense",
         "income": "Income",
         "analytics": "Analytics",
+        "financialTransaction": "Financial Transaction",
+        "category": "Category",
+        "budget": "Budget",
+        "financialAccount": "Financial Account",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

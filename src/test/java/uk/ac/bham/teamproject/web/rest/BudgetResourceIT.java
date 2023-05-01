@@ -4,9 +4,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static uk.ac.bham.teamproject.web.rest.TestUtil.sameNumber;
 
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicLong;
@@ -31,17 +33,20 @@ import uk.ac.bham.teamproject.repository.BudgetRepository;
 @WithMockUser
 class BudgetResourceIT {
 
-    private static final String DEFAULT_NAME = "AAAAAAAAAA";
-    private static final String UPDATED_NAME = "BBBBBBBBBB";
+    private static final Long DEFAULT_BUDGET_ID = 1L;
+    private static final Long UPDATED_BUDGET_ID = 2L;
 
-    private static final Instant DEFAULT_START_DATE = Instant.ofEpochMilli(0L);
-    private static final Instant UPDATED_START_DATE = Instant.now().truncatedTo(ChronoUnit.MILLIS);
+    private static final LocalDate DEFAULT_MONTH_OF_THE_TIME = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_MONTH_OF_THE_TIME = LocalDate.now(ZoneId.systemDefault());
 
-    private static final Instant DEFAULT_END_DATE = Instant.ofEpochMilli(0L);
-    private static final Instant UPDATED_END_DATE = Instant.now().truncatedTo(ChronoUnit.MILLIS);
+    private static final BigDecimal DEFAULT_TOTAL_BUDGET = new BigDecimal(1);
+    private static final BigDecimal UPDATED_TOTAL_BUDGET = new BigDecimal(2);
 
-    private static final Double DEFAULT_LIMIT = 1D;
-    private static final Double UPDATED_LIMIT = 2D;
+    private static final BigDecimal DEFAULT_TOTAL_SPENT = new BigDecimal(1);
+    private static final BigDecimal UPDATED_TOTAL_SPENT = new BigDecimal(2);
+
+    private static final BigDecimal DEFAULT_AMOUNT_REMAINING = new BigDecimal(1);
+    private static final BigDecimal UPDATED_AMOUNT_REMAINING = new BigDecimal(2);
 
     private static final String ENTITY_API_URL = "/api/budgets";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
@@ -67,7 +72,12 @@ class BudgetResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Budget createEntity(EntityManager em) {
-        Budget budget = new Budget().name(DEFAULT_NAME).startDate(DEFAULT_START_DATE).endDate(DEFAULT_END_DATE).limit(DEFAULT_LIMIT);
+        Budget budget = new Budget()
+            .budgetId(DEFAULT_BUDGET_ID)
+            .monthOfTheTime(DEFAULT_MONTH_OF_THE_TIME)
+            .totalBudget(DEFAULT_TOTAL_BUDGET)
+            .totalSpent(DEFAULT_TOTAL_SPENT)
+            .amountRemaining(DEFAULT_AMOUNT_REMAINING);
         return budget;
     }
 
@@ -78,7 +88,12 @@ class BudgetResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Budget createUpdatedEntity(EntityManager em) {
-        Budget budget = new Budget().name(UPDATED_NAME).startDate(UPDATED_START_DATE).endDate(UPDATED_END_DATE).limit(UPDATED_LIMIT);
+        Budget budget = new Budget()
+            .budgetId(UPDATED_BUDGET_ID)
+            .monthOfTheTime(UPDATED_MONTH_OF_THE_TIME)
+            .totalBudget(UPDATED_TOTAL_BUDGET)
+            .totalSpent(UPDATED_TOTAL_SPENT)
+            .amountRemaining(UPDATED_AMOUNT_REMAINING);
         return budget;
     }
 
@@ -100,10 +115,11 @@ class BudgetResourceIT {
         List<Budget> budgetList = budgetRepository.findAll();
         assertThat(budgetList).hasSize(databaseSizeBeforeCreate + 1);
         Budget testBudget = budgetList.get(budgetList.size() - 1);
-        assertThat(testBudget.getName()).isEqualTo(DEFAULT_NAME);
-        assertThat(testBudget.getStartDate()).isEqualTo(DEFAULT_START_DATE);
-        assertThat(testBudget.getEndDate()).isEqualTo(DEFAULT_END_DATE);
-        assertThat(testBudget.getLimit()).isEqualTo(DEFAULT_LIMIT);
+        assertThat(testBudget.getBudgetId()).isEqualTo(DEFAULT_BUDGET_ID);
+        assertThat(testBudget.getMonthOfTheTime()).isEqualTo(DEFAULT_MONTH_OF_THE_TIME);
+        assertThat(testBudget.getTotalBudget()).isEqualByComparingTo(DEFAULT_TOTAL_BUDGET);
+        assertThat(testBudget.getTotalSpent()).isEqualByComparingTo(DEFAULT_TOTAL_SPENT);
+        assertThat(testBudget.getAmountRemaining()).isEqualByComparingTo(DEFAULT_AMOUNT_REMAINING);
     }
 
     @Test
@@ -126,10 +142,10 @@ class BudgetResourceIT {
 
     @Test
     @Transactional
-    void checkNameIsRequired() throws Exception {
+    void checkMonthOfTheTimeIsRequired() throws Exception {
         int databaseSizeBeforeTest = budgetRepository.findAll().size();
         // set the field null
-        budget.setName(null);
+        budget.setMonthOfTheTime(null);
 
         // Create the Budget, which fails.
 
@@ -143,10 +159,10 @@ class BudgetResourceIT {
 
     @Test
     @Transactional
-    void checkStartDateIsRequired() throws Exception {
+    void checkTotalBudgetIsRequired() throws Exception {
         int databaseSizeBeforeTest = budgetRepository.findAll().size();
         // set the field null
-        budget.setStartDate(null);
+        budget.setTotalBudget(null);
 
         // Create the Budget, which fails.
 
@@ -160,10 +176,10 @@ class BudgetResourceIT {
 
     @Test
     @Transactional
-    void checkEndDateIsRequired() throws Exception {
+    void checkTotalSpentIsRequired() throws Exception {
         int databaseSizeBeforeTest = budgetRepository.findAll().size();
         // set the field null
-        budget.setEndDate(null);
+        budget.setTotalSpent(null);
 
         // Create the Budget, which fails.
 
@@ -177,10 +193,10 @@ class BudgetResourceIT {
 
     @Test
     @Transactional
-    void checkLimitIsRequired() throws Exception {
+    void checkAmountRemainingIsRequired() throws Exception {
         int databaseSizeBeforeTest = budgetRepository.findAll().size();
         // set the field null
-        budget.setLimit(null);
+        budget.setAmountRemaining(null);
 
         // Create the Budget, which fails.
 
@@ -204,10 +220,11 @@ class BudgetResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(budget.getId().intValue())))
-            .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
-            .andExpect(jsonPath("$.[*].startDate").value(hasItem(DEFAULT_START_DATE.toString())))
-            .andExpect(jsonPath("$.[*].endDate").value(hasItem(DEFAULT_END_DATE.toString())))
-            .andExpect(jsonPath("$.[*].limit").value(hasItem(DEFAULT_LIMIT.doubleValue())));
+            .andExpect(jsonPath("$.[*].budgetId").value(hasItem(DEFAULT_BUDGET_ID.intValue())))
+            .andExpect(jsonPath("$.[*].monthOfTheTime").value(hasItem(DEFAULT_MONTH_OF_THE_TIME.toString())))
+            .andExpect(jsonPath("$.[*].totalBudget").value(hasItem(sameNumber(DEFAULT_TOTAL_BUDGET))))
+            .andExpect(jsonPath("$.[*].totalSpent").value(hasItem(sameNumber(DEFAULT_TOTAL_SPENT))))
+            .andExpect(jsonPath("$.[*].amountRemaining").value(hasItem(sameNumber(DEFAULT_AMOUNT_REMAINING))));
     }
 
     @Test
@@ -222,10 +239,11 @@ class BudgetResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(budget.getId().intValue()))
-            .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
-            .andExpect(jsonPath("$.startDate").value(DEFAULT_START_DATE.toString()))
-            .andExpect(jsonPath("$.endDate").value(DEFAULT_END_DATE.toString()))
-            .andExpect(jsonPath("$.limit").value(DEFAULT_LIMIT.doubleValue()));
+            .andExpect(jsonPath("$.budgetId").value(DEFAULT_BUDGET_ID.intValue()))
+            .andExpect(jsonPath("$.monthOfTheTime").value(DEFAULT_MONTH_OF_THE_TIME.toString()))
+            .andExpect(jsonPath("$.totalBudget").value(sameNumber(DEFAULT_TOTAL_BUDGET)))
+            .andExpect(jsonPath("$.totalSpent").value(sameNumber(DEFAULT_TOTAL_SPENT)))
+            .andExpect(jsonPath("$.amountRemaining").value(sameNumber(DEFAULT_AMOUNT_REMAINING)));
     }
 
     @Test
@@ -247,7 +265,12 @@ class BudgetResourceIT {
         Budget updatedBudget = budgetRepository.findById(budget.getId()).get();
         // Disconnect from session so that the updates on updatedBudget are not directly saved in db
         em.detach(updatedBudget);
-        updatedBudget.name(UPDATED_NAME).startDate(UPDATED_START_DATE).endDate(UPDATED_END_DATE).limit(UPDATED_LIMIT);
+        updatedBudget
+            .budgetId(UPDATED_BUDGET_ID)
+            .monthOfTheTime(UPDATED_MONTH_OF_THE_TIME)
+            .totalBudget(UPDATED_TOTAL_BUDGET)
+            .totalSpent(UPDATED_TOTAL_SPENT)
+            .amountRemaining(UPDATED_AMOUNT_REMAINING);
 
         restBudgetMockMvc
             .perform(
@@ -261,10 +284,11 @@ class BudgetResourceIT {
         List<Budget> budgetList = budgetRepository.findAll();
         assertThat(budgetList).hasSize(databaseSizeBeforeUpdate);
         Budget testBudget = budgetList.get(budgetList.size() - 1);
-        assertThat(testBudget.getName()).isEqualTo(UPDATED_NAME);
-        assertThat(testBudget.getStartDate()).isEqualTo(UPDATED_START_DATE);
-        assertThat(testBudget.getEndDate()).isEqualTo(UPDATED_END_DATE);
-        assertThat(testBudget.getLimit()).isEqualTo(UPDATED_LIMIT);
+        assertThat(testBudget.getBudgetId()).isEqualTo(UPDATED_BUDGET_ID);
+        assertThat(testBudget.getMonthOfTheTime()).isEqualTo(UPDATED_MONTH_OF_THE_TIME);
+        assertThat(testBudget.getTotalBudget()).isEqualByComparingTo(UPDATED_TOTAL_BUDGET);
+        assertThat(testBudget.getTotalSpent()).isEqualByComparingTo(UPDATED_TOTAL_SPENT);
+        assertThat(testBudget.getAmountRemaining()).isEqualByComparingTo(UPDATED_AMOUNT_REMAINING);
     }
 
     @Test
@@ -335,7 +359,11 @@ class BudgetResourceIT {
         Budget partialUpdatedBudget = new Budget();
         partialUpdatedBudget.setId(budget.getId());
 
-        partialUpdatedBudget.name(UPDATED_NAME).startDate(UPDATED_START_DATE).endDate(UPDATED_END_DATE);
+        partialUpdatedBudget
+            .budgetId(UPDATED_BUDGET_ID)
+            .monthOfTheTime(UPDATED_MONTH_OF_THE_TIME)
+            .totalBudget(UPDATED_TOTAL_BUDGET)
+            .amountRemaining(UPDATED_AMOUNT_REMAINING);
 
         restBudgetMockMvc
             .perform(
@@ -349,10 +377,11 @@ class BudgetResourceIT {
         List<Budget> budgetList = budgetRepository.findAll();
         assertThat(budgetList).hasSize(databaseSizeBeforeUpdate);
         Budget testBudget = budgetList.get(budgetList.size() - 1);
-        assertThat(testBudget.getName()).isEqualTo(UPDATED_NAME);
-        assertThat(testBudget.getStartDate()).isEqualTo(UPDATED_START_DATE);
-        assertThat(testBudget.getEndDate()).isEqualTo(UPDATED_END_DATE);
-        assertThat(testBudget.getLimit()).isEqualTo(DEFAULT_LIMIT);
+        assertThat(testBudget.getBudgetId()).isEqualTo(UPDATED_BUDGET_ID);
+        assertThat(testBudget.getMonthOfTheTime()).isEqualTo(UPDATED_MONTH_OF_THE_TIME);
+        assertThat(testBudget.getTotalBudget()).isEqualByComparingTo(UPDATED_TOTAL_BUDGET);
+        assertThat(testBudget.getTotalSpent()).isEqualByComparingTo(DEFAULT_TOTAL_SPENT);
+        assertThat(testBudget.getAmountRemaining()).isEqualByComparingTo(UPDATED_AMOUNT_REMAINING);
     }
 
     @Test
@@ -367,7 +396,12 @@ class BudgetResourceIT {
         Budget partialUpdatedBudget = new Budget();
         partialUpdatedBudget.setId(budget.getId());
 
-        partialUpdatedBudget.name(UPDATED_NAME).startDate(UPDATED_START_DATE).endDate(UPDATED_END_DATE).limit(UPDATED_LIMIT);
+        partialUpdatedBudget
+            .budgetId(UPDATED_BUDGET_ID)
+            .monthOfTheTime(UPDATED_MONTH_OF_THE_TIME)
+            .totalBudget(UPDATED_TOTAL_BUDGET)
+            .totalSpent(UPDATED_TOTAL_SPENT)
+            .amountRemaining(UPDATED_AMOUNT_REMAINING);
 
         restBudgetMockMvc
             .perform(
@@ -381,10 +415,11 @@ class BudgetResourceIT {
         List<Budget> budgetList = budgetRepository.findAll();
         assertThat(budgetList).hasSize(databaseSizeBeforeUpdate);
         Budget testBudget = budgetList.get(budgetList.size() - 1);
-        assertThat(testBudget.getName()).isEqualTo(UPDATED_NAME);
-        assertThat(testBudget.getStartDate()).isEqualTo(UPDATED_START_DATE);
-        assertThat(testBudget.getEndDate()).isEqualTo(UPDATED_END_DATE);
-        assertThat(testBudget.getLimit()).isEqualTo(UPDATED_LIMIT);
+        assertThat(testBudget.getBudgetId()).isEqualTo(UPDATED_BUDGET_ID);
+        assertThat(testBudget.getMonthOfTheTime()).isEqualTo(UPDATED_MONTH_OF_THE_TIME);
+        assertThat(testBudget.getTotalBudget()).isEqualByComparingTo(UPDATED_TOTAL_BUDGET);
+        assertThat(testBudget.getTotalSpent()).isEqualByComparingTo(UPDATED_TOTAL_SPENT);
+        assertThat(testBudget.getAmountRemaining()).isEqualByComparingTo(UPDATED_AMOUNT_REMAINING);
     }
 
     @Test

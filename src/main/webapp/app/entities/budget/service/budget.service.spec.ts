@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
+import { DATE_FORMAT } from 'app/config/input.constants';
 import { IBudget } from '../budget.model';
 import { sampleWithRequiredData, sampleWithNewData, sampleWithPartialData, sampleWithFullData } from '../budget.test-samples';
 
@@ -8,8 +9,7 @@ import { BudgetService, RestBudget } from './budget.service';
 
 const requireRestSample: RestBudget = {
   ...sampleWithRequiredData,
-  startDate: sampleWithRequiredData.startDate?.toJSON(),
-  endDate: sampleWithRequiredData.endDate?.toJSON(),
+  monthOfTheTime: sampleWithRequiredData.monthOfTheTime?.format(DATE_FORMAT),
 };
 
 describe('Budget Service', () => {

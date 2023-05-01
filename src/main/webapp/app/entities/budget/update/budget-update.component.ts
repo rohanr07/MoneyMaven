@@ -18,6 +18,21 @@ export class BudgetUpdateComponent implements OnInit {
 
   editForm: BudgetFormGroup = this.budgetFormService.createBudgetFormGroup();
 
+  months: string[] = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
+
   constructor(
     protected budgetService: BudgetService,
     protected budgetFormService: BudgetFormService,
@@ -69,5 +84,12 @@ export class BudgetUpdateComponent implements OnInit {
   protected updateForm(budget: IBudget): void {
     this.budget = budget;
     this.budgetFormService.resetForm(this.editForm, budget);
+  }
+
+  getAmountRemaining(): number {
+    const totalBudget = this.editForm.get('totalBudget')?.value;
+    const totalSpent = this.editForm.get('totalSpent')?.value;
+    // @ts-ignore
+    return totalBudget - totalSpent;
   }
 }

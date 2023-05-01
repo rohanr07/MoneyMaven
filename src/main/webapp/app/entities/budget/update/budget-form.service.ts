@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-import dayjs from 'dayjs/esm';
-import { DATE_TIME_FORMAT } from 'app/config/input.constants';
 import { IBudget, NewBudget } from '../budget.model';
 
 /**
@@ -16,26 +14,15 @@ type PartialWithRequiredKeyOf<T extends { id: unknown }> = Partial<Omit<T, 'id'>
  */
 type BudgetFormGroupInput = IBudget | PartialWithRequiredKeyOf<NewBudget>;
 
-/**
- * Type that converts some properties for forms.
- */
-type FormValueOf<T extends IBudget | NewBudget> = Omit<T, 'startDate' | 'endDate'> & {
-  startDate?: string | null;
-  endDate?: string | null;
-};
-
-type BudgetFormRawValue = FormValueOf<IBudget>;
-
-type NewBudgetFormRawValue = FormValueOf<NewBudget>;
-
-type BudgetFormDefaults = Pick<NewBudget, 'id' | 'startDate' | 'endDate'>;
+type BudgetFormDefaults = Pick<NewBudget, 'id'>;
 
 type BudgetFormGroupContent = {
-  id: FormControl<BudgetFormRawValue['id'] | NewBudget['id']>;
-  name: FormControl<BudgetFormRawValue['name']>;
-  startDate: FormControl<BudgetFormRawValue['startDate']>;
-  endDate: FormControl<BudgetFormRawValue['endDate']>;
-  limit: FormControl<BudgetFormRawValue['limit']>;
+  id: FormControl<IBudget['id'] | NewBudget['id']>;
+  budgetId: FormControl<IBudget['budgetId']>;
+  monthOfTheTime: FormControl<IBudget['monthOfTheTime']>;
+  totalBudget: FormControl<IBudget['totalBudget']>;
+  totalSpent: FormControl<IBudget['totalSpent']>;
+  amountRemaining: FormControl<IBudget['amountRemaining']>;
 };
 
 export type BudgetFormGroup = FormGroup<BudgetFormGroupContent>;
@@ -43,10 +30,10 @@ export type BudgetFormGroup = FormGroup<BudgetFormGroupContent>;
 @Injectable({ providedIn: 'root' })
 export class BudgetFormService {
   createBudgetFormGroup(budget: BudgetFormGroupInput = { id: null }): BudgetFormGroup {
-    const budgetRawValue = this.convertBudgetToBudgetRawValue({
+    const budgetRawValue = {
       ...this.getFormDefaults(),
       ...budget,
-    });
+    };
     return new FormGroup<BudgetFormGroupContent>({
       id: new FormControl(
         { value: budgetRawValue.id, disabled: true },
@@ -55,27 +42,28 @@ export class BudgetFormService {
           validators: [Validators.required],
         }
       ),
-      name: new FormControl(budgetRawValue.name, {
+      budgetId: new FormControl(budgetRawValue.budgetId),
+      monthOfTheTime: new FormControl(budgetRawValue.monthOfTheTime, {
         validators: [Validators.required],
       }),
-      startDate: new FormControl(budgetRawValue.startDate, {
+      totalBudget: new FormControl(budgetRawValue.totalBudget, {
         validators: [Validators.required],
       }),
-      endDate: new FormControl(budgetRawValue.endDate, {
+      totalSpent: new FormControl(budgetRawValue.totalSpent, {
         validators: [Validators.required],
       }),
-      limit: new FormControl(budgetRawValue.limit, {
+      amountRemaining: new FormControl(budgetRawValue.amountRemaining, {
         validators: [Validators.required],
       }),
     });
   }
 
   getBudget(form: BudgetFormGroup): IBudget | NewBudget {
-    return this.convertBudgetRawValueToBudget(form.getRawValue() as BudgetFormRawValue | NewBudgetFormRawValue);
+    return form.getRawValue() as IBudget | NewBudget;
   }
 
   resetForm(form: BudgetFormGroup, budget: BudgetFormGroupInput): void {
-    const budgetRawValue = this.convertBudgetToBudgetRawValue({ ...this.getFormDefaults(), ...budget });
+    const budgetRawValue = { ...this.getFormDefaults(), ...budget };
     form.reset(
       {
         ...budgetRawValue,
@@ -85,30 +73,8 @@ export class BudgetFormService {
   }
 
   private getFormDefaults(): BudgetFormDefaults {
-    const currentTime = dayjs();
-
     return {
       id: null,
-      startDate: currentTime,
-      endDate: currentTime,
-    };
-  }
-
-  private convertBudgetRawValueToBudget(rawBudget: BudgetFormRawValue | NewBudgetFormRawValue): IBudget | NewBudget {
-    return {
-      ...rawBudget,
-      startDate: dayjs(rawBudget.startDate, DATE_TIME_FORMAT),
-      endDate: dayjs(rawBudget.endDate, DATE_TIME_FORMAT),
-    };
-  }
-
-  private convertBudgetToBudgetRawValue(
-    budget: IBudget | (Partial<NewBudget> & BudgetFormDefaults)
-  ): BudgetFormRawValue | PartialWithRequiredKeyOf<NewBudgetFormRawValue> {
-    return {
-      ...budget,
-      startDate: budget.startDate ? budget.startDate.format(DATE_TIME_FORMAT) : undefined,
-      endDate: budget.endDate ? budget.endDate.format(DATE_TIME_FORMAT) : undefined,
     };
   }
 }

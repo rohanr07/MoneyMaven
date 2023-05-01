@@ -15,7 +15,7 @@ describe('FinancialTransaction e2e test', () => {
   const financialTransactionPageUrlPattern = new RegExp('/financial-transaction(\\?.*)?$');
   const username = Cypress.env('E2E_USERNAME') ?? 'user';
   const password = Cypress.env('E2E_PASSWORD') ?? 'user';
-  const financialTransactionSample = { description: 'distributed', amount: 76069, date: '2023-03-14T06:54:40.862Z' };
+  const financialTransactionSample = { description: 'distributed', amount: 76069, date: '2023-04-30T21:55:54.862Z' };
 
   let financialTransaction;
 
@@ -161,7 +161,7 @@ describe('FinancialTransaction e2e test', () => {
 
       cy.get(`[data-cy="amount"]`).type('26347').should('have.value', '26347');
 
-      cy.get(`[data-cy="date"]`).type('2023-03-14T05:30').blur().should('have.value', '2023-03-14T05:30');
+      cy.get(`[data-cy="date"]`).type('2023-04-30T20:31').blur().should('have.value', '2023-04-30T20:31');
 
       cy.get(entityCreateSaveButtonSelector).click();
 

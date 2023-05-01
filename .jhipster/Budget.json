@@ -1,0 +1,53 @@
+{
+  "applications": "*",
+  "changelogDate": "20230501055721",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "budget",
+  "fields": [
+    {
+      "fieldName": "budgetId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "monthOfTheTime",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "totalBudget",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "totalSpent",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "amountRemaining",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Budget",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "financialTransaction",
+      "otherEntityRelationshipName": "budget",
+      "relationshipName": "transactions",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "category",
+      "otherEntityRelationshipName": "budget",
+      "relationshipName": "category",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

@@ -18,8 +18,11 @@ type CategoryFormDefaults = Pick<NewCategory, 'id'>;
 
 type CategoryFormGroupContent = {
   id: FormControl<ICategory['id'] | NewCategory['id']>;
-  name: FormControl<ICategory['name']>;
+  categoryId: FormControl<ICategory['categoryId']>;
+  categoryName: FormControl<ICategory['categoryName']>;
   description: FormControl<ICategory['description']>;
+  budgetTarget: FormControl<ICategory['budgetTarget']>;
+  budget: FormControl<ICategory['budget']>;
 };
 
 export type CategoryFormGroup = FormGroup<CategoryFormGroupContent>;
@@ -39,10 +42,15 @@ export class CategoryFormService {
           validators: [Validators.required],
         }
       ),
-      name: new FormControl(categoryRawValue.name, {
+      categoryId: new FormControl(categoryRawValue.categoryId),
+      categoryName: new FormControl(categoryRawValue.categoryName, {
         validators: [Validators.required],
       }),
       description: new FormControl(categoryRawValue.description),
+      budgetTarget: new FormControl(categoryRawValue.budgetTarget, {
+        validators: [Validators.required],
+      }),
+      budget: new FormControl(categoryRawValue.budget),
     });
   }
 

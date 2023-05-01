@@ -5,15 +5,15 @@ import { map } from 'rxjs/operators';
 import dayjs from 'dayjs/esm';
 
 import { isPresent } from 'app/core/util/operators';
+import { DATE_FORMAT } from 'app/config/input.constants';
 import { ApplicationConfigService } from 'app/core/config/application-config.service';
 import { createRequestOption } from 'app/core/request/request-util';
 import { IBudget, NewBudget } from '../budget.model';
 
 export type PartialUpdateBudget = Partial<IBudget> & Pick<IBudget, 'id'>;
 
-type RestOf<T extends IBudget | NewBudget> = Omit<T, 'startDate' | 'endDate'> & {
-  startDate?: string | null;
-  endDate?: string | null;
+type RestOf<T extends IBudget | NewBudget> = Omit<T, 'monthOfTheTime'> & {
+  monthOfTheTime?: string | null;
 };
 
 export type RestBudget = RestOf<IBudget>;
@@ -100,16 +100,14 @@ export class BudgetService {
   protected convertDateFromClient<T extends IBudget | NewBudget | PartialUpdateBudget>(budget: T): RestOf<T> {
     return {
       ...budget,
-      startDate: budget.startDate?.toJSON() ?? null,
-      endDate: budget.endDate?.toJSON() ?? null,
+      monthOfTheTime: budget.monthOfTheTime?.format(DATE_FORMAT) ?? null,
     };
   }
 
   protected convertDateFromServer(restBudget: RestBudget): IBudget {
     return {
       ...restBudget,
-      startDate: restBudget.startDate ? dayjs(restBudget.startDate) : undefined,
-      endDate: restBudget.endDate ? dayjs(restBudget.endDate) : undefined,
+      monthOfTheTime: restBudget.monthOfTheTime ? dayjs(restBudget.monthOfTheTime) : undefined,
     };
   }
 

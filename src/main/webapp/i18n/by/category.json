@@ -18,9 +18,13 @@
         "title": "Category"
       },
       "id": "ID",
-      "name": "Name",
+      "categoryId": "Category Id",
+      "categoryName": "Category Name",
       "description": "Description",
-      "transactions": "Transactions"
+      "budgetTarget": "Budget Target",
+      "transactions": "Transactions",
+      "budget": "Budget",
+      "budget": "Budget"
     }
   }
 }

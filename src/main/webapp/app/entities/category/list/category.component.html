@@ -38,15 +38,39 @@
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
-          <th scope="col" jhiSortBy="name">
+          <th scope="col" jhiSortBy="categoryId">
             <div class="d-flex">
-              <span jhiTranslate="teamprojectApp.category.name">Name</span>
+              <span jhiTranslate="teamprojectApp.category.categoryId">Category Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="categoryName">
+            <div class="d-flex">
+              <span jhiTranslate="teamprojectApp.category.categoryName">Category Name</span>
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
           <th scope="col" jhiSortBy="description">
             <div class="d-flex">
               <span jhiTranslate="teamprojectApp.category.description">Description</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="budgetTarget">
+            <div class="d-flex">
+              <span jhiTranslate="teamprojectApp.category.budgetTarget">Budget Target</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="budget.id">
+            <div class="d-flex">
+              <span jhiTranslate="teamprojectApp.category.budget">Budget</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="budget.id">
+            <div class="d-flex">
+              <span jhiTranslate="teamprojectApp.category.budget">Budget</span>
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
@@ -58,8 +82,20 @@
           <td>
             <a [routerLink]="['/category', category.id, 'view']">{{ category.id }}</a>
           </td>
-          <td>{{ category.name }}</td>
+          <td>{{ category.categoryId }}</td>
+          <td>{{ category.categoryName }}</td>
           <td>{{ category.description }}</td>
+          <td>{{ category.budgetTarget }}</td>
+          <td>
+            <div *ngIf="category.budget">
+              <a [routerLink]="['/budget', category.budget.id, 'view']">{{ category.budget.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="category.budget">
+              <a [routerLink]="['/budget', category.budget.id, 'view']">{{ category.budget.id }}</a>
+            </div>
+          </td>
           <td class="text-end">
             <div class="btn-group">
               <button

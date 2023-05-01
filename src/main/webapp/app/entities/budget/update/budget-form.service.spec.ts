@@ -20,10 +20,11 @@ describe('Budget Form Service', () => {
         expect(formGroup.controls).toEqual(
           expect.objectContaining({
             id: expect.any(Object),
-            name: expect.any(Object),
-            startDate: expect.any(Object),
-            endDate: expect.any(Object),
-            limit: expect.any(Object),
+            budgetId: expect.any(Object),
+            monthOfTheTime: expect.any(Object),
+            totalBudget: expect.any(Object),
+            totalSpent: expect.any(Object),
+            amountRemaining: expect.any(Object),
           })
         );
       });
@@ -34,10 +35,11 @@ describe('Budget Form Service', () => {
         expect(formGroup.controls).toEqual(
           expect.objectContaining({
             id: expect.any(Object),
-            name: expect.any(Object),
-            startDate: expect.any(Object),
-            endDate: expect.any(Object),
-            limit: expect.any(Object),
+            budgetId: expect.any(Object),
+            monthOfTheTime: expect.any(Object),
+            totalBudget: expect.any(Object),
+            totalSpent: expect.any(Object),
+            amountRemaining: expect.any(Object),
           })
         );
       });

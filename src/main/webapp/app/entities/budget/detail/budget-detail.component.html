@@ -14,21 +14,25 @@
         <dd>
           <span>{{ budget.id }}</span>
         </dd>
-        <dt><span jhiTranslate="teamprojectApp.budget.name">Name</span></dt>
+        <dt><span jhiTranslate="teamprojectApp.budget.budgetId">Budget Id</span></dt>
         <dd>
-          <span>{{ budget.name }}</span>
+          <span>{{ budget.budgetId }}</span>
         </dd>
-        <dt><span jhiTranslate="teamprojectApp.budget.startDate">Start Date</span></dt>
+        <dt><span jhiTranslate="teamprojectApp.budget.monthOfTheTime">Month Of The Time</span></dt>
         <dd>
-          <span>{{ budget.startDate | formatMediumDatetime }}</span>
+          <span>{{ budget.monthOfTheTime | formatMediumDate }}</span>
         </dd>
-        <dt><span jhiTranslate="teamprojectApp.budget.endDate">End Date</span></dt>
+        <dt><span jhiTranslate="teamprojectApp.budget.totalBudget">Total Budget</span></dt>
         <dd>
-          <span>{{ budget.endDate | formatMediumDatetime }}</span>
+          <span>{{ budget.totalBudget }}</span>
         </dd>
-        <dt><span jhiTranslate="teamprojectApp.budget.limit">Limit</span></dt>
+        <dt><span jhiTranslate="teamprojectApp.budget.totalSpent">Total Spent</span></dt>
         <dd>
-          <span>{{ budget.limit }}</span>
+          <span>{{ budget.totalSpent }}</span>
+        </dd>
+        <dt><span jhiTranslate="teamprojectApp.budget.amountRemaining">Amount Remaining</span></dt>
+        <dd>
+          <span>{{ budget.amountRemaining }}</span>
         </dd>
       </dl>
 
