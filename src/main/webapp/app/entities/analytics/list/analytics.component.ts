@@ -149,17 +149,8 @@ export class AnalyticsComponent implements OnInit {
 
         var x = data.map(item => item.amount);
         var a = dataa.map(item => item.amount);
-        var y = x.slice(0, this.no_of_points); //expenses
-        var b = a.slice(0, this.no_of_points); //income
-
-        // @ts-ignore
-        var totalSumOfExpenses = y.reduce((a, cv) => a + cv);
-        // @ts-ignore
-        var avgExpense = totalSumOfExpenses / this.no_of_points;
-        // @ts-ignore
-        var totalSumOfIncomes = b.reduce((a, cv) => a + cv);
-        // @ts-ignore
-        var avgIncome = totalSumOfIncomes / this.no_of_points;
+        var y = x.slice(0, this.no_of_points);
+        var b = a.slice(0, this.no_of_points);
 
         var d = data.map(item => item.date);
         var e = d.slice(0, this.no_of_points);
@@ -237,6 +228,12 @@ export class AnalyticsComponent implements OnInit {
         const chart = new Chart(canvas, {
           type: this.lineChartType,
           data: chartData,
+          options: {
+            backgroundColor: 'black',
+            responsive: true,
+
+            scales: {},
+          },
         });
       });
     });
