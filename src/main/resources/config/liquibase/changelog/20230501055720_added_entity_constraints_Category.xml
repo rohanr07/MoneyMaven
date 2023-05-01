@@ -13,11 +13,5 @@
                                  constraintName="fk_category__budget_id"
                                  referencedColumnNames="id"
                                  referencedTableName="budget"/>
-
-        <addForeignKeyConstraint baseColumnNames="budget_id"
-                                 baseTableName="category"
-                                 constraintName="fk_category__budget_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="budget"/>
     </changeSet>
 </databaseChangeLog>
