@@ -1,122 +1,120 @@
-<div>
-  <h2 id="page-heading" data-cy="IncomeHeading">
-    <span>Income</span>
-    <h5 class="text-end">{{ today | date: 'MM/dd/yyyy' }}</h5>
-    <div class="d-flex justify-content-between">
-      <div class="d-flex justify-content-start">
-        <input type="text" class="form-control me-2 small-search-box" [(ngModel)]="searchTerm" placeholder="Search by reference..." />
-        <button class="btn btn-success h5-font-size" (click)="filterByDescription2(searchTerm)">Search</button>
-      </div>
-      <div class="d-flex justify-content-end">
-        <h5><b>Logged in: </b>{{ currentUser?.login }}</h5>
-      </div>
+<h2 id="page-heading" data-cy="IncomeHeading">
+  <span><Strong>Income</Strong></span>
+  <h5 class="text-end">{{ today | date: 'MM/dd/yyyy' }}</h5>
+  <div class="d-flex justify-content-between">
+    <div class="d-flex justify-content-start">
+      <input type="text" class="form-control me-2 small-search-box" [(ngModel)]="searchTerm" placeholder="Search by reference..." />
+      <button class="btn btn-success h5-font-size" (click)="filterByDescription2(searchTerm)">Search</button>
     </div>
-
     <div class="d-flex justify-content-end">
-      <h5><b>Total Monthly Income: </b>${{ totalMonthlyIncome }}</h5>
+      <h5><b>Logged in: </b>{{ currentUser?.login }}</h5>
     </div>
-
-    <div class="d-flex justify-content-end">
-      <button class="btn btn-info me-2" (click)="load2()" [disabled]="isLoading">
-        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
-        <span jhiTranslate="teamprojectApp.income.home.refreshListLabel">Refresh list</span>
-      </button>
-
-      <button
-        id="jh-create-entity"
-        data-cy="entityCreateButton"
-        class="btn btn-primary jh-create-entity create-income"
-        [routerLink]="['/income/new']"
-      >
-        <fa-icon icon="plus"></fa-icon>
-        <span jhiTranslate="teamprojectApp.income.home.createLabel"> Create a new Income </span>
-      </button>
-    </div>
-  </h2>
-
-  <jhi-alert-error></jhi-alert-error>
-
-  <jhi-alert></jhi-alert>
-
-  <div class="alert alert-warning" id="no-result" *ngIf="incomes?.length === 0">
-    <span jhiTranslate="teamprojectApp.income.home.notFound">No Incomes found</span>
   </div>
 
-  <div class="table-responsive table-entities" id="entities" *ngIf="incomes && incomes.length > 0">
-    <table class="table table-striped" aria-describedby="page-heading">
-      <thead>
-        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues2()">
-          <th scope="col" jhiSortBy="id">
-            <div class="d-flex">
-              <span jhiTranslate="global.field.id">ID</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="amount">
-            <div class="d-flex">
-              <span jhiTranslate="teamprojectApp.income.amount">Amount</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="companyName">
-            <div class="d-flex">
-              <span>Reference</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="date">
-            <div class="d-flex">
-              <span jhiTranslate="teamprojectApp.income.date">Date</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="currency">
-            <div class="d-flex">
-              <span jhiTranslate="teamprojectApp.income.currency">Currency</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="user.login">
-            <div class="d-flex">
-              <span jhiTranslate="teamprojectApp.income.user">User</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let income of incomes; trackBy: trackId" data-cy="entityTable">
-          <td>
-            <a [routerLink]="['/income', income.id, 'view']">{{ income.id }}</a>
-          </td>
-          <td>{{ income.amount }}</td>
-          <td>{{ income.companyName }}</td>
-          <td>{{ income.date | formatMediumDate }}</td>
-          <td jhiTranslate="{{ 'teamprojectApp.Currency.' + income.currency }}">{{ income.currency }}</td>
-          <td>
-            {{ income.user?.login }}
-          </td>
-          <td class="text-end">
-            <div class="btn-group">
-              <button type="submit" [routerLink]="['/income', income.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
-                <fa-icon icon="eye"></fa-icon>
-                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
-              </button>
-
-              <button type="submit" [routerLink]="['/income', income.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
-                <fa-icon icon="pencil-alt"></fa-icon>
-                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
-              </button>
-
-              <button type="submit" (click)="delete2(income)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
-                <fa-icon icon="times"></fa-icon>
-                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
-              </button>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="d-flex justify-content-end">
+    <h5><b>Total Monthly Income: </b>${{ totalMonthlyIncome }}</h5>
   </div>
+
+  <div class="d-flex justify-content-end">
+    <button class="btn btn-info me-2" (click)="load2()" [disabled]="isLoading">
+      <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+      <span jhiTranslate="teamprojectApp.income.home.refreshListLabel">Refresh list</span>
+    </button>
+
+    <button
+      id="jh-create-entity"
+      data-cy="entityCreateButton"
+      class="btn btn-primary jh-create-entity create-income"
+      [routerLink]="['/income/new']"
+    >
+      <fa-icon icon="plus"></fa-icon>
+      <span jhiTranslate="teamprojectApp.income.home.createLabel"> Create a new Income </span>
+    </button>
+  </div>
+</h2>
+
+<jhi-alert-error></jhi-alert-error>
+
+<jhi-alert></jhi-alert>
+
+<div class="alert alert-warning" id="no-result" *ngIf="incomes?.length === 0">
+  <span jhiTranslate="teamprojectApp.income.home.notFound">No Incomes found</span>
+</div>
+
+<div class="table-responsive table-entities" id="entities" *ngIf="incomes && incomes.length > 0">
+  <table class="table table-striped" aria-describedby="page-heading">
+    <thead>
+      <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues2()">
+        <th scope="col" jhiSortBy="id">
+          <div class="d-flex">
+            <span jhiTranslate="global.field.id">ID</span>
+            <fa-icon class="p-1" icon="sort"></fa-icon>
+          </div>
+        </th>
+        <th scope="col" jhiSortBy="amount">
+          <div class="d-flex">
+            <span jhiTranslate="teamprojectApp.income.amount">Amount</span>
+            <fa-icon class="p-1" icon="sort"></fa-icon>
+          </div>
+        </th>
+        <th scope="col" jhiSortBy="companyName">
+          <div class="d-flex">
+            <span>Reference</span>
+            <fa-icon class="p-1" icon="sort"></fa-icon>
+          </div>
+        </th>
+        <th scope="col" jhiSortBy="date">
+          <div class="d-flex">
+            <span jhiTranslate="teamprojectApp.income.date">Date</span>
+            <fa-icon class="p-1" icon="sort"></fa-icon>
+          </div>
+        </th>
+        <th scope="col" jhiSortBy="currency">
+          <div class="d-flex">
+            <span jhiTranslate="teamprojectApp.income.currency">Currency</span>
+            <fa-icon class="p-1" icon="sort"></fa-icon>
+          </div>
+        </th>
+        <th scope="col" jhiSortBy="user.login">
+          <div class="d-flex">
+            <span jhiTranslate="teamprojectApp.income.user">User</span>
+            <fa-icon class="p-1" icon="sort"></fa-icon>
+          </div>
+        </th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let income of incomes; trackBy: trackId" data-cy="entityTable">
+        <td>
+          <a [routerLink]="['/income', income.id, 'view']">{{ income.id }}</a>
+        </td>
+        <td>{{ income.amount }}</td>
+        <td>{{ income.companyName }}</td>
+        <td>{{ income.date | formatMediumDate }}</td>
+        <td jhiTranslate="{{ 'teamprojectApp.Currency.' + income.currency }}">{{ income.currency }}</td>
+        <td>
+          {{ income.user?.login }}
+        </td>
+        <td class="text-end">
+          <div class="btn-group">
+            <button type="submit" [routerLink]="['/income', income.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+              <fa-icon icon="eye"></fa-icon>
+              <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+            </button>
+
+            <button type="submit" [routerLink]="['/income', income.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+              <fa-icon icon="pencil-alt"></fa-icon>
+              <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+
+            <button type="submit" (click)="delete2(income)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+              <fa-icon icon="times"></fa-icon>
+              <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
