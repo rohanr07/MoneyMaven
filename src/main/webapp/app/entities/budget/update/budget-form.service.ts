@@ -52,7 +52,7 @@ export class BudgetFormService {
       totalSpent: new FormControl(budgetRawValue.totalSpent, {
         validators: [Validators.required],
       }),
-      amountRemaining: new FormControl(budgetRawValue.amountRemaining, {}),
+      amountRemaining: new FormControl(budgetRawValue.amountRemaining, { validators: [Validators.min(0)] }),
     });
   }
 

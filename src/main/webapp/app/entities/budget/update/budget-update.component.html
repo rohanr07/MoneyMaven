@@ -16,28 +16,17 @@
         <div class="row mb-3">
           <label class="form-label" jhiTranslate="teamprojectApp.budget.monthOfTheTime" for="field_monthOfTheTime">Month Of The Time</label>
           <div class="input-group">
-            <select
+            <input
               id="field_monthOfTheTime"
-              data-cy="monthOfTheTime"
+              data-cy="date"
+              type="text"
               class="form-control"
-              name="monthOfTheTime"
+              name="date"
+              ngbDatepicker
+              #dateDp="ngbDatepicker"
               formControlName="monthOfTheTime"
-            >
-              <option [value]="month" *ngFor="let month of months">{{ month }}</option>
-            </select>
-          </div>
-          <div
-            *ngIf="
-              editForm.get('monthOfTheTime')!.invalid && (editForm.get('monthOfTheTime')!.dirty || editForm.get('monthOfTheTime')!.touched)
-            "
-          >
-            <small
-              class="form-text text-danger"
-              *ngIf="editForm.get('monthOfTheTime')?.errors?.required"
-              jhiTranslate="entity.validation.required"
-            >
-              This field is required.
-            </small>
+            />
+            <button type="button" class="btn btn-secondary" (click)="dateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
           </div>
         </div>
 
@@ -139,6 +128,7 @@
           data-cy="entityCreateSaveButton"
           [disabled]="editForm.invalid || isSaving"
           class="btn btn-primary"
+          (click)="save()"
         >
           <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
         </button>

@@ -18,7 +18,7 @@ export class BudgetUpdateComponent implements OnInit {
 
   editForm: BudgetFormGroup = this.budgetFormService.createBudgetFormGroup();
 
-  months: string[] = [
+  /*months: string[] = [
     'January',
     'February',
     'March',
@@ -31,7 +31,7 @@ export class BudgetUpdateComponent implements OnInit {
     'October',
     'November',
     'December',
-  ];
+  ];*/
 
   constructor(
     protected budgetService: BudgetService,
@@ -53,11 +53,15 @@ export class BudgetUpdateComponent implements OnInit {
   }
 
   save(): void {
+    console.log('Save button clicked');
     this.isSaving = true;
     const budget = this.budgetFormService.getBudget(this.editForm);
     if (budget.id !== null) {
+      console.log('Updating budget');
       this.subscribeToSaveResponse(this.budgetService.update(budget));
     } else {
+      console.log('Creating budget');
+      console.log(budget);
       this.subscribeToSaveResponse(this.budgetService.create(budget));
     }
   }
@@ -90,6 +94,12 @@ export class BudgetUpdateComponent implements OnInit {
     const totalBudget = this.editForm.get('totalBudget')?.value;
     const totalSpent = this.editForm.get('totalSpent')?.value;
     // @ts-ignore
-    return totalBudget - totalSpent;
+    const amountRemaining = totalBudget - totalSpent;
+
+    console.log('Total Budget:', totalBudget);
+    console.log('Total Spent:', totalSpent);
+    console.log('Amount Remaining:', amountRemaining);
+
+    return amountRemaining;
   }
 }
