@@ -57,6 +57,7 @@ export class IncomeComponent implements OnInit {
       .subscribe({
         next: (res: EntityArrayResponseType2) => {
           this.onResponseSuccess2(res);
+          this.reloadPage();
         },
       });
   }
@@ -67,6 +68,9 @@ export class IncomeComponent implements OnInit {
         this.onResponseSuccess2(res);
       },
     });
+  }
+  reloadPage() {
+    window.location.href = window.location.href;
   }
 
   navigateToWithComponentValues2(): void {
