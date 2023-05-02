@@ -3,6 +3,7 @@ import { HttpResponse } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 import { BudgetFormService, BudgetFormGroup } from './budget-form.service';
 import { IBudget } from '../budget.model';
@@ -36,7 +37,8 @@ export class BudgetUpdateComponent implements OnInit {
   constructor(
     protected budgetService: BudgetService,
     protected budgetFormService: BudgetFormService,
-    protected activatedRoute: ActivatedRoute
+    protected activatedRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -74,7 +76,7 @@ export class BudgetUpdateComponent implements OnInit {
   }
 
   protected onSaveSuccess(): void {
-    this.previousState();
+    this.router.navigate(['./budget']);
   }
 
   protected onSaveError(): void {
