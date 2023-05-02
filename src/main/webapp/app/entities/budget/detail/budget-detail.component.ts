@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { IBudget } from '../budget.model';
+import dayjs from 'dayjs';
 
 @Component({
   selector: 'jhi-budget-detail',
@@ -20,5 +21,11 @@ export class BudgetDetailComponent implements OnInit {
 
   previousState(): void {
     window.history.back();
+  }
+  formatMonth(date: dayjs.Dayjs | null | undefined): string {
+    if (!date) {
+      return '';
+    }
+    return date.format('MMMM');
   }
 }

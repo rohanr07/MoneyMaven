@@ -8,6 +8,7 @@ import { ASC, DESC, SORT, ITEM_DELETED_EVENT, DEFAULT_SORT_DATA } from 'app/conf
 import { EntityArrayResponseType, BudgetService } from '../service/budget.service';
 import { BudgetDeleteDialogComponent } from '../delete/budget-delete-dialog.component';
 import { SortService } from 'app/shared/sort/sort.service';
+import dayjs from 'dayjs';
 
 @Component({
   selector: 'jhi-budget',
@@ -56,6 +57,7 @@ export class BudgetComponent implements OnInit {
     this.loadFromBackendWithRouteInformations().subscribe({
       next: (res: EntityArrayResponseType) => {
         this.onResponseSuccess(res);
+        this.calculateCurrentMonthTotals();
       },
     });
   }
@@ -80,16 +82,6 @@ export class BudgetComponent implements OnInit {
   protected onResponseSuccess(response: EntityArrayResponseType): void {
     const dataFromBody = this.fillComponentAttributesFromResponseBody(response.body);
     this.budgets = this.refineData(dataFromBody);
-
-    this.totalBudgetForMonth = 0;
-    this.totalSpendingForMonth = 0;
-    this.amountRemainingForMonth = 0;
-
-    this.budgets.forEach(budget => {
-      this.totalBudgetForMonth += budget.totalBudget ?? 0;
-      this.totalSpendingForMonth += budget.totalSpent ?? 0;
-    });
-    this.amountRemainingForMonth = this.totalBudgetForMonth - this.totalSpendingForMonth;
   }
 
   protected refineData(data: IBudget[]): IBudget[] {
@@ -128,6 +120,38 @@ export class BudgetComponent implements OnInit {
       return [];
     } else {
       return [predicate + ',' + ascendingQueryParam];
+    }
+  }
+
+  formatMonth(date: dayjs.Dayjs | null | undefined): string {
+    if (!date) {
+      return '';
+    }
+    return date.format('MMMM');
+  }
+
+  private calculateCurrentMonthTotals(): void {
+    this.totalBudgetForMonth = 0;
+    this.totalSpendingForMonth = 0;
+    this.amountRemainingForMonth = 0;
+
+    // Check if this.budgets is defined and not null
+    if (this.budgets) {
+      const currentMonth = dayjs().month();
+      const currentYear = dayjs().year();
+
+      const currentMonthBudgets = this.budgets.filter(budget => {
+        const budgetMonth = dayjs(budget.monthOfTheTime).month();
+        const budgetYear = dayjs(budget.monthOfTheTime).year();
+        return budgetMonth === currentMonth && budgetYear === currentYear;
+      });
+
+      currentMonthBudgets.forEach(budget => {
+        this.totalBudgetForMonth += budget.totalBudget ?? 0;
+        this.totalSpendingForMonth += budget.totalSpent ?? 0;
+      });
+
+      this.amountRemainingForMonth = this.totalBudgetForMonth - this.totalSpendingForMonth;
     }
   }
 }
