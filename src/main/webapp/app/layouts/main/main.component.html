@@ -6,15 +6,25 @@
 </div>
 
 <div *ngIf="account == null" class="card jh-card" style="padding: 0; margin: 0; height: 100%; width: 100%">
+
   <router-outlet></router-outlet>
+  <!--  <jhi-footer></jhi-footer>-->
 </div>
 <div class="container-lg" style="min-height: 100%; min-width: 100%">
   <!--  <div *ngIf="account == null" class="card jh-card" style="padding: 0; margin: 0; height: 100%; width: 100%">-->
   <!--    <router-outlet></router-outlet>-->
   <!--  </div>-->
   <div *ngIf="account != null" class="card jh-card" style="margin: 0; height: 100%; width: 100%">
+
     <router-outlet></router-outlet>
+    <jhi-footer></jhi-footer>
   </div>
-  <jhi-footer></jhi-footer>
-  <div *ngIf="isNotLandingPage()"></div>
+  <div *ngIf="!isNotLoginPage()">
+
+    <jhi-footer></jhi-footer>
+  </div>
+
+  <!--  <div *ngIf="isNotLandingPage()">-->
+
+  <!--  </div>-->
 </div>

@@ -10,8 +10,17 @@
       width: 100%;
     }
 
+    .ftrContent {
+      display: none;
+    }
+
+    .footer:hover p {
+      display: block;
+    }
+
     .btn:hover {
       color: rgb(129, 12, 168);
+      /*color: rgba(0, 0, 0,0);*/
       background: #ffffff;
       border: 2px solid rgb(129, 12, 168);
     }
@@ -21,6 +30,8 @@
     }
 
     .alert-link:hover {
+      /*color: rgba(255,255, 255,0);*/
+
       color: rgb(129, 12, 168);
     }
 
@@ -41,10 +52,11 @@
       color: #ffffff;
     }
     .herobg {
+      height: 100%;
       position: relative;
       overflow: hidden;
       /*background-image: linear-gradient(to top, #810ca7 40%, rgb(81, 27, 101) 80%);*/
-      background: linear-gradient(-45deg, #9105be, #821fa2, #4c2a85, #320e3b);
+      background: linear-gradient(-45deg, #7204fc, #821fa2, #00a29d, #320e3b);
       background-size: 400% 400%;
       animation: gradient 10s linear infinite;
     }
@@ -83,7 +95,7 @@
     /*Change speed of animation*/
     .wave.wave1 {
       animation: animate 30s linear infinite;
-      z-index: 1000;
+      z-index: 5;
       opacity: 1;
       animation-delay: 0s;
       bottom: 0;
@@ -91,7 +103,7 @@
 
     .wave.wave2 {
       animation: animate2 35s linear infinite;
-      z-index: 999;
+      z-index: 4;
       opacity: 0.5;
       animation-delay: -5s;
       bottom: 10px;
@@ -99,7 +111,7 @@
 
     .wave.wave3 {
       animation: animate 30s cubic-bezier(0.17, 0.67, 0.83, 0.67) infinite;
-      z-index: 998;
+      z-index: 3;
       opacity: 0.2;
       animation-delay: -2s;
       bottom: 15px;
@@ -107,7 +119,7 @@
 
     .wave.wave4 {
       animation: animate2 35s cubic-bezier(0.17, 0.67, 0.83, 0.67) infinite;
-      z-index: 997;
+      z-index: 2;
       opacity: 0.7;
       animation-delay: -5s;
       bottom: 20px;
@@ -219,15 +231,15 @@
   <!--  code injected by Prabal for main page; used angular hook ngswitch to display the page-->
 
   <div class="col-md-6" [ngSwitch]="account != null" style="width: 100%; height: 780px; margin: 0">
-    <div class="wrapper herobg" *ngSwitchCase="false">
-      <div class="wave wave1"></div>
-      <div class="wave wave1"></div>
-      <div class="wave wave2"></div>
+    <div class="herobg" *ngSwitchCase="false">
+<!--      <div class="wave wave1"></div>-->
+<!--      <div class="wave wave1"></div>-->
+<!--      <div class="wave wave2"></div>-->
 
-      <div class="wave wave3"></div>
-      <div class="wave wave3"></div>
-      <div class="wave wave3"></div>
-      <div class="wave wave4"></div>
+<!--      <div class="wave wave3"></div>-->
+<!--      <div class="wave wave3"></div>-->
+<!--      <div class="wave wave3"></div>-->
+<!--      <div class="wave wave4"></div>-->
       <div class="container">
         <!--your content here-->
         <div
@@ -310,5 +322,22 @@
     <!--    <span jhiTranslate="global.messages.info.register.noaccount">You don't have an account yet?</span>&nbsp;-->
     <!--    <a class="alert-link" routerLink="account/register">Sign up - it's free</a>-->
     <!--  </div>-->
+    <!--    *ngSwitchCase="false"-->
+    <div class="footer disclaimer" *ngSwitchCase="false" style="margin-top: 0px">
+      <span
+        class="projectDisclaimer"
+        style="font-family: 'Leelawadee UI'; margin-left: 20px; font-weight: 100; font-size: small; letter-spacing: 1px"
+        >Alpha Project Disclaimer (hover to read)</span
+      >
+      <p
+        class="ftrContent"
+        style="font-family: 'Leelawadee UI'; margin-left: 20px; font-weight: 100; font-size: small; letter-spacing: 1px"
+      >
+        This server is provided by the School of Computer Science at the University of Birmingham to allow users to provide feedback on
+        software developed by students as part of an assignment. While we take reasonable precautions, we cannot guarantee the security of
+        the data entered into the system. Do NOT enter any real personal data (e.g., financial information or otherwise) into the system.
+        The assignment runs until May 31st 2023, at which time the server and all associated data will be destroyed.
+      </p>
+    </div>
   </div>
 </html>
