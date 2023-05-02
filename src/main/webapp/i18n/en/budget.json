@@ -19,7 +19,7 @@
       },
       "id": "ID",
       "budgetId": "Budget Id",
-      "monthOfTheTime": "Month Of The Time",
+      "monthOfTheTime": "Date",
       "totalBudget": "Total Budget",
       "totalSpent": "Total Spent",
       "amountRemaining": "Amount Remaining",

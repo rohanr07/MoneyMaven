@@ -88,9 +88,10 @@ export class BudgetUpdateComponent implements OnInit {
   protected updateForm(budget: IBudget): void {
     this.budget = budget;
     this.budgetFormService.resetForm(this.editForm, budget);
+    this.editForm.get('amountRemaining')?.setValue(this.amountRemaining);
   }
 
-  getAmountRemaining(): number {
+  /*getAmountRemaining(): number {
     const totalBudget = this.editForm.get('totalBudget')?.value;
     const totalSpent = this.editForm.get('totalSpent')?.value;
     // @ts-ignore
@@ -101,5 +102,11 @@ export class BudgetUpdateComponent implements OnInit {
     console.log('Amount Remaining:', amountRemaining);
 
     return amountRemaining;
+  }*/
+
+  get amountRemaining(): number {
+    const totalBudget = this.editForm.get('totalBudget')?.value ?? 0;
+    const totalSpent = this.editForm.get('totalSpent')?.value ?? 0;
+    return totalBudget - totalSpent;
   }
 }

@@ -52,12 +52,18 @@ export class BudgetFormService {
       totalSpent: new FormControl(budgetRawValue.totalSpent, {
         validators: [Validators.required],
       }),
-      amountRemaining: new FormControl(budgetRawValue.amountRemaining, { validators: [Validators.min(0)] }),
+      amountRemaining: new FormControl({ value: null, disabled: true }),
     });
   }
 
   getBudget(form: BudgetFormGroup): IBudget | NewBudget {
-    return form.getRawValue() as IBudget | NewBudget;
+    const rawBudget = form.getRawValue() as IBudget | NewBudget;
+    const totalBudget = rawBudget.totalBudget ?? 0;
+    const totalSpent = rawBudget.totalSpent ?? 0;
+    return {
+      ...rawBudget,
+      amountRemaining: totalBudget - totalSpent,
+    };
   }
 
   resetForm(form: BudgetFormGroup, budget: BudgetFormGroupInput): void {
