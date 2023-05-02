@@ -52,6 +52,7 @@
       color: #ffffff;
     }
     .herobg {
+      height: 100%;
       position: relative;
       overflow: hidden;
       /*background-image: linear-gradient(to top, #810ca7 40%, rgb(81, 27, 101) 80%);*/
@@ -230,15 +231,15 @@
   <!--  code injected by Prabal for main page; used angular hook ngswitch to display the page-->
 
   <div class="col-md-6" [ngSwitch]="account != null" style="width: 100%; height: 780px; margin: 0">
-    <div class="wrapper herobg" *ngSwitchCase="false">
-      <div class="wave wave1"></div>
-      <div class="wave wave1"></div>
-      <div class="wave wave2"></div>
+    <div class="herobg" *ngSwitchCase="false">
+<!--      <div class="wave wave1"></div>-->
+<!--      <div class="wave wave1"></div>-->
+<!--      <div class="wave wave2"></div>-->
 
-      <div class="wave wave3"></div>
-      <div class="wave wave3"></div>
-      <div class="wave wave3"></div>
-      <div class="wave wave4"></div>
+<!--      <div class="wave wave3"></div>-->
+<!--      <div class="wave wave3"></div>-->
+<!--      <div class="wave wave3"></div>-->
+<!--      <div class="wave wave4"></div>-->
       <div class="container">
         <!--your content here-->
         <div
@@ -322,7 +323,7 @@
     <!--    <a class="alert-link" routerLink="account/register">Sign up - it's free</a>-->
     <!--  </div>-->
     <!--    *ngSwitchCase="false"-->
-    <div class="footer disclaimer" *ngSwitchCase="false" style="margin-top: 75px">
+    <div class="footer disclaimer" *ngSwitchCase="false" style="margin-top: 0px">
       <span
         class="projectDisclaimer"
         style="font-family: 'Leelawadee UI'; margin-left: 20px; font-weight: 100; font-size: small; letter-spacing: 1px"
