@@ -2,8 +2,7 @@
 
 
 ## Developed by:
-
-Madasar Shah for the team project
+Team43
 
 This application was generated using JHipster 7.9.3, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v7.9.3](https://www.jhipster.tech/documentation-archive/v7.9.3).
 
@@ -26,9 +25,6 @@ In the project root, JHipster generates configuration files for tools like git, 
 - `/src/main/docker` - Docker configurations for the application and services that the application depends on
 
 ## Development
-
-Before you can build this project, you must install and configure the following dependencies on your machine:
-
 1. [Node.js][]: We use Node to run a development web server and build the project.
    Depending on your system, you can install Node either from source or as a pre-packaged bundle.
 
@@ -87,10 +83,6 @@ import 'leaflet/dist/leaflet.js';
 ```
 
 Edit [src/main/webapp/content/scss/vendor.scss](src/main/webapp/content/scss/vendor.scss) file:
-
-```
-@import '~leaflet/dist/leaflet.css';
-```
 
 Note: There are still a few other things remaining to do for Leaflet that we won't detail here.
 
